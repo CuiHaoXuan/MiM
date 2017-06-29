@@ -1,6 +1,7 @@
 
 # add one routeing entry per destination
 #------------------------------------------------------
+
 num_nexthop:	The number of nexthop 
 no_if:		Correspond to virtual network interface (e1,e2,e3,e4)
 
@@ -23,6 +24,7 @@ if (num_nexthop == 4 && no_if == 4) use the fourth hop
 
 # the above algorithm is summarized as follows 
 #------------------------------------------------------
+
 if (num_nexthop == 1 || (num_nexthop == 2 && (no_if == 1 || no_if == 3)) || (num_nexthop == 3 && (no_if == 1 || no_if == 4)) || (num_nexthop == 4 && no_if == 1)) use the first hop
 
 if ((num_nexthop == 2 && (no_if == 2 || no_if == 4)) || (num_nexthop == 3 && no_if == 2) || (num_nexthop == 4 && no_if == 2)) use the second hop
@@ -34,6 +36,7 @@ if (num_nexthop == 4 && no_if == 4) use the fourth hop
 
 # the above algorithm written in C language
 #------------------------------------------------------
+
 route_multipath (struct rib *rib, int num_nexthop, int no_if)
 {
 
@@ -81,6 +84,7 @@ route_multipath (struct rib *rib, int num_nexthop, int no_if)
 
 #  The following is the Chinese explanation of the algorithm 
 #------------------------------------------------------------------------
+
 为了让路由表为多路径传输提供更好的网络流量负载均衡支持，需要第二次改进OSPF-MDR，为每一个目的地址仅生成一条路由表项，这样，在节点M1中，生成的到节点M6的路由表项新增如下4条，此时的下一跳的个数为3：
 nexthop via 112.26.0.2 dev eth0 weight1 to 112.26.1.6
 nexthop via 112.26.0.3 dev eth0 weight1 to 112.26.2.6
