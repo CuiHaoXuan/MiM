@@ -1,0 +1,3546 @@
+
+================================================================================
+porting MPTCP to android-x86_64-nougat & kernel-4.4
+================================================================================
+
+========================================================= // download mptcp_v0.92.zip
+# download mptcp_v0.92.zip from  https://github.com/multipath-tcp/mptcp
+# then unzip
+
+[root@localhost android-x86_64-nougat-mptcp]# ls
+kernel  mptcp-mptcp_v0.92  mptcp-mptcp_v0.92.zip
+
+[root@localhost android-x86_64-nougat-mptcp]# mv mptcp-mptcp_v0.92 mptcp_v0.92
+========================================================= // download mptcp_v0.92.zip - end
+
+
+========================================================= // look MPTCP - begin
+[root@localhost android-x86_64-nougat-mptcp]# cd mptcp_v0.92/
+[root@localhost mptcp_v0.92]# find . -name mptcp*
+./include/net/mptcp.h
+./include/net/mptcp_v4.h
+./include/net/mptcp_v6.h
+./include/net/netns/mptcp.h
+./net/mptcp
+./net/mptcp/*
+========================================================= // look MPTCP - end
+
+
+========================================================= // copy MPTCP - begin
+[root@localhost android-x86_64-nougat-mptcp]# pwd
+/opt/android-x86/android-x86_64-nougat-mptcp
+
+[root@localhost android-x86_64-nougat-mptcp]# 
+
+/bin/cp -r mptcp_v0.92/net/mptcp/ kernel/net/
+/bin/cp mptcp_v0.92/include/net/mptcp.h kernel/include/net/
+/bin/cp mptcp_v0.92/include/net/mptcp_v4.h kernel/include/net/
+/bin/cp mptcp_v0.92/include/net/mptcp_v6.h kernel/include/net/
+/bin/cp mptcp_v0.92/include/net/netns/mptcp.h kernel/include/net/netns/
+========================================================= // copy MPTCP - end
+
+
+***********************************************************
+in PC, modify source codes
+***********************************************************
+
+========================================================= // modify source codes - begin
+
+*************************************************************************
+gedit include/uapi/linux/if.h
+*************************************************************************
+根据 mptcp_v0.92/include/uapi/linux/if.h 修改下面部分
+----------------------------------------
+#endif /* __UAPI_DEF_IF_NET_DEVICE_FLAGS_LOWER_UP_DORMANT_ECHO */
+
+//ztg add
+//--------------------------------------------------------------------
+#define IFF_NOMULTIPATH	0x80000		/* Disable for MPTCP 		*/
+#define IFF_MPBACKUP	0x100000	/* Use as backup path for MPTCP */
+//--------------------------------------------------------------------
+
+#define IFF_VOLATILE	(IFF_LOOPBACK|IFF_POINTOPOINT|IFF_BROADCAST|IFF_ECHO|\
+		IFF_MASTER|IFF_SLAVE|IFF_RUNNING|IFF_LOWER_UP|IFF_DORMANT)
+*************************************************************************
+
+*************************************************************************
+gedit net/ipv4/tcp_ipv4.c
+*************************************************************************
+但是，tcp_v4_rcv(struct sk_buff *skb) 需要根据 mptcp_v0.92/net/ipv4/tcp_ipv4.c 修改
+
+tcp_v4_send_ack() 的定义以及对其的调用，需要自己修改
+*************************************************************************
+
+*************************************************************************
+gedit net/ipv6/tcp_ipv6.c
+*************************************************************************
+但是，tcp_v6_reqsk_send_ack() 需要根据 mptcp_v0.92/net/ipv6/tcp_ipv6.c 修改
+但是，tcp_v6_rcv(struct sk_buff *skb) 需要根据 mptcp_v0.92/net/ipv6/tcp_ipv6.c 修改
+*************************************************************************
+
+
+*************************************************************************
+一共 58 个文件
+*************************************************************************
+gedit drivers/infiniband/hw/cxgb4/cm.c
+gedit include/linux/skbuff.h
+gedit include/linux/tcp.h
+gedit include/net/inet_common.h
+gedit include/net/inet_connection_sock.h
+gedit include/net/inet_sock.h
+gedit include/net/mptcp.h
+gedit include/net/mptcp_v4.h
+gedit include/net/mptcp_v6.h
+gedit include/net/net_namespace.h
+gedit include/net/netns/mptcp.h
+gedit include/net/sock.h
+gedit include/net/tcp.h
+gedit include/net/tcp_states.h
+gedit include/net/transp_v6.h
+gedit include/uapi/linux/if.h
+gedit include/uapi/linux/tcp.h
+gedit net/Kconfig
+gedit net/Makefile
+gedit net/core/dev.c
+gedit net/core/skbuff.c
+gedit net/core/sock.c
+gedit net/ipv4/Kconfig
+gedit net/ipv4/af_inet.c
+gedit net/ipv4/inet_connection_sock.c
+gedit net/ipv4/ip_sockglue.c
+gedit net/ipv4/syncookies.c
+gedit net/ipv4/tcp.c
+gedit net/ipv4/tcp_fastopen.c
+gedit net/ipv4/tcp_input.c
+gedit net/ipv4/tcp_ipv4.c
+gedit net/ipv4/tcp_minisocks.c
+gedit net/ipv4/tcp_output.c
+gedit net/ipv4/tcp_timer.c
+gedit net/ipv6/addrconf.c
+gedit net/ipv6/af_inet6.c
+gedit net/ipv6/ipv6_sockglue.c
+gedit net/ipv6/syncookies.c
+gedit net/ipv6/tcp_ipv6.c
+gedit net/mptcp/Kconfig
+gedit net/mptcp/Makefile
+gedit net/mptcp/mptcp_balia.c
+gedit net/mptcp/mptcp_binder.c
+gedit net/mptcp/mptcp_coupled.c
+gedit net/mptcp/mptcp_ctrl.c
+gedit net/mptcp/mptcp_fullmesh.c
+gedit net/mptcp/mptcp_input.c
+gedit net/mptcp/mptcp_ipv4.c
+gedit net/mptcp/mptcp_ipv6.c
+gedit net/mptcp/mptcp_ndiffports.c
+gedit net/mptcp/mptcp_ofo_queue.c
+gedit net/mptcp/mptcp_olia.c
+gedit net/mptcp/mptcp_output.c
+gedit net/mptcp/mptcp_pm.c
+gedit net/mptcp/mptcp_redundant.c
+gedit net/mptcp/mptcp_rr.c
+gedit net/mptcp/mptcp_sched.c
+gedit net/mptcp/mptcp_wvegas.c
+*************************************************************************
+
+
+------------------------------------------------------------------- 在服务器
+cd /mnt/backup/android-x86_64-nougat-mptcp
+cp -a kernel kernel.before-mptcp		// 由于 笔记本 硬盘空间小，因此，在服务器上 备份 kernel
+
+------------------------------------------------------------------- 在笔记本
+cd /opt/android-x86/android-x86_64-nougat-mptcp
+
+./find-alter-files.sh kernel/drivers
+./find-alter-files.sh kernel/include
+./find-alter-files.sh kernel/net
+
+scp -r /root/opt/android-x86/android-x86_64-nougat-mptcp/kernel/* 10.109.253.80:/mnt/backup/android-x86_64-nougat-mptcp/kernel/
+
+touch timestamp.txt
+
+------------------------------------------------------------------- 在服务器
+cd /mnt/backup/android-x86_64-nougat-mptcp
+
+export WITH_SU=true
+. build/envsetup.sh
+lunch cm_android_x86_64-userdebug
+m -j32 iso_img
+
+
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+
+
+
+#-----------------------------------------------------------------
+#  启用 MPTCP
+#-----------------------------------------------------------------
+
+---------------------------------------------
+#http://blog.csdn.net/ztguang/article/details/68066810
+
+http://blog.csdn.net/ztguang/article/details/73718892
+
+(OK) MPTCP-0.92 setup - kernel/net/mptcp/Kconfig - Android-x86 7.1.1 - kernel 4.4.62 
+---------------------------------------------
+gedit kernel/net/mptcp/Kconfig
+--------------------------------------------- use
+config MPTCP
+	default y							// add the line, 编译，安装，启动，很快重启
+									// del the line, 编译，安装，正常启动
+menuconfig MPTCP_PM_ADVANCED
+	default y							// add the line
+
+config MPTCP_FULLMESH
+	default y							// add the line
+
+config MPTCP_NDIFFPORTS
+	default y							// add the line
+
+config MPTCP_BINDER
+	default y							// add the line
+---------------------------------------------
+gedit kernel/net/mptcp/Kconfig
+--------------------------------------------- use	// 注意 "Round-Robin" "Redundant" "Default" 的顺序
+							// 原始顺序是： "Default" "Round-Robin" "Redundant"
+choice
+	prompt "Default MPTCP Scheduler"
+	default DEFAULT
+	help
+	  Select the Scheduler of your choice
+
+	config DEFAULT_ROUNDROBIN
+		bool "Round-Robin" if MPTCP_ROUNDROBIN=y
+		---help---
+		  This is the round-rob scheduler, sending in a round-robin
+		  fashion..
+
+	config DEFAULT_REDUNDANT
+		bool "Redundant" if MPTCP_REDUNDANT=y
+		---help---
+		  This is the redundant scheduler, sending packets redundantly over
+		  all the subflows.
+
+	config DEFAULT_SCHEDULER
+		bool "Default"
+		---help---
+		  This is the default scheduler, sending first on the subflow
+		  with the lowest RTT.
+---------------------------------------------
+
+
+---------------------------------------------
+#http://blog.csdn.net/ztguang/article/details/68066824
+
+http://blog.csdn.net/ztguang/article/details/73719277
+
+(OK) MPTCP-0.92 setup - kernel/net/ipv4/Kconfig - Android-x86 7.1.1 - kernel 4.4.62 
+---------------------------------------------
+gedit kernel/net/ipv4/Kconfig
+--------------------------------------------- use
+menuconfig TCP_CONG_ADVANCED
+	bool "TCP: advanced congestion control"
+	default y							// add the line
+
+
+config TCP_CONG_CUBIC
+	tristate "CUBIC TCP"
+	default y
+
+
+config TCP_CONG_VEGAS
+config TCP_CONG_VENO
+	default m							// add the line
+
+config TCP_CONG_LIA
+config TCP_CONG_OLIA
+config TCP_CONG_WVEGAS
+config TCP_CONG_BALIA
+	default y							// add the line
+---------------------------------------------
+
+
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+
+
+#-----------------------------------------------------------------
+#  测试 MPTCP
+#-----------------------------------------------------------------
+
+------------------------------------------------------ 测试 MPTCP
+in android
+------------------------------------------------------
+
+(android-1)	nc -l cat /system/app/chrome.apk 12123			// nc -l 12123 < /system/app/chrome.apk
+		netstat -naupt
+		0.0.0.0:33186
+
+(android-2)	cd /data
+		nc 112.26.1.1 33186 > /data/chrome.apk			// nc 112.26.1.1 12123 > chrome.apk
+------------------------------------------------------
+
+
+#============================================================================
+
+gedit kernel/include/linux/ipv6.h
+
+-------------------------------------------------------------------
+gedit kernel/include/linux/tcp.h
+-------------------------------------------------------------------
+//ztg del
+//#ifdef CONFIG_TCP_MD5SIG
+	/* Only used by TCP MD5 Signature so far. */
+	const struct tcp_request_sock_ops *af_specific;
+//ztg del
+//#endif
+-------------------------------------------------------------------
+
+gedit kernel/include/net/inet6_connection_sock.h
+gedit kernel/include/net/inet_common.h
+gedit kernel/include/net/inet_connection_sock.h
+gedit kernel/include/net/inet_sock.h
+gedit kernel/include/net/net_namespace.h
+gedit kernel/include/net/request_sock.h
+gedit kernel/include/net/sock.h
+
+-------------------------------------------------------------------
+gedit kernel/include/net/tcp.h
+-------------------------------------------------------------------
+//ztg add
+//---------
+extern void tcp_openreq_init_rwin(struct request_sock *req,
+				  struct sock *sk, struct dst_entry *dst);
+//---------
+extern void tcp_enter_memory_pressure(struct sock *sk);
+---------------------------------------
+//ztg alter
+//void tcp_cwnd_validate(struct sock *sk, bool is_cwnd_limited);
+void tcp_cwnd_validate(struct sock *sk);
+---------------------------------------
+//ztg alter
+//	void (*cwnd_validate)(struct sock *sk, bool is_cwnd_limited);
+	void (*cwnd_validate)(struct sock *sk);
+---------------------------------------
+//ztg del
+/*
+static inline void tcp_minshall_update(struct tcp_sock *tp, unsigned int mss,
+				       const struct sk_buff *skb)
+{
+	if (skb->len < mss)
+		tp->snd_sml = TCP_SKB_CB(skb)->end_seq;
+}
+*/
+---------------------------------------
+
+// 在 tcp_set_ca_state 上面 添加下面函数
+//ztg add
+//--------------------------------------------------------------------
+static inline bool tcp_ca_needs_ecn(const struct sock *sk)
+{
+	const struct inet_connection_sock *icsk = inet_csk(sk);
+
+	return icsk->icsk_ca_ops->flags & TCP_CONG_NEEDS_ECN;
+}
+//--------------------------------------------------------------------
+
+---------------------------------------
+int tcp_fastopen_reset_cipher(void *key, unsigned int len);
+//ztg add
+//--------------------------------------------------------------------
+bool tcp_try_fastopen(struct sock *sk, struct sk_buff *skb,
+		      struct request_sock *req,
+		      struct tcp_fastopen_cookie *foc,
+		      struct dst_entry *dst);
+//--------------------------------------------------------------------
+---------------------------------------
+int tcp_v6_send_synack(struct sock *sk, struct dst_entry *dst,
+//ztg alter
+//		       struct flowi *fl, struct request_sock *req,
+		       struct flowi6 *fl6, struct request_sock *req,
+//ztg alter
+//		       u16 queue_mapping, struct tcp_fastopen_cookie *foc);
+		       u16 queue_mapping);
+---------------------------------------
+
+-------------------------------------------------------------------
+
+
+gedit kernel/include/net/transp_v6.h
+gedit kernel/include/uapi/linux/if.h
+gedit kernel/include/uapi/linux/tcp.h
+gedit kernel/net/Kconfig
+gedit kernel/net/Makefile
+gedit kernel/net/core/dev.c
+
+-------------------------------------------------------------------
+gedit kernel/net/core/request_sock.c
+------------------------------------------------------------------- use（note:没修改之前，MPTCP 只有一次握手）
+int reqsk_queue_alloc(struct request_sock_queue *queue,
+//ztg alter
+//		      unsigned int nr_table_entries)
+		      unsigned int nr_table_entries, gfp_t flags)
+{
+	size_t lopt_size = sizeof(struct listen_sock);
+	struct listen_sock *lopt;
+
+	nr_table_entries = min_t(u32, nr_table_entries, sysctl_max_syn_backlog);
+	nr_table_entries = max_t(u32, nr_table_entries, 8);
+	nr_table_entries = roundup_pow_of_two(nr_table_entries + 1);
+	lopt_size += nr_table_entries * sizeof(struct request_sock *);
+	if (lopt_size > PAGE_SIZE)
+//ztg alter
+//		lopt = vzalloc(lopt_size);
+		lopt = __vmalloc(lopt_size, flags | __GFP_HIGHMEM | __GFP_ZERO, PAGE_KERNEL);
+	else
+//ztg alter
+//		lopt = kzalloc(lopt_size, GFP_KERNEL);
+		lopt = kzalloc(lopt_size, flags | __GFP_NOWARN | __GFP_NORETRY);
+	if (lopt == NULL)
+		return -ENOMEM;
+}
+-------------------------------------------------------------------
+
+
+gedit kernel/net/core/skbuff.c
+gedit kernel/net/core/sock.c
+gedit kernel/net/ipv4/Kconfig
+gedit kernel/net/ipv4/af_inet.c
+gedit kernel/net/ipv4/inet_connection_sock.c
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/ip_sockglue.c
+-------------------------------------------------------------------
+#include <net/ip_fib.h>
+
+//ztg add
+#include <net/mptcp.h>
+---------------------------------------
+		if (inet->tos != val) {
+			inet->tos = val;
+			sk->sk_priority = rt_tos2priority(val);
+			sk_dst_reset(sk);
+//ztg add
+//--------------------------------------------------------------------
+			/* Update TOS on mptcp subflow */
+			if (is_meta_sk(sk)) {
+				struct sock *sk_it;
+				mptcp_for_each_sk(tcp_sk(sk)->mpcb, sk_it) {
+					if (inet_sk(sk_it)->tos != inet_sk(sk)->tos) {
+						inet_sk(sk_it)->tos = inet_sk(sk)->tos;
+						sk_it->sk_priority = sk->sk_priority;
+						sk_dst_reset(sk_it);
+					}
+				}
+			}
+//--------------------------------------------------------------------
+		}
+		break;
+	case IP_TTL:
+-------------------------------------------------------------------
+
+
+gedit kernel/net/ipv4/syncookies.c
+gedit kernel/net/ipv4/tcp.c
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/tcp_fastopen.c
+					// 3.10 版本中 添加 3.18.43 版本中的 tcp_fastopen_create_child，三个函数如下：
+-------------------------------------------------------------------
+static bool tcp_fastopen_create_child()
+//ztg alter
+//	sk->sk_data_ready(sk);
+	sk->sk_data_ready(sk, 0);
+
+static bool tcp_fastopen_queue_check(struct sock *sk)
+bool tcp_try_fastopen()
+-------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+					// 3.10 版本中 添加 3.18.43 版本中的 tcp_conn_request
+-------------------------------------------------------------------
+
+-------------------------------------------- no use
+在 int tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb,
+的前面添加 static void tcp_synack_rtt_meas(struct sock *sk, const u32 synack_stamp){}
+//ztg alter
+//		tcp_ack_update_rtt(sk, FLAG_SYN_ACKED, seq_rtt_us, -1L);
+		tcp_ack_update_rtt(sk, FLAG_SYN_ACKED, seq_rtt_us);
+--------------------------------------------
+
+-------------------------------------------------------------------
+static void tcp_fixup_sndbuf(struct sock *sk) 替换为 3.18.43 版本中的 static void tcp_sndbuf_expand(struct sock *sk)
+static void tcp_new_space(struct sock *sk) 替换为 3.18.43 版本中的 static void tcp_new_space(struct sock *sk)
+
+				// 在文件最后添加下面 3 个函数
+//ztg add
+//--------------------------------------------------------------------
+static inline void pr_drop_req(struct request_sock *req, __u16 port, int family)
+{ }
+
+static void tcp_ecn_create_request(struct request_sock *req,
+                                   const struct sk_buff *skb,
+                                   const struct sock *listen_sk)
+{ }
+
+int tcp_conn_request(struct request_sock_ops *rsk_ops,
+                     const struct tcp_request_sock_ops *af_ops,
+                     struct sock *sk, struct sk_buff *skb)
+{
+//ztg alter
+//	tcp_openreq_init(req, &tmp_opt, skb, sk);
+	tcp_openreq_init(req, &tmp_opt, skb);
+//ztg alter
+//			    !tcp_peer_is_proven(req, dst, true,
+//						tmp_opt.saw_tstamp)) {
+			    !tcp_peer_is_proven(req, dst, true)) {
+//ztg alter
+//			 !tcp_peer_is_proven(req, dst, false,
+//					     tmp_opt.saw_tstamp)) {
+			 !tcp_peer_is_proven(req, dst, false)) {
+//--------------------------------------------------------------------
+}
+					// 要注意 tcp_parse_options()
+//ztg alter
+//void tcp_parse_options(const struct sk_buff *skb,
+//		       struct tcp_options_received *opt_rx, int estab,
+//		       struct tcp_fastopen_cookie *foc)
+//---------------------
+void tcp_parse_options(const struct sk_buff *skb,
+		       struct tcp_options_received *opt_rx,
+		       struct mptcp_options_received *mopt,
+		       int estab, struct tcp_fastopen_cookie *foc)
+//---------------------
+-------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+-------------------------------------------------------------------
+3.10 版本的 tcp_v4_conn_request 使用 3.18 版本的 tcp_v4_conn_request 替换
+------------------------------------------
+//ztg alter
+//int tcp_v4_conn_request(struct sock *sk, struct sk_buff *skb)
+static int tcp_v4_conn_request_orig(struct sock *sk, struct sk_buff *skb)
+{
+	int do_fastopen;
+//ztg add
+	if(!sk) return 0;
+}
+//ztg del
+//EXPORT_SYMBOL(tcp_v4_conn_request);
+------------------------------------------
+//ztg add
+//--------------------------------------------------------------------
+int tcp_v4_conn_request(struct sock *sk, struct sk_buff *skb)
+{
+//ztg add
+	tcp_v4_conn_request_orig(NULL, NULL);	// no effection
+...
+}
+EXPORT_SYMBOL(tcp_v4_conn_request);
+//--------------------------------------------------------------------
+------------------------------------------------------------------- 没有修改到的地方
+-static void tcp_v4_init_req(struct request_sock *req, struct sock *sk,
+-			    struct sk_buff *skb)
++static int tcp_v4_init_req(struct request_sock *req, struct sock *sk,
++			   struct sk_buff *skb, bool want_cookie)
+ {
+ 	struct inet_request_sock *ireq = inet_rsk(req);
+ 
+@@ -1229,6 +1265,8 @@ static void tcp_v4_init_req(struct request_sock *req, struct sock *sk,
+ 	ireq->ir_rmt_addr = ip_hdr(skb)->saddr;
+ 	ireq->no_srccheck = inet_sk(sk)->transparent;
+ 	ireq->opt = tcp_v4_save_options(skb);
++
++	return 0;
+ }
+ 
+ static struct dst_entry *tcp_v4_route_req(struct sock *sk, struct flowi *fl,
+-------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/tcp_minisocks.c
+-------------------------------------------------------------------
+tcp_twsk_destructor() 函数后面 添加 void tcp_openreq_init_rwin(){}
+-------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/tcp_output.c
+------------------------------------------------------------------- 需要注意，参数个数不一样, 经过分析，使用 一个参数 版本
+-static void tcp_cwnd_validate(struct sock *sk, bool is_cwnd_limited)
++void tcp_cwnd_validate(struct sock *sk, bool is_cwnd_limited)
+------------------------------------------------------------------- 有两处
+//ztg alter
+//	tcp_select_initial_window(tcp_full_space(sk),
+	tp->ops->select_initial_window(tcp_full_space(sk),
+//ztg alter
+//				  dst_metric(dst, RTAX_INITRWND));
+				       dst_metric(dst, RTAX_INITRWND), sk);
+-------------------------------------------------------------------
+3.10 版本的 tcp_mss_split_point 使用 3.18 版本的 tcp_mss_split_point 替换, 去掉 static
+//ztg alter
+//	if (tcp_nagle_check(partial != 0, tp, nonagle))
+	if (tcp_nagle_check(tp, skb, tcp_current_mss(sk), nonagle))
+-------------------------------------------------------------------
+tcp_nagle_check 函数放在 tcp_mss_split_point 的前面
+tcp_minshall_check 函数放在 tcp_nagle_check 的前面
+-------------------------------------------------------------------
+		if (tso_segs > 1 && !tcp_urg_mode(tp))
+			limit = tcp_mss_split_point(sk, skb, mss_now,
+						    min_t(unsigned int,
+							  cwnd_quota,
+//ztg alter
+//							  sk->sk_gso_max_segs));
+//--------
+							  sk->sk_gso_max_segs),
+						    nonagle);
+//--------
+------------------------------------------------------------------- 
+-static void tcp_minshall_update(struct tcp_sock *tp, unsigned int mss_now,
+-				const struct sk_buff *skb)
++void tcp_minshall_update(struct tcp_sock *tp, unsigned int mss_now,
++			 const struct sk_buff *skb)
+ {
+ 	if (skb->len < tcp_skb_pcount(skb) * mss_now)
+ 		tp->snd_sml = TCP_SKB_CB(skb)->end_seq;
+-------------------------------------------------------------------
+在 static inline bool tcp_minshall_check() 后面 添加 tcp_minshall_update() 的 中定义
+-------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv4/tcp_timer.c
+gedit kernel/net/ipv6/addrconf.c
+gedit kernel/net/ipv6/af_inet6.c
+gedit kernel/net/ipv6/inet6_connection_sock.c
+gedit kernel/net/ipv6/ipv6_sockglue.c
+gedit kernel/net/ipv6/syncookies.c
+------------------------------------------------------------------- 需要注意
+ 	ret = NULL;
+-	req = inet_reqsk_alloc(&tcp6_request_sock_ops);
++#ifdef CONFIG_MPTCP
++	if (mopt.saw_mpc)
++		req = inet_reqsk_alloc(&mptcp6_request_sock_ops);
++	else
++#endif
++		req = inet_reqsk_alloc(&tcp6_request_sock_ops);
+
+-------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+-------------------------------------------------------------------
+3.10 版本的 tcp_v6_conn_request 使用 3.18 版本的 tcp_v6_conn_request 替换
+------------------------------------------
+//ztg alter
+//int tcp_v6_conn_request(struct sock *sk, struct sk_buff *skb)
+static int tcp_v6_conn_request_orig(struct sock *sk, struct sk_buff *skb)
+{
+	bool want_cookie = false;
+//ztg add
+	if(!sk) return 0;
+}
+------------------------------------------
+//ztg add
+//--------------------------------------------------------------------
+int tcp_v6_conn_request(struct sock *sk, struct sk_buff *skb)
+{
+//ztg add
+	tcp_v4_conn_request_orig(NULL, NULL);	// no effection
+...
+}
+EXPORT_SYMBOL(tcp_v6_conn_request);
+//--------------------------------------------------------------------
+
+------------------------------------------
+//ztg alter
+//		       struct flowi *fl,
+		       struct flowi6 *fl6,
+------------------------------------------
+
+------------------------------------------------------------------- 没有修改到的地方
+-static void tcp_v6_init_req(struct request_sock *req, struct sock *sk,
+-			    struct sk_buff *skb)
++static int tcp_v6_init_req(struct request_sock *req, struct sock *sk,
++			   struct sk_buff *skb, bool want_cookie)
+ { }
+ 
+ static struct dst_entry *tcp_v6_route_req(struct sock *sk, struct flowi *fl,
+------------------------------------------------------------------- // 参数不一样, 经过分析，使用 11 个参数 版本
+ static void tcp_v6_send_response(struct sock *sk, struct sk_buff *skb, u32 seq,
+-				 u32 ack, u32 win, u32 tsval, u32 tsecr,
++				 u32 ack, u32 data_ack, u32 win, u32 tsval, u32 tsecr,
+ 				 int oif, struct tcp_md5sig_key *key, int rst,
+-				 u8 tclass, u32 label)
++				 u8 tclass, u32 label, int mptcp)
+-------------------------------------------------------------------
+
+========================================================= // modify source codes - end
+
+
+
+--------------------------------- no use
+[root@localhost android_x86_64]# pwd
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/generic/android_x86_64
+
+[root@localhost android_x86_64]# 
+
+mkdir -p /root/opt/android-x86/android-x86_64-nougat-mptcp/kernel/drivers/infiniband/hw/cxgb4/
+cp drivers/infiniband/hw/cxgb4/cm.c /root/opt/android-x86/android-x86_64-nougat-mptcp/kernel/drivers/infiniband/hw/cxgb4/
+
+mkdir -p /root/opt/android-x86/android-x86_64-nougat-mptcp/kernel/arch/
+cp arch/Kconfig /root/opt/android-x86/android-x86_64-nougat-mptcp/kernel/arch/
+---------------------------------
+
+
+***********************************************************
+compile Android-x86 in IBM Server
+***********************************************************
+
+[root@localhost android-x86_64-nougat-mptcp]# pwd
+/opt/android-x86/android-x86_64-nougat-mptcp
+
+-------------------------------------------------------------------
+cd /opt/android-x86/android-x86_64-nougat-mptcp
+
+. build/envsetup.sh
+lunch cm_android_x86_64-userdebug
+m -j32 iso_img
+-----------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+
+
+============ 编译错误，修改源代码 - begin
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/include/net/tcp.h:1055:36: error: 'TCP_CONG_NEEDS_ECN' undeclared (first use in this function)
+---------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------
+static void tcp_ecn_create_request(struct request_sock *req,
+				   const struct sk_buff *skb,
+				   const struct sock *listen_sk)
+{
+...
+/*										// del the below lines
+	ect = !INET_ECN_is_not_ect(TCP_SKB_CB(skb)->ip_dsfield);
+	need_ecn = tcp_ca_needs_ecn(listen_sk);
+
+	if (!ect && !need_ecn && net->ipv4.sysctl_tcp_ecn)
+		inet_rsk(req)->ecn_ok = 1;
+	else if (ect && need_ecn)
+		inet_rsk(req)->ecn_ok = 1;
+*/
+}
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg del
+/*
+static inline bool tcp_ca_needs_ecn(const struct sock *sk)
+{
+	const struct inet_connection_sock *icsk = inet_csk(sk);
+
+	return icsk->icsk_ca_ops->flags & TCP_CONG_NEEDS_ECN;
+}
+*/
+---------------------------------
+
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/tcp_output.c:1646:47: warning: passing argument 1 of 'tcp_current_mss' discards 'const' qualifier from pointer target type
+error, forbidden warning: tcp_output.c:1646
+---------------------------------
+gedit kernel/net/ipv4/tcp_output.c
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg alter
+//unsigned int tcp_mss_split_point(const struct sock *sk,
+//				 const struct sk_buff *skb,
+unsigned int tcp_mss_split_point(struct sock *sk,
+				 struct sk_buff *skb,
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/include/linux/stddef.h:8:14: warning: passing argument 4 of 'tcp_parse_options' makes integer from pointer without a cast
+error, forbidden warning: stddef.h:8
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+//ztg alter
+//	tcp_parse_options(skb, &tmp_opt, 0, want_cookie ? NULL : &foc);
+	tcp_parse_options(skb, &tmp_opt, NULL, 0, want_cookie ? NULL : &foc);
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+---------------------------------
+//ztg alter
+//	tcp_parse_options(skb, &tmp_opt, 0, NULL);
+	tcp_parse_options(skb, &tmp_opt, NULL, 0, NULL);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:1263:2: error: implicit declaration of function 'tcp_conn_request' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+extern void tcp4_proc_exit(void);
+#endif
+
+//ztg add
+//-----
+int tcp_conn_request(struct request_sock_ops *rsk_ops,
+		     const struct tcp_request_sock_ops *af_ops,
+		     struct sock *sk, struct sk_buff *skb);
+//-----
+---------------------------------
+
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ipv4.c
+---------------------------------
+//ztg alter
+//	.rtx_syn_ack	=	tcp_rtx_synack,
+	.rtx_syn_ack	=	tcp_v4_rtx_synack,
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ipv6.c
+---------------------------------
+//ztg alter
+//	.rtx_syn_ack	=	tcp_rtx_synack,
+	.rtx_syn_ack	=	tcp_v6_rtx_synack,
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+//ztg alter
+//static int tcp_v4_rtx_synack(struct sock *sk, struct request_sock *req)
+int tcp_v4_rtx_synack(struct sock *sk, struct request_sock *req)
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+---------------------------------
+//ztg alter
+//static int tcp_v6_rtx_synack(struct sock *sk, struct request_sock *req)
+int tcp_v6_rtx_synack(struct sock *sk, struct request_sock *req)
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg add
+int tcp_v4_rtx_synack(struct sock *sk, struct request_sock *req);
+void tcp_v4_reqsk_destructor(struct request_sock *req);
+
+//ztg add
+int tcp_v6_rtx_synack(struct sock *sk, struct request_sock *req);
+void tcp_v6_reqsk_destructor(struct request_sock *req);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/tcp_ipv4.c:979:41: warning: passing argument 3 of 'tcp_v4_send_synack' from incompatible pointer type
+error, forbidden warning: tcp_ipv4.c:979
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+--------------------------------- 使用原来的
+static int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+			      struct request_sock *req,
+			      u16 queue_mapping,
+			      bool nocache)
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+--------------------------------- 使用原来的
+static int tcp_v6_send_synack(struct sock *sk, struct dst_entry *dst,
+//int tcp_v6_send_synack(struct sock *sk, struct dst_entry *dst,
+		      struct flowi6 *fl6,
+		      struct request_sock *req,
+		      u16 queue_mapping)
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+//		       struct flowi *fl,
+//		       struct request_sock *req,
+//		       u16 queue_mapping,
+//		       struct tcp_fastopen_cookie *foc);
+
+//int tcp_v6_send_synack(struct sock *sk, struct dst_entry *dst,
+//ztg alter
+//		       struct flowi *fl, struct request_sock *req,
+//		       struct flowi6 *fl6, struct request_sock *req,
+//ztg alter
+//		       u16 queue_mapping, struct tcp_fastopen_cookie *foc);
+//		       u16 queue_mapping);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/tcp_fastopen.c:285:30: warning: passing argument 1 of 'tcp_fastopen_cookie_gen' makes integer from pointer without a cast
+error, forbidden warning: tcp_fastopen.c:285
+---------------------------------
+gedit kernel/net/ipv4/tcp_fastopen.c
+---------------------------------
+//ztg add
+	struct iphdr *iph = ip_hdr(skb);
+	struct tcp_fastopen_cookie valid_foc = { .len = -1 };
+
+//ztg alter
+//	if (tcp_fastopen_cookie_gen(req, skb, &valid_foc) &&
+	if (tcp_fastopen_cookie_gen(iph->saddr, &valid_foc) &&
+---------------------------------
+//ztg alter
+//void tcp_fastopen_cookie_gen(__be32 addr, struct tcp_fastopen_cookie *foc)
+bool tcp_fastopen_cookie_gen(__be32 addr, struct tcp_fastopen_cookie *foc)
+{
+	__be32 peer_addr[4] = { addr, 0, 0, 0 };
+	struct tcp_fastopen_context *ctx;
+//ztg add
+	bool ok = false;
+
+	rcu_read_lock();
+	ctx = rcu_dereference(tcp_fastopen_ctx);
+	if (ctx) {
+		crypto_cipher_encrypt_one(ctx->tfm,
+					  foc->val,
+					  (__u8 *)peer_addr);
+		foc->len = TCP_FASTOPEN_COOKIE_SIZE;
+//ztg add
+		ok = true;
+	}
+	rcu_read_unlock();
+//ztg add
+	return ok;
+}
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg alter
+//void tcp_fastopen_cookie_gen(__be32 addr, struct tcp_fastopen_cookie *foc);
+bool tcp_fastopen_cookie_gen(__be32 addr, struct tcp_fastopen_cookie *foc);
+---------------------------------
+
+---------------------------------
+net/built-in.o:activity_stats.c:function tcp_v4_conn_request: error: undefined reference to 'tcp_request_sock_ipv4_ops'
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+//ztg alter
+//#ifdef CONFIG_TCP_MD5SIG
+//static const struct tcp_request_sock_ops tcp_request_sock_ipv4_ops = {
+//	.md5_lookup	=	tcp_v4_reqsk_md5_lookup,
+//	.calc_md5_hash	=	tcp_v4_md5_hash_skb,
+//};
+//#endif
+//-------
+const struct tcp_request_sock_ops tcp_request_sock_ipv4_ops = {
+	.mss_clamp	=	TCP_MSS_DEFAULT,
+#ifdef CONFIG_TCP_MD5SIG
+	.md5_lookup	=	tcp_v4_reqsk_md5_lookup,
+	.calc_md5_hash	=	tcp_v4_md5_hash_skb,
+#endif
+	.init_req	=	tcp_v4_init_req,
+#ifdef CONFIG_SYN_COOKIES
+	.cookie_init_seq =	cookie_v4_init_sequence,
+#endif
+	.route_req	=	tcp_v4_route_req,
+	.init_seq	=	tcp_v4_init_sequence,
+	.send_synack	=	tcp_v4_send_synack,
+	.queue_hash_add =	inet_csk_reqsk_queue_hash_add,
+};
+//-------
+---------------------------------
+//ztg add
+//-------
+
+static void tcp_v4_init_req(struct request_sock *req, struct sock *sk,
+			    struct sk_buff *skb, bool want_cookie)
+{
+	struct inet_request_sock *ireq = inet_rsk(req);
+
+	ireq->ir_loc_addr = ip_hdr(skb)->daddr;
+	ireq->ir_rmt_addr = ip_hdr(skb)->saddr;
+	ireq->no_srccheck = inet_sk(sk)->transparent;
+	ireq->opt = tcp_v4_save_options(skb);
+}
+
+static struct dst_entry *tcp_v4_route_req(struct sock *sk, struct flowi *fl,
+					  const struct request_sock *req,
+					  bool *strict)
+{
+	struct dst_entry *dst = inet_csk_route_req(sk, &fl->u.ip4, req);
+
+	if (strict) {
+		if (fl->u.ip4.daddr == inet_rsk(req)->ir_rmt_addr)
+			*strict = true;
+		else
+			*strict = false;
+	}
+
+	return dst;
+}
+//-------
+
+struct request_sock_ops tcp_request_sock_ops __read_mostly = {
+---------------------------------
+
+---------------------------------
+net/built-in.o:activity_stats.c:function tcp_v6_conn_request: error: undefined reference to 'tcp_request_sock_ipv6_ops'
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+---------------------------------
+//ztg alter
+//#ifdef CONFIG_TCP_MD5SIG
+//static const struct tcp_request_sock_ops tcp_request_sock_ipv6_ops = {
+//	.md5_lookup	=	tcp_v6_reqsk_md5_lookup,
+//	.calc_md5_hash	=	tcp_v6_md5_hash_skb,
+//};
+//#endif
+//-------
+const struct tcp_request_sock_ops tcp_request_sock_ipv6_ops = {
+	.mss_clamp	=	IPV6_MIN_MTU - sizeof(struct tcphdr) -
+				sizeof(struct ipv6hdr),
+#ifdef CONFIG_TCP_MD5SIG
+	.md5_lookup	=	tcp_v6_reqsk_md5_lookup,
+	.calc_md5_hash	=	tcp_v6_md5_hash_skb,
+#endif
+	.init_req	=	tcp_v6_init_req,
+#ifdef CONFIG_SYN_COOKIES
+	.cookie_init_seq =	cookie_v6_init_sequence,
+#endif
+	.route_req	=	tcp_v6_route_req,
+	.init_seq	=	tcp_v6_init_sequence,
+	.send_synack	=	tcp_v6_send_synack,
+	.queue_hash_add =	inet6_csk_reqsk_queue_hash_add,
+};
+//-------
+---------------------------------
+//ztg add
+//-------
+static void tcp_v6_init_req(struct request_sock *req, struct sock *sk,
+			    struct sk_buff *skb)
+{
+	struct inet_request_sock *ireq = inet_rsk(req);
+	struct ipv6_pinfo *np = inet6_sk(sk);
+
+	ireq->ir_v6_rmt_addr = ipv6_hdr(skb)->saddr;
+	ireq->ir_v6_loc_addr = ipv6_hdr(skb)->daddr;
+
+	ireq->ir_iif = sk->sk_bound_dev_if;
+
+	/* So that link locals have meaning */
+	if (!sk->sk_bound_dev_if &&
+	    ipv6_addr_type(&ireq->ir_v6_rmt_addr) & IPV6_ADDR_LINKLOCAL)
+		ireq->ir_iif = tcp_v6_iif(skb);
+
+	if (!TCP_SKB_CB(skb)->tcp_tw_isn &&
+	    (ipv6_opt_accepted(sk, skb, &TCP_SKB_CB(skb)->header.h6) ||
+	     np->rxopt.bits.rxinfo ||
+	     np->rxopt.bits.rxoinfo || np->rxopt.bits.rxhlim ||
+	     np->rxopt.bits.rxohlim || np->repflow)) {
+		atomic_inc(&skb->users);
+		ireq->pktopts = skb;
+	}
+}
+
+static struct dst_entry *tcp_v6_route_req(struct sock *sk, struct flowi *fl,
+					  const struct request_sock *req,
+					  bool *strict)
+{
+	if (strict)
+		*strict = true;
+	return inet6_csk_route_req(sk, &fl->u.ip6, req);
+}
+//-------
+
+struct request_sock_ops tcp6_request_sock_ops __read_mostly = {
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:801:6: error: 'struct inet_request_sock' has no member named 'ir_v6_rmt_addr'
+
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:802:6: error: 'struct inet_request_sock' has no member named 'ir_v6_loc_addr'
+
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:804:6: error: 'struct inet_request_sock' has no member named 'ir_iif'
+---------------------------------
+gedit kernel/include/net/request_sock.h
+---------------------------------
+struct request_sock {
+//ztg add
+	struct sock_common		__req_common;
+---------------------------------
+gedit kernel/include/net/sock.h
+---------------------------------
+struct sock_common {
+
+#ifdef CONFIG_NET_NS
+	struct net	 	*skc_net;
+#endif
+
+//ztg add
+//-------
+#if IS_ENABLED(CONFIG_IPV6)
+	struct in6_addr		skc_v6_daddr;
+	struct in6_addr		skc_v6_rcv_saddr;
+#endif
+//-------
+}
+---------------------------------
+gedit kernel/include/net/inet_sock.h
+---------------------------------
+struct inet_request_sock {
+	struct request_sock	req;
+//ztg add
+//-------
+#define ir_loc_addr		req.__req_common.skc_rcv_saddr
+#define ir_rmt_addr		req.__req_common.skc_daddr
+#define ir_num			req.__req_common.skc_num
+#define ir_rmt_port		req.__req_common.skc_dport
+#define ir_v6_rmt_addr		req.__req_common.skc_v6_daddr
+#define ir_v6_loc_addr		req.__req_common.skc_v6_rcv_saddr
+#define ir_iif			req.__req_common.skc_bound_dev_if
+//-------
+
+//ztg alter
+//	struct ip_options_rcu	*opt;
+//-------
+	union {
+		struct ip_options_rcu	*opt;
+		struct sk_buff		*pktopts;
+	};
+//-------
+};
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:815:35: error: 'struct ipv6_pinfo' has no member named 'repflow'
+---------------------------------
+gedit kernel/include/linux/ipv6.h
+---------------------------------
+struct ipv6_pinfo {
+	                        sndflow:1,
+//ztg add
+				repflow:1,
+};
+---------------------------------
+
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg add
+//-------
+#if IS_ENABLED(CONFIG_IPV6)
+/* This is the variant of inet6_iif() that must be used by TCP,
+ * as TCP moves IP6CB into a different location in skb->cb[]
+ */
+static inline int tcp_v6_iif(const struct sk_buff *skb)
+{
+	return TCP_SKB_CB(skb)->header.h6.iif;
+}
+#endif
+//-------
+
+/* Due to TSO, an SKB can be composed of multiple actual
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:812:7: error: too many arguments to function 'ipv6_opt_accepted'
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+---------------------------------
+//ztg alter
+//	    (ipv6_opt_accepted(sk, skb, &TCP_SKB_CB(skb)->header.h6) ||
+	    (ipv6_opt_accepted(sk, skb) ||
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/tcp_ipv4.c:1437:2: warning: initialization from incompatible pointer type
+
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:858:2: warning: initialization from incompatible pointer type
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg alter
+//	int (*init_req)(struct request_sock *req, struct sock *sk,
+//			 struct sk_buff *skb, bool want_cookie);
+	void (*init_req)(struct request_sock *req, struct sock *sk,
+			 struct sk_buff *skb, bool want_cookie);
+---------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------
+//ztg alter
+//	if (af_ops->init_req(req, sk, skb, want_cookie))
+	af_ops->init_req(req, sk, skb, want_cookie);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/tcp_ipv4.c:1443:2: warning: initialization from incompatible pointer type
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+//ztg alter
+//-------
+//static int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+//			      struct request_sock *req,
+//			      u16 queue_mapping,
+//			      bool nocache)
+//-------
+int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+		       struct flowi6 *fl,
+		       struct request_sock *req,
+		       u16 queue_mapping)
+---------------------------------
+//ztg alter
+//static int tcp_v4_rtx_synack(struct sock *sk, struct request_sock *req)
+int tcp_v4_rtx_synack(struct sock *sk, struct request_sock *req)
+{
+//ztg alter
+//	int res = tcp_v4_send_synack(sk, NULL, req, 0, false);
+	int res = tcp_v4_send_synack(sk, NULL, NULL, req, 0);
+---------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------
+//ztg alter
+//	err = af_ops->send_synack(sk, dst, &fl, req,
+//				  skb_get_queue_mapping(skb), &foc);
+	err = af_ops->send_synack(sk, dst, (struct flowi6 *)&fl, req, skb_get_queue_mapping(skb));
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg alter
+//	int (*send_synack)(struct sock *sk, struct dst_entry *dst,
+//			   struct flowi *fl, struct request_sock *req,
+//			   u16 queue_mapping, struct tcp_fastopen_cookie *foc);
+//-------
+	int (*send_synack)(struct sock *sk, struct dst_entry *dst,
+			   struct flowi6 *fl, struct request_sock *req,
+			   u16 queue_mapping);
+//-------
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:864:2: warning: initialization from incompatible pointer type
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+---------------------------------
+//ztg alter
+static int tcp_v6_send_synack(struct sock *sk, struct dst_entry *dst,
+		      struct flowi6 *fl6,
+		      struct request_sock *req,
+		      u16 queue_mapping)
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/tcp_ipv6.c:608:4: error: implicit declaration of function 'ip6_flowlabel' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/ipv6.h
+---------------------------------
+//ztg add
+//-------
+static inline __be32 ip6_flowlabel(const struct ipv6hdr *hdr)
+{
+	return *(__be32 *)hdr & IPV6_FLOWLABEL_MASK;
+}
+//-------
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/tcp_output.c:3210:9: error: 'struct sock' has no member named 'sk_v6_daddr'
+---------------------------------
+gedit kernel/include/net/sock.h
+---------------------------------
+struct sock {
+
+}
+---------------------------------
+
+
+============ 编译错误，修改源代码 - end
+
+================================================ 至此，成功编译，安装，能够访问互联网，但是，没有包含 MPTCP，下面 启用 MPTCP。
+
+
+
+***********************************************************
+修改配置文件，使得 将 MPTCP 编译进内核
+***********************************************************
+
+---------------------------------------------
+gedit kernel/net/Makefile
+--------------------------------------------- use
+obj-$(CONFIG_NET)		+= ipv6/
+#//ztg add
+obj-$(CONFIG_MPTCP)		+= mptcp/
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/Kconfig
+--------------------------------------------- use
+source "net/netlabel/Kconfig"
+#//ztg add
+source "net/mptcp/Kconfig"
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/mptcp/Kconfig
+--------------------------------------------- use
+config MPTCP
+	default y							// add the line
+---------------------------------------------
+
+
+---------------------------------------------
+[root@localhost android-x86_64-nougat-mptcp]# 
+
+vim out/target/product/android_x86_64/obj/kernel/.config
+---------------------------------------------
+
+-------------------------------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+
+============ MPTCP 编译错误，修改源代码 - begin
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv4.c:85:2: error: too many arguments to function 'tcp_request_sock_ipv4_ops.init_req'
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+static void tcp_v4_init_req(struct request_sock *req, struct sock *sk,
+			    struct sk_buff *skb, bool want_cookie)
+---------------------------------
+gedit kernel/net/ipv6/tcp_ipv6.c
+---------------------------------
+static void tcp_v6_init_req(struct request_sock *req, struct sock *sk,
+			    struct sk_buff *skb, bool want_cookie)
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg alter
+//	int (*init_req)(struct request_sock *req, struct sock *sk,
+//			 struct sk_buff *skb, bool want_cookie);
+	void (*init_req)(struct request_sock *req, struct sock *sk,
+			 struct sk_buff *skb, bool want_cookie);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv4.c:466:2: error: unknown field 'mtu_reduced' specified in initializer
+---------------------------------
+gedit kernel/include/net/inet_connection_sock.h
+---------------------------------
+	int	    (*bind_conflict)(const struct sock *sk,
+				     const struct inet_bind_bucket *tb, bool relax);
+//ztg add
+	void	    (*mtu_reduced)(struct sock *sk);
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+	.compat_getsockopt = compat_ip_getsockopt,
+#endif
+//ztg add
+	.mtu_reduced	   = tcp_v4_mtu_reduced,
+---------------------------------
+ 
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ctrl.c:508:5: error: implicit declaration of function 'sock_gen_put' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/sock.h
+---------------------------------
+//ztg add
+//-------
+/* Generic version of sock_put(), dealing with all sockets
+ * (TCP_TIMEWAIT, ESTABLISHED...)
+ */
+extern void sock_gen_put(struct sock *sk);
+//-------
+
+extern int sk_receive_skb(struct sock *sk, struct sk_buff *skb,
+			  const int nested);
+---------------------------------
+gedit kernel/net/ipv4/inet_hashtables.c
+---------------------------------
+//ztg add
+//-------
+/* All sockets share common refcount, but have different destructors */
+void sock_gen_put(struct sock *sk)
+{
+	if (!atomic_dec_and_test(&sk->sk_refcnt))
+		return;
+
+	if (sk->sk_state == TCP_TIME_WAIT)
+		inet_twsk_free(inet_twsk(sk));
+	else
+		sk_free(sk);
+}
+EXPORT_SYMBOL_GPL(sock_gen_put);
+//-------
+
+struct sock *__inet_lookup_established(struct net *net,
+---------------------------------
+gedit kernel/net/ipv4/inet_timewait_sock.c
+---------------------------------
+//ztg alter
+//static noinline void inet_twsk_free(struct inet_timewait_sock *tw)
+void inet_twsk_free(struct inet_timewait_sock *tw)
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ctrl.c:1206:3: error: implicit declaration of function 'tcp_assign_congestion_control' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+//ztg add
+extern void tcp_assign_congestion_control(struct sock *sk);
+extern void tcp_init_congestion_control(struct sock *sk);
+---------------------------------
+
+---------------------------------
+gedit kernel/net/ipv4/tcp_cong.c
+---------------------------------
+//ztg del
+//-------
+/* Assign choice of congestion control. */
+/*
+void tcp_init_congestion_control(struct sock *sk)
+{
+...
+}
+*/
+//-------
+
+//ztg add
+//-------
+/* Assign choice of congestion control. */
+void tcp_assign_congestion_control(struct sock *sk)
+{
+	struct inet_connection_sock *icsk = inet_csk(sk);
+	struct tcp_congestion_ops *ca;
+
+	rcu_read_lock();
+	list_for_each_entry_rcu(ca, &tcp_cong_list, list) {
+		if (likely(try_module_get(ca->owner))) {
+			icsk->icsk_ca_ops = ca;
+			goto out;
+		}
+		/* Fallback to next available. The last really
+		 * guaranteed fallback is Reno from this list.
+		 */
+	}
+out:
+	rcu_read_unlock();
+
+	/* Clear out private data before diag gets it and
+	 * the ca has not been initialized.
+	 */
+	if (ca->get_info)
+		memset(icsk->icsk_ca_priv, 0, sizeof(icsk->icsk_ca_priv));
+}
+
+void tcp_init_congestion_control(struct sock *sk)
+{
+	const struct inet_connection_sock *icsk = inet_csk(sk);
+
+	if (icsk->icsk_ca_ops->init)
+		icsk->icsk_ca_ops->init(sk);
+}
+//-------
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ctrl.c:569:23: error: 'struct tcp_sock' has no member named 'srtt_us'
+---------------------------------
+sed -i "s/srtt_us/srtt/g" `grep "srtt_us" -rl ./kernel`
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ctrl.c:1083:12: error: 'struct sock' has no member named 'sk_ipv6only'
+---------------------------------
+gedit kernel/include/net/sock.h
+---------------------------------
+#define sk_reuseport		__sk_common.skc_reuseport
+//ztg add
+#define sk_ipv6only		__sk_common.skc_ipv6only
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv4.c:466:20: error: 'tcp_v4_mtu_reduced' undeclared here (not in a function)
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+extern void tcp_v4_send_check(struct sock *sk, struct sk_buff *skb);
+//ztg add
+void tcp_v4_mtu_reduced(struct sock *sk);
+---------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------
+//ztg alter
+//static void tcp_v4_mtu_reduced(struct sock *sk)
+void tcp_v4_mtu_reduced(struct sock *sk)
+{
+}
+//ztg add
+EXPORT_SYMBOL(tcp_v4_mtu_reduced);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv4/inet_hashtables.c:242:3: error: implicit declaration of function 'inet_twsk_free' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/inet_timewait_sock.h
+---------------------------------
+//ztg add
+extern void inet_twsk_free(struct inet_timewait_sock *tw);
+extern void inet_twsk_put(struct inet_timewait_sock *tw);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/include/net/sock.h:314:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before '.' token
+ #define sk_ipv6only  __sk_common.skc_ipv6only
+---------------------------------
+gedit kernel/include/net/sock.h
+---------------------------------
+//ztg alter
+//	unsigned char		skc_reuseport:4;
+//-------
+	unsigned char		skc_reuseport:1;
+	unsigned char		skc_ipv6only:1;
+//-------
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/include/net/sock.h:314:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before '.' token
+
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/ipv6/udp.c:61:6: note: in expansion of macro 'sk_ipv6only'
+  int sk_ipv6only = ipv6_only_sock(sk);
+---------------------------------
+gedit kernel/net/ipv6/udp.c
+---------------------------------
+//ztg alter
+//	int sk_ipv6only = ipv6_only_sock(sk);
+	int sk_ipv6onlyy = ipv6_only_sock(sk);
+
+//ztg alter
+//	    !(sk_ipv6only && addr_type2 == IPV6_ADDR_MAPPED))
+	    !(sk_ipv6onlyy && addr_type2 == IPV6_ADDR_MAPPED))
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv4.c:479:39: warning: assignment from incompatible pointer type
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ipv4.c
+---------------------------------
+//ztg alter
+//static int mptcp_v4_init_req(struct request_sock *req, struct sock *sk,
+void mptcp_v4_init_req(struct request_sock *req, struct sock *sk,
+{
+//ztg del
+//	return 0;
+}
+---------------------------------
+gedit kernel/include/net/mptcp_v4.h
+---------------------------------
+#ifdef CONFIG_MPTCP
+//ztg add
+//-----
+void mptcp_v4_init_req(struct request_sock *req, struct sock *sk,
+		     struct sk_buff *skb, bool want_cookie);
+//-----
+
+int mptcp_v4_do_rcv(struct sock *meta_sk, struct sk_buff *skb);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ctrl.c:1282:20: warning: assignment from incompatible pointer type
+---------------------------------
+gedit kernel/include/net/mptcp.h
+---------------------------------
+//ztg alter
+//void mptcp_data_ready(struct sock *sk);
+void mptcp_data_ready(struct sock *sk, int bytes);
+---------------------------------
+gedit kernel/net/mptcp/mptcp_input.c
+---------------------------------
+//ztg alter
+//void mptcp_data_ready(struct sock *sk)
+void mptcp_data_ready(struct sock *sk, int bytes)
+
+//ztg alter
+//		meta_sk->sk_data_ready(meta_sk);
+		meta_sk->sk_data_ready(meta_sk, 0);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ctrl.c:2524:23: warning: passing argument 1 of 'snmp_fold_field' from incompatible pointer type
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ctrl.c
+---------------------------------
+//ztg alter
+//			   snmp_fold_field(net->mptcp.mptcp_statistics,
+			   snmp_fold_field((void __percpu **)net->mptcp.mptcp_statistics,
+//ztg alter
+//	net->mptcp.mptcp_statistics = alloc_percpu(struct mptcp_mib);
+	net->mptcp.mptcp_statistics[0] = alloc_percpu(struct mptcp_mib);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_output.c:131:3: error: implicit declaration of function 'pskb_copy_for_clone' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/linux/skbuff.h
+---------------------------------
+extern struct sk_buff *skb_copy(const struct sk_buff *skb,
+				gfp_t priority);
+//ztg add
+//-------
+extern struct sk_buff *__pskb_copy_fclone(struct sk_buff *skb, int headroom,
+					   gfp_t gfp_mask, bool fclone);
+//-------
+
+-------------
+static inline struct sk_buff *pskb_copy(struct sk_buff *skb,
+					gfp_t gfp_mask)
+{ }
+
+//ztg add
+//-------
+static inline struct sk_buff *pskb_copy_for_clone(struct sk_buff *skb,
+						  gfp_t gfp_mask)
+{
+	return __pskb_copy_fclone(skb, skb_headroom(skb), gfp_mask, true);
+}
+//-------
+---------------------------------
+gedit kernel/net/core/skbuff.c
+---------------------------------
+EXPORT_SYMBOL(skb_copy);
+
+//ztg add
+//-------
+/**
+ *	__pskb_copy_fclone	-  create copy of an sk_buff with private head.
+ *	@skb: buffer to copy
+ *	@headroom: headroom of new skb
+ *	@gfp_mask: allocation priority
+ *	@fclone: if true allocate the copy of the skb from the fclone
+ *	cache instead of the head cache; it is recommended to set this
+ *	to true for the cases where the copy will likely be cloned
+ *
+ *	Make a copy of both an &sk_buff and part of its data, located
+ *	in header. Fragmented data remain shared. This is used when
+ *	the caller wishes to modify only header of &sk_buff and needs
+ *	private copy of the header to alter. Returns %NULL on failure
+ *	or the pointer to the buffer on success.
+ *	The returned buffer has a reference count of 1.
+ */
+
+struct sk_buff *__pskb_copy_fclone(struct sk_buff *skb, int headroom,
+				   gfp_t gfp_mask, bool fclone)
+{
+	unsigned int size = skb_headlen(skb) + headroom;
+	int flags = skb_alloc_rx_flag(skb) | (fclone ? SKB_ALLOC_FCLONE : 0);
+	struct sk_buff *n = __alloc_skb(size, gfp_mask, flags, NUMA_NO_NODE);
+
+	if (!n)
+		goto out;
+
+	/* Set the data pointer */
+	skb_reserve(n, headroom);
+	/* Set the tail pointer and length */
+	skb_put(n, skb_headlen(skb));
+	/* Copy the bytes */
+	skb_copy_from_linear_data(skb, n->data, n->len);
+
+	n->truesize += skb->data_len;
+	n->data_len  = skb->data_len;
+	n->len	     = skb->len;
+
+	if (skb_shinfo(skb)->nr_frags) {
+		int i;
+
+		if (skb_orphan_frags(skb, gfp_mask)) {
+			kfree_skb(n);
+			n = NULL;
+			goto out;
+		}
+		for (i = 0; i < skb_shinfo(skb)->nr_frags; i++) {
+			skb_shinfo(n)->frags[i] = skb_shinfo(skb)->frags[i];
+			skb_frag_ref(skb, i);
+		}
+		skb_shinfo(n)->nr_frags = i;
+	}
+
+	if (skb_has_frag_list(skb)) {
+		skb_shinfo(n)->frag_list = skb_shinfo(skb)->frag_list;
+		skb_clone_fraglist(n);
+	}
+
+	copy_skb_header(n, skb);
+out:
+	return n;
+}
+EXPORT_SYMBOL(__pskb_copy_fclone);
+//-------
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv4.c:487:44: warning: assignment from incompatible pointer type
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ipv4.c
+---------------------------------
+//ztg alter
+//static int mptcp_v4_join_init_req(struct request_sock *req, struct sock *sk,
+static void mptcp_v4_join_init_req(struct request_sock *req, struct sock *sk,
+				  struct sk_buff *skb, bool want_cookie)
+{
+//ztg alter
+//---------
+/*
+	if (loc_id == -1)
+		return -1;
+	mtreq->loc_id = loc_id;
+	mtreq->low_prio = low_prio;
+
+	mptcp_join_reqsk_init(mpcb, req, skb);
+
+	return 0;
+*/
+//---------
+	if (loc_id != -1) {
+		mtreq->loc_id = loc_id;
+		mtreq->low_prio = low_prio;
+		mptcp_join_reqsk_init(mpcb, req, skb);
+	}
+//---------
+}
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_output.c:445:2: error: implicit declaration of function 'tcp_skb_pcount_set' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+static inline int tcp_skb_pcount(const struct sk_buff *skb)
+{
+	return skb_shinfo(skb)->gso_segs;
+}
+
+//ztg add
+//------
+static inline void tcp_skb_pcount_set(struct sk_buff *skb, int segs)
+{
+	TCP_SKB_CB(skb)->tcp_gso_segs = segs;
+}
+//------
+---------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 涉及 skb_mstamp - begin
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_output.c:616:3: error: implicit declaration of function 'skb_mstamp_get' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/linux/skbuff.h
+---------------------------------
+typedef unsigned char *sk_buff_data_t;
+#endif
+
+//ztg add
+//-----
+/**
+ * struct skb_mstamp - multi resolution time stamps
+ * @stamp_us: timestamp in us resolution
+ * @stamp_jiffies: timestamp in jiffies
+ */
+struct skb_mstamp {
+	union {
+		u64		v64;
+		struct {
+			u32	stamp_us;
+			u32	stamp_jiffies;
+		};
+	};
+};
+
+/**
+ * skb_mstamp_get - get current timestamp
+ * @cl: place to store timestamps
+ */
+static inline void skb_mstamp_get(struct skb_mstamp *cl)
+{
+	u64 val = local_clock();
+
+	do_div(val, NSEC_PER_USEC);
+	cl->stamp_us = (u32)val;
+	cl->stamp_jiffies = (u32)jiffies;
+}
+
+/**
+ * skb_mstamp_delta - compute the difference in usec between two skb_mstamp
+ * @t1: pointer to newest sample
+ * @t0: pointer to oldest sample
+ */
+static inline u32 skb_mstamp_us_delta(const struct skb_mstamp *t1,
+				      const struct skb_mstamp *t0)
+{
+	s32 delta_us = t1->stamp_us - t0->stamp_us;
+	u32 delta_jiffies = t1->stamp_jiffies - t0->stamp_jiffies;
+
+	/* If delta_us is negative, this might be because interval is too big,
+	 * or local_clock() drift is too big : fallback using jiffies.
+	 */
+	if (delta_us <= 0 ||
+	    delta_jiffies >= (INT_MAX / (USEC_PER_SEC / HZ)))
+
+		delta_us = jiffies_to_usecs(delta_jiffies);
+
+	return delta_us;
+}
+//-----
+
+-----------------
+struct sk_buff {
+//ztg alter
+//	ktime_t			tstamp;
+//-----
+	union {
+		ktime_t		tstamp;
+		struct skb_mstamp skb_mstamp;
+	};
+//-----
+}
+---------------------------------
+[root@localhost mptcp_v0.92]# grep skb_mstamp -R .		// 以后有问题，需要查看这些文件
+---------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 涉及 skb_mstamp - end
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_output.c:1423:3: error: implicit declaration of function 'tcp_skb_timestamp' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/net/tcp.h
+---------------------------------
+#define tcp_time_stamp		((__u32)(jiffies))
+
+//ztg add
+//--------
+static inline u32 tcp_skb_timestamp(const struct sk_buff *skb)
+{
+	return skb->skb_mstamp.stamp_jiffies;
+}
+//--------
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_output.c:533:8: error: too many arguments to function 'tcp_fragment'
+---------------------------------
+gedit kernel/net/mptcp/mptcp_output.c
+---------------------------------
+//ztg alter
+//	ret = tcp_fragment(meta_sk, skb, len, UINT_MAX, gfp);
+	ret = tcp_fragment(meta_sk, skb, len, UINT_MAX);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_output.c:773:3: error: too many arguments to function 'tcp_cwnd_validate'
+---------------------------------
+gedit kernel/net/mptcp/mptcp_output.c
+---------------------------------
+//ztg alter
+//		tcp_cwnd_validate(subsk, tcp_packets_in_flight(subtp) >=
+//				  subtp->snd_cwnd);
+		tcp_cwnd_validate(subsk);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/include/linux/skbuff.h:357:2: error: implicit declaration of function 'local_clock' [-Werror=implicit-function-declaration]
+---------------------------------
+gedit kernel/include/linux/skbuff.h
+---------------------------------
+//ztg add
+#include <linux/sched.h>
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv6.c:514:39: warning: assignment from incompatible pointer type
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ipv6.c
+---------------------------------
+//ztg alter
+//static int mptcp_v6_init_req(struct request_sock *req, struct sock *sk,
+static void mptcp_v6_init_req(struct request_sock *req, struct sock *sk,
+			     struct sk_buff *skb, bool want_cookie)
+{
+//ztg del
+//	return 0;
+}
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/include/linux/compiler.h:343:38: error: call to '__compiletime_assert_3659' declared with attribute error: BUILD_BUG_ON failed: sizeof(struct tcp_skb_cb) > sizeof(skb->cb)
+  _compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
+---------------------------------
+gedit kernel/include/linux/skbuff.h
+---------------------------------
+//ztg alter
+//	char			cb[48] __aligned(8);
+	char			cb[56] __aligned(8);
+---------------------------------
+
+---------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_ipv6.c:523:44: warning: assignment from incompatible pointer type
+---------------------------------
+gedit kernel/net/mptcp/mptcp_ipv6.c
+---------------------------------
+//ztg alter
+//static int mptcp_v6_join_init_req(struct request_sock *req, struct sock *sk,
+static void mptcp_v6_join_init_req(struct request_sock *req, struct sock *sk,
+				  struct sk_buff *skb, bool want_cookie)
+{
+//ztg alter
+//---------
+/*
+	if (loc_id == -1)
+		return -1;
+	mtreq->loc_id = loc_id;
+	mtreq->low_prio = low_prio;
+
+	mptcp_join_reqsk_init(mpcb, req, skb);
+
+	return 0;
+*/
+//---------
+	if (loc_id != -1) {
+		mtreq->loc_id = loc_id;
+		mtreq->low_prio = low_prio;
+		mptcp_join_reqsk_init(mpcb, req, skb);
+	}
+//---------
+}
+---------------------------------
+
+-------------------------------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+
+---------------------------------------------
+[root@localhost android-x86_64-nougat-mptcp]# grep MPTCP out/target/product/android_x86_64/obj/kernel/.config
+
+CONFIG_MPTCP=y
+# CONFIG_MPTCP_PM_ADVANCED is not set
+CONFIG_DEFAULT_MPTCP_PM="default"
+# CONFIG_MPTCP_SCHED_ADVANCED is not set
+CONFIG_DEFAULT_MPTCP_SCHED="default"
+
+[root@localhost android-x86_64-nougat-mptcp]# 
+---------------------------------------------
+
+
+============ MPTCP 编译错误，修改源代码 - end
+
+
+======================== 至此，成功编译，安装，能够访问互联网，包含 MPTCP，但是，没有启用 MPTCP。
+======================== 下面启用 MPTCP
+
+
+***********************************************************
+启用 MPTCP
+***********************************************************
+
+---------------------------------------------
+http://blog.csdn.net/ztguang/article/details/68066810
+---------------------------------------------
+gedit kernel/net/mptcp/Kconfig
+--------------------------------------------- use
+
+config MPTCP
+	default y							// add the line, 编译，安装，启动，很快重启
+									// del the line, 编译，安装，正常启动
+menuconfig MPTCP_PM_ADVANCED
+	default y							// add the line
+
+config MPTCP_FULLMESH
+	default y							// add the line
+
+config MPTCP_NDIFFPORTS
+	default y							// add the line
+
+config MPTCP_BINDER
+	default y							// add the line
+---------------------------------------------
+
+
+---------------------------------------------
+http://blog.csdn.net/ztguang/article/details/68066824
+---------------------------------------------
+gedit kernel/net/ipv4/Kconfig
+--------------------------------------------- use
+menuconfig TCP_CONG_ADVANCED
+	bool "TCP: advanced congestion control"
+	default y							// add the line
+
+
+config TCP_CONG_CUBIC
+	tristate "CUBIC TCP"
+	default y
+
+
+config TCP_CONG_VEGAS
+config TCP_CONG_VENO
+	default m							// add the line
+
+config TCP_CONG_LIA
+config TCP_CONG_OLIA
+config TCP_CONG_WVEGAS
+config TCP_CONG_BALIA
+	default y							// add the line
+---------------------------------------------
+
+--------------------------------------------- look
+[root@localhost android-x86_64-nougat-mptcp]# cd /mnt/backup/android-x86_64-nougat-mptcp
+[root@localhost android-x86_64-nougat-mptcp]# vim out/target/product/android_x86_64/obj/kernel/.config
+
+# CONFIG_NETLABEL is not set
+CONFIG_MPTCP=y
+CONFIG_MPTCP_PM_ADVANCED=y
+CONFIG_MPTCP_FULLMESH=y
+# CONFIG_MPTCP_NDIFFPORTS is not set
+# CONFIG_MPTCP_BINDER is not set
+CONFIG_DEFAULT_FULLMESH=y
+# CONFIG_DEFAULT_DUMMY is not set
+CONFIG_DEFAULT_MPTCP_PM="fullmesh"
+CONFIG_MPTCP_SCHED_ADVANCED=y
+CONFIG_MPTCP_ROUNDROBIN=y
+CONFIG_MPTCP_REDUNDANT=y
+CONFIG_DEFAULT_SCHEDULER=y
+# CONFIG_DEFAULT_ROUNDROBIN is not set
+# CONFIG_DEFAULT_REDUNDANT is not set
+CONFIG_DEFAULT_MPTCP_SCHED="default"
+CONFIG_ANDROID_PARANOID_NETWORK=y
+--------------------------------------------- look
+
+--------------------------------------------- look
+[root@localhost android-x86-6.0-rc1]# grep MPTCP kernel/arch/x86/configs/android-x86_64_defconfig
+--------------------------------------------- look
+
+--------------------------------------------- use
+[root@localhost android-x86_64-nougat-mptcp]# vim kernel/arch/x86/configs/android-x86_64_defconfig
+
+CONFIG_IPV6_MULTIPLE_TABLES=y
+# CONFIG_IPV6_SUBTREES is not set
+# CONFIG_IPV6_MROUTE is not set
+# CONFIG_NETLABEL is not set
+
+#//ztg add
+# SUPPORT MPTCP
+CONFIG_MPTCP=y
+CONFIG_MPTCP_PM_ADVANCED=y
+CONFIG_MPTCP_FULLMESH=y
+CONFIG_MPTCP_NDIFFPORTS=y
+CONFIG_MPTCP_BINDER=y
+CONFIG_DEFAULT_FULLMESH=y
+# CONFIG_DEFAULT_DUMMY is not set
+CONFIG_DEFAULT_MPTCP_PM="fullmesh"
+CONFIG_MPTCP_SCHED_ADVANCED=y
+CONFIG_MPTCP_ROUNDROBIN=y
+CONFIG_MPTCP_REDUNDANT=y
+#CONFIG_DEFAULT_SCHEDULER=y
+CONFIG_DEFAULT_ROUNDROBIN=y
+# CONFIG_DEFAULT_ROUNDROBIN is not set
+# CONFIG_DEFAULT_REDUNDANT is not set
+#CONFIG_DEFAULT_MPTCP_SCHED="default"
+CONFIG_DEFAULT_MPTCP_SCHED="roundrobin"
+
+CONFIG_ANDROID_PARANOID_NETWORK=y
+---------------------------------------------
+
+--------------------------------------------- use
+[root@localhost android-x86_64-nougat-mptcp]# vim kernel/arch/x86/configs/android-x86_64_defconfig
+
+# CONFIG_TCP_CONG_ADVANCED is not set
+CONFIG_TCP_CONG_CUBIC=y
+CONFIG_DEFAULT_TCP_CONG="cubic"
+
+上面 3 行，修改为下面 3 行
+
+# CONFIG_TCP_CONG_ADVANCED is not set
+#CONFIG_TCP_CONG_CUBIC=y
+#CONFIG_DEFAULT_TCP_CONG="cubic"
+
+然后，添加如下 n 行
+
+#//ztg add
+# SUPPORT MPTCP
+CONFIG_TCP_CONG_ADVANCED=y
+CONFIG_TCP_CONG_BIC=m
+CONFIG_TCP_CONG_CUBIC=n
+CONFIG_TCP_CONG_WESTWOOD=m
+CONFIG_TCP_CONG_HTCP=m
+CONFIG_TCP_CONG_HSTCP=n
+CONFIG_TCP_CONG_HYBLA=n
+CONFIG_TCP_CONG_VEGAS=n
+CONFIG_TCP_CONG_SCALABLE=n
+CONFIG_TCP_CONG_LP=n
+CONFIG_TCP_CONG_VENO=n
+CONFIG_TCP_CONG_YEAH=n
+CONFIG_TCP_CONG_ILLINOIS=n
+CONFIG_TCP_CONG_LIA=y
+CONFIG_TCP_CONG_OLIA=y
+CONFIG_TCP_CONG_WVEGAS=y
+CONFIG_TCP_CONG_BALIA=y
+CONFIG_TCP_CONG_CDG=n
+# CONFIG_DEFAULT_CUBIC is not set
+CONFIG_DEFAULT_LIA=y
+# CONFIG_DEFAULT_OLIA is not set
+# CONFIG_DEFAULT_WVEGAS is not set
+# CONFIG_DEFAULT_BALIA is not set
+# CONFIG_DEFAULT_RENO is not set
+CONFIG_DEFAULT_TCP_CONG="lia"
+
+# CONFIG_TCP_MD5SIG is not set
+CONFIG_IPV6=y
+---------------------------------------------
+
+----------------------------------------------
+### 查看本机支持的拥赛控制算法，命令：
+cat /proc/sys/net/ipv4/tcp_allowed_congestion_control
+
+### 拥塞策略的配置方式为
+sysctl net.ipv4.tcp_congestion_control=balia/lia/olia/reno/wVegas
+# 或者
+echo olia >/proc/sys/net/ipv4/tcp_congestion_control
+----------------------------------------------
+
+-------------------------------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+
+
+--------------------------------------------- look
+[root@localhost android-x86_64-nougat-mptcp]# grep MPTCP out/target/product/android_x86_64/obj/kernel/.config
+[root@localhost android-x86_64-nougat-mptcp]# vim out/target/product/android_x86_64/obj/kernel/.config
+[root@localhost android-x86_64-nougat-mptcp]# 
+
+kernel/arch/x86/configs/x86_64_defconfig:		CONFIG_IP_ADVANCED_ROUTER=y
+kernel/arch/x86/configs/android-x86_64_defconfig:	CONFIG_IP_ADVANCED_ROUTER=y
+kernel/arch/x86/configs/i386_defconfig:			CONFIG_IP_ADVANCED_ROUTER=y
+kernel/android/configs/android-base.cfg:		CONFIG_IP_ADVANCED_ROUTER=y
+---------------------------------------------
+
+--------------------------------------------- look
+vim kernel/arch/x86/configs/android-x86_64_defconfig
+
+[root@localhost android_x86_64]# gedit arch/x86/configs/android-x86_64_defconfig
+
+# CONFIG_TCP_CONG_ADVANCED is not set
+#CONFIG_TCP_CONG_CUBIC=y
+#CONFIG_DEFAULT_TCP_CONG="cubic"
+
+# SUPPORT MPTCP
+CONFIG_TCP_CONG_ADVANCED=y
+CONFIG_TCP_CONG_BIC=m
+CONFIG_TCP_CONG_CUBIC=y
+CONFIG_TCP_CONG_WESTWOOD=m
+CONFIG_TCP_CONG_HTCP=m
+CONFIG_TCP_CONG_HSTCP=m
+CONFIG_TCP_CONG_HYBLA=m
+CONFIG_TCP_CONG_VEGAS=m
+CONFIG_TCP_CONG_SCALABLE=m
+CONFIG_TCP_CONG_LP=m
+CONFIG_TCP_CONG_VENO=m
+CONFIG_TCP_CONG_YEAH=m
+CONFIG_TCP_CONG_ILLINOIS=m
+CONFIG_TCP_CONG_LIA=y
+CONFIG_TCP_CONG_OLIA=y
+CONFIG_TCP_CONG_WVEGAS=y
+CONFIG_TCP_CONG_BALIA=y
+CONFIG_TCP_CONG_CDG=m
+# CONFIG_DEFAULT_CUBIC is not set
+CONFIG_DEFAULT_LIA=y
+# CONFIG_DEFAULT_OLIA is not set
+# CONFIG_DEFAULT_WVEGAS is not set
+# CONFIG_DEFAULT_BALIA is not set
+# CONFIG_DEFAULT_RENO is not set
+CONFIG_DEFAULT_TCP_CONG="lia"
+---------------------------------------------
+
+
+-------------------------------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+=================================== 启用 MPTCP 的 编译错误 - begin
+
+---------------------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_fullmesh.c:1089:26: error: 'INET6_IFADDR_STATE_ERRDAD' undeclared (first use in this function)
+---------------------------------------------
+gedit kernel/include/net/if_inet6.h
+---------------------------------------------
+//ztg alter
+//-------
+/*
+enum {
+	INET6_IFADDR_STATE_DAD,
+	INET6_IFADDR_STATE_POSTDAD,
+	INET6_IFADDR_STATE_UP,
+	INET6_IFADDR_STATE_DEAD,
+};
+*/
+//-------
+enum {
+	INET6_IFADDR_STATE_PREDAD,
+	INET6_IFADDR_STATE_DAD,
+	INET6_IFADDR_STATE_POSTDAD,
+	INET6_IFADDR_STATE_ERRDAD,
+	INET6_IFADDR_STATE_DEAD,
+};
+//-------
+---------------------------------------------
+
+---------------------------------------------
+/opt/android-x86/android-x86_64-nougat-mptcp/kernel/net/mptcp/mptcp_fullmesh.c:1186:15: error: implicit declaration of function 'netdev_notifier_info_to_dev' [-Werror=implicit-function-declaration]
+---------------------------------------------
+gedit kernel/include/linux/netdevice.h
+---------------------------------------------
+extern int call_netdevice_notifiers(unsigned long val, struct net_device *dev);
+//ztg add
+//-------
+struct netdev_notifier_info {
+	struct net_device *dev;
+};
+
+static inline struct net_device *
+netdev_notifier_info_to_dev(const struct netdev_notifier_info *info)
+{
+	return info->dev;
+}
+//-------
+---------------------------------------------
+
+-------------------------------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+编译，安装，启动，错误如下：
+---------------------------------------------
+BUG: unable to handle kernel paging request at 00000000000071c4
+
+Call Trace:
+notifier_call_chain
+__dev_notify_flags
+dev_change_flags
+devinet_ioctl
+dev_get_by_name_rcu
+sock_do_ioctl.constprop
+sock_do_ioctl.constprop
+sock_ioctl
+do_vfs_ioctl
+SyS_ioctl
+system_call_fastpath
+
+RIP netdev_event
+---------------------------------------------
+
+---------------------------------------------
+vim kernel/net/mptcp/mptcp_fullmesh.c
+---------------------------------------------
+static int netdev_event(struct notifier_block *this, unsigned long event,
+			void *ptr)
+{
+//ztg alter					// 彻底解决问题，可以 进入 GUI
+//	const struct net_device *dev = netdev_notifier_info_to_dev(ptr);
+	const struct net_device *dev = ptr;
+}
+---------------------------------------------
+
+=================================== 启用 MPTCP 的 编译错误 - end
+
+
+-------------------------------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+-------------------------------------------------------------------
+
+======================== 至此，成功编译，安装，能够访问互联网，包含 MPTCP，启用了 MPTCP。
+======================== 下面 双网卡测试 MPTCP
+
+
+
+======================== 还原到 移植 MPTCP 之前 的状态 - begin
+
+---------------------------------------------
+kernel/net/Kconfig			// no edit
+kernel/net/Makefile			// edit，去掉 MPTCP
+
+kernel/net/ipv4/tcp.c			// edit，根据 fep-port-lineage-14.1-to-honor-5x-on-virtualbox.txt 修改
+------------------
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/linux/ipv6.h	kernel/include/linux/ipv6.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/linux/tcp.h	kernel/include/linux/tcp.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/inet6_connection_sock.h	kernel/include/net/inet6_connection_sock.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/inet_common.h	kernel/include/net/inet_common.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/inet_connection_sock.h	kernel/include/net/inet_connection_sock.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/inet_sock.h	kernel/include/net/inet_sock.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/net_namespace.h	kernel/include/net/net_namespace.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/request_sock.h	kernel/include/net/request_sock.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/sock.h	kernel/include/net/sock.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/tcp.h	kernel/include/net/tcp.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/net/transp_v6.h	kernel/include/net/transp_v6.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/uapi/linux/if.h	kernel/include/uapi/linux/if.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/include/uapi/linux/tcp.h	kernel/include/uapi/linux/tcp.h
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/core/dev.c	kernel/net/core/dev.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/core/request_sock.c	kernel/net/core/request_sock.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/core/skbuff.c	kernel/net/core/skbuff.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/core/sock.c	kernel/net/core/sock.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/Kconfig	kernel/net/ipv4/Kconfig
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/af_inet.c	kernel/net/ipv4/af_inet.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/inet_connection_sock.c	kernel/net/ipv4/inet_connection_sock.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/ip_sockglue.c	kernel/net/ipv4/ip_sockglue.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/syncookies.c	kernel/net/ipv4/syncookies.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp.c	kernel/net/ipv4/tcp.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp_fastopen.c	kernel/net/ipv4/tcp_fastopen.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp_input.c	kernel/net/ipv4/tcp_input.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp_ipv4.c	kernel/net/ipv4/tcp_ipv4.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp_minisocks.c	kernel/net/ipv4/tcp_minisocks.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp_output.c	kernel/net/ipv4/tcp_output.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv4/tcp_timer.c	kernel/net/ipv4/tcp_timer.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv6/addrconf.c	kernel/net/ipv6/addrconf.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv6/af_inet6.c	kernel/net/ipv6/af_inet6.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv6/inet6_connection_sock.c	kernel/net/ipv6/inet6_connection_sock.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv6/ipv6_sockglue.c	kernel/net/ipv6/ipv6_sockglue.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv6/syncookies.c	kernel/net/ipv6/syncookies.c
+/bin/cp ../lineage-14.1-kiwi-on-phone/kernel/huawei/kiwi/net/ipv6/tcp_ipv6.c	kernel/net/ipv6/tcp_ipv6.c
+---------------------------------------------
+
+---------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+---------------------------------------------
+
+======================== 还原到 移植 MPTCP 之前 的状态 - end
+
+
+
+======================== MPTCP, only one handshake，下面解决该问题 - begin
+
+--------------------------------------------- look
+saddr
+daddr
+//	20490432	1.56.168.192	192.168.56.1
+//	54044864	3.56.168.192	192.168.56.3
+//	16849520	1.1.26.112	112.26.1.1
+//	16915056	1.2.26.112	112.26.2.1
+
+//	70822080	4.56.168.192	192.168.56.4
+//	33626736	2.1.26.112	112.26.1.2
+//	33692272	2.2.26.112	112.26.2.2
+---------------------------------------------
+
+--------------------------------------------- look
+extern struct static_key mptcp_static_key;
+static inline bool mptcp(const struct tcp_sock *tp)
+{
+        return static_key_false(&mptcp_static_key) && tp->mpc;
+}
+---------------------------------------------
+
+--------------------------------------------- look
+static inline int is_meta_sk(const struct sock *sk)
+{
+        return sk->sk_type == SOCK_STREAM  && sk->sk_protocol == IPPROTO_TCP &&
+               mptcp(tcp_sk(sk)) && mptcp_meta_sk(sk) == sk;
+}
+---------------------------------------------
+
+--------------------------------------------- look
+    服务器端:(接收syn,并返回syn/ack)
+    tcp_v4_rcv -> tcp_v4_do_rcv
+                      -> tcp_v4_hnd_req
+                      -> tcp_rcv_state_process
+                          -> icsk->icsk_af_ops->conn_request 
+                             (tcp_v4_conn_request) ->
+                                  -> tcp_v4_init_sequence
+                                  -> tcp_v4_send_synack
+                                        -> ip_build_and_send_pkt
+---------------------------------------------
+
+--------------------------------------------- look
+参考：http://blog.csdn.net/qy532846454/article/details/7882819
+【Linux内核分析 - 网络[十六]：TCP三次握手】
+---------------------------------------------
+	tcp_v4_do_rcv() 是TCP模块接收的入口函数，客户端发起请求的对象是listen fd，所以sk->sk_state == TCP_LISTEN，调用tcp_v4_hnd_req()来检查是否处于半连接，只要三次握手没有完成，这样的连接就称为半连接，具体而言就是收到了SYN，但还没有收到ACK的连接，所以对于这个查找函数，如果是SYN报文，则会返回listen的socket(连接尚未创建)；如果是ACK报文，则会返回SYN报文处理中插入的半连接socket。其中存储这些半连接的数据结构是syn_table，它在listen()调用时被创建，大小由sys_ctl_max_syn_backlog和listen()传入的队列长度决定。
+此时是收到SYN报文，tcp_v4_hnd_req()返回的仍是sk，调用 tcp_rcv_state_process() 来接收SYN报文，并发送SYN+ACK报文，同时向syn_table中插入一项表明此次连接的sk。
+
+	tcp_rcv_state_process()处理各个状态上socket的情况。下面是处于TCP_LISTEN的代码段，处于TCP_LISTEN的socket不会再向其它状态变迁，它负责监听，并在连接建立时创建新的socket。
+	实际上，当收到第一个SYN报文时，会执行这段代码，conn_request() => tcp_v4_conn_request。
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------------------
+int tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb,
+{
+		if (th->syn) {
+//ztg add
+			if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+			if (icsk->icsk_af_ops->conn_request(sk, skb) < 0)	// .conn_request = tcp_v4_conn_request
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_conn_request(struct sock *sk, struct sk_buff *skb)
+{
+	return tcp_conn_request(&tcp_request_sock_ops,
+				&tcp_request_sock_ipv4_ops, sk, skb);
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------------------
+int tcp_conn_request(struct request_sock_ops *rsk_ops,
+{
+--------------------
+	af_ops->init_req(req, sk, skb, want_cookie);
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+--------------------
+
+--------------------
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+	tcp_rsk(req)->snt_isn = isn;
+--------------------
+
+--------------------
+	err = af_ops->send_synack(sk, dst, (struct flowi6 *)&fl, req, skb_get_queue_mapping(skb));
+	if (!fastopen) {
+//ztg add
+		if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+		if (err || want_cookie) {
+//ztg add
+			if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里
+							// 经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+							// err == 0, 接着 进入 send_synack (tcp_v4_send_synack) 测试
+			goto drop_and_free;
+		}
+		tcp_rsk(req)->listener = NULL;
+		af_ops->queue_hash_add(sk, req, TCP_TIMEOUT_INIT);
+	}
+--------------------
+}
+	// 调用 tcp_rcv_state_process() 来接收SYN报文，并发送SYN+ACK报文，同时向syn_table中插入一项表明此次连接的sk。
+---------------------------------------------
+queue_hash_add
+	---> inet_csk_reqsk_queue_hash_add
+		---> reqsk_queue_hash_req
+			---> lopt->syn_table[hash] = req;
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+{
+		err = ip_build_and_send_pkt(skb, sk, ireq->loc_addr,
+					    ireq->rmt_addr,
+					    ireq->opt);
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/ip_output.c
+---------------------------------------------
+int ip_build_and_send_pkt(struct sk_buff *skb, struct sock *sk,
+{
+//ztg add
+	if (iph->daddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里
+							// 经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+	/* Send it out. */
+	return ip_local_out(skb);
+}
+---------------------------------------------
+
+======== 为了传递 ，修改下面几个文件 - begin
+
+---------------------------------------------
+gedit kernel/include/net/request_sock.h
+--------------------------------------------- 已还原
+struct request_sock {
+//ztg add
+	__be32				daddr, saddr;
+};
+
+---------------------------------------------
+
+--------------------------------------------- 已还原
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------------------
+int tcp_conn_request(struct request_sock_ops *rsk_ops,
+{
+//ztg add
+	req->saddr = ip_hdr(skb)->saddr;
+	err = af_ops->send_synack(sk, dst, (struct flowi6 *)&fl, req, skb_get_queue_mapping(skb));
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+{
+//ztg add
+	if (skb && ireq->rmt_addr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里
+							// 经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+	return err;
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+--------------------------------------------- 还原
+int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+{
+		err = ip_build_and_send_pkt(skb, sk, ireq->loc_addr,
+					    ireq->rmt_addr,
+					    ireq->opt);
+//ztg add
+		printk(KERN_INFO "IP - %s: %d: %s: src_addr:%u dst_addr:%u\n",
+			__FILE__, __LINE__, __func__ , ireq->loc_addr, ireq->rmt_addr);
+							// 使用 dmesg 或者 cat /dev/kmsg
+							// 发现：src_addr:0 dst_addr:0
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/ip_output.c
+---------------------------------------------
+int ip_build_and_send_pkt(struct sk_buff *skb, struct sock *sk,
+{
+//ztg add
+	printk(KERN_INFO "IP - %s: %d: %s: src_addr:%u dst_addr:%u\n",
+		__FILE__, __LINE__, __func__ , iph->saddr, iph->daddr);
+							// 使用 dmesg 或者 cat /dev/kmsg
+							// 发现：src_addr:0 dst_addr:0
+	/* Send it out. */
+	return ip_local_out(skb);
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/inet_connection_sock.c
+---------------------------------------------
+void inet_csk_reqsk_queue_hash_add(struct sock *sk, struct request_sock *req,
+				   unsigned long timeout)
+{
+	const u32 h = inet_synq_hash(inet_rsk(req)->rmt_addr, inet_rsk(req)->rmt_port,
+				     lopt->hash_rnd, lopt->nr_table_entries);
+//ztg add
+	printk(KERN_INFO "IP - %s: %d: %s: rmt_addr:%u\n",
+		__FILE__, __LINE__, __func__ , inet_rsk(req)->rmt_addr);
+							// 使用 dmesg 或者 cat /dev/kmsg
+							// 发现：rmt_addr:0
+}
+---------------------------------------------
+
+======== 为了传递 ，修改下面几个文件 - end
+
+
+======== 解决【src_addr:0 dst_addr:0】的问题 - begin
+
+---------------------------------------------
+gedit kernel/include/net/tcp.h
+--------------------------------------------- 添加下面两行后，nc 可以运行了，但是 只有 主连接 收发数据
+static inline void tcp_openreq_init(struct request_sock *req,
+{
+	ireq->saw_mpc = 0;
+//ztg add
+//--------------------------------------------------------------------
+	ireq->loc_addr = ip_hdr(skb)->daddr;
+	ireq->rmt_addr = ip_hdr(skb)->saddr;
+//--------------------------------------------------------------------
+}
+---------------------------------------------
+
+======== 解决【src_addr:0 dst_addr:0】的问题 - end
+
+
+
+
+======== 解决 struct inet_request_sock { } 成员的的问题【大动】 - begin
+
+---------------------------------------------
+gedit kernel/include/net/inet_sock.h
+---------------------------------------------
+//ztg add
+//ztg del
+//-------------------------------------------------------------------- 删除4行
+/*
+#define ir_loc_addr		req.__req_common.skc_rcv_saddr
+#define ir_rmt_addr		req.__req_common.skc_daddr
+#define ir_num			req.__req_common.skc_num
+#define ir_rmt_port		req.__req_common.skc_dport
+*/
+#define ir_v6_rmt_addr		req.__req_common.skc_v6_daddr
+#define ir_v6_loc_addr		req.__req_common.skc_v6_rcv_saddr
+#define ir_iif			req.__req_common.skc_bound_dev_if
+//--------------------------------------------------------------------
+
+
+--------------------------------------------- 注意：ir_loc_addr 替换为 loc_addr
+gedit kernel/net/ipv4/tcp_ipv4.c
+gedit kernel/net/mptcp/mptcp_ipv4.c
+---------------------------------------------
+
+--------------------------------------------- 注意：ir_rmt_addr 替换为 rmt_addr
+gedit kernel/net/ipv4/tcp_ipv4.c
+gedit kernel/net/mptcp/mptcp_ipv4.c
+gedit kernel/net/ipv4/tcp_input.c 
+---------------------------------------------
+
+--------------------------------------------- 注意：ir_num 替换为 loc_port
+gedit kernel/net/mptcp/mptcp_ctrl.c
+---------------------------------------------
+
+--------------------------------------------- 注意：ir_rmt_port 替换为 rmt_port
+gedit kernel/net/mptcp/mptcp_ipv4.c
+gedit kernel/net/mptcp/mptcp_ctrl.c
+gedit kernel/net/mptcp/mptcp_ipv6.c
+---------------------------------------------
+
+======== 解决 struct inet_request_sock { } 成员的的问题【大动】 - end
+
+
+
+
+================================ 解决【只有 master flow，没有 slave flow】的问题 - begin
+================================ 至此，可以多路径传输了，但是，传了 2.5MB，停止。
+
+---------------------------------------------
+gedit kernel/net/mptcp/mptcp_ipv4.c
+---------------------------------------------
+int mptcp_init4_subsockets(struct sock *meta_sk, const struct mptcp_loc4 *loc,
+{
+//ztg add
+	printk(KERN_INFO "MPTCP - AAA - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+			
+}
+		// 在该函数内多处放 printk，输出：A B C D F, 定位到错误点：connect
+		// connect 将会调用 tcp_v4_connect 进行连接操作
+int mptcp_init4_subsockets(struct sock *meta_sk, const struct mptcp_loc4 *loc,
+{
+	ret = sock.ops->connect(&sock, (struct sockaddr *)&rem_in,
+				sizeof(struct sockaddr_in), O_NONBLOCK);
+	if (ret < 0 && ret != -EINPROGRESS) {
+		mptcp_debug("%s: MPTCP subsocket connect() failed, error %d\n",
+			    __func__, ret);
+		goto error;
+	}
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/af_inet.c
+--------------------------------------------- // 发现：sock.ops->connect 调用 inet_stream_connect
+static struct inet_protosw inetsw_array[] =
+{
+	{
+		.type =       SOCK_STREAM,
+		.protocol =   IPPROTO_TCP,
+		.prot =       &tcp_prot,
+		.ops =        &inet_stream_ops,
+		.no_check =   0,
+		.flags =      INET_PROTOSW_PERMANENT |
+			      INET_PROTOSW_ICSK,
+	},
+}
+
+const struct proto_ops inet_stream_ops = {
+	.family		   = PF_INET,
+	.owner		   = THIS_MODULE,
+	.release	   = inet_release,
+	.bind		   = inet_bind,
+	.connect	   = inet_stream_connect,				// 调用 inet_stream_connect
+	.socketpair	   = sock_no_socketpair,
+	.accept		   = inet_accept,
+...
+}
+
+int __inet_stream_connect(struct socket *sock, struct sockaddr *uaddr,
+			  int addr_len, int flags)
+{
+		err = sk->sk_prot->connect(sk, uaddr, addr_len);		// 调用 tcp_v4_connect
+
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_connect(struct sock *sk, struct sockaddr *uaddr, int addr_len)
+{
+	err = inet_hash_connect(&tcp_death_row, sk);
+//ztg add
+	printk(KERN_INFO "MPTCP - GGG: err:%d - %s: %d: %s\n", err, __FILE__, __LINE__, __func__);
+
+}
+		// 在该函数内多处放 printk，输出：A B C D G H I F, 定位到错误点：ip_route_connect
+
+int tcp_v4_connect(struct sock *sk, struct sockaddr *uaddr, int addr_len)
+{
+//ztg add
+	printk(KERN_INFO "MPTCP - III-nexthop(%u) src(%u) oif(%d) %s: %d: %s\n", nexthop, inet->inet_saddr, sk->sk_bound_dev_if, __FILE__, __LINE__, __func__);
+
+	orig_sport = inet->inet_sport;
+	orig_dport = usin->sin_port;
+	fl4 = &inet->cork.fl.u.ip4;
+	rt = ip_route_connect(fl4, nexthop, inet->inet_saddr,
+			      RT_CONN_FLAGS(sk), sk->sk_bound_dev_if,
+			      IPPROTO_TCP,
+			      orig_sport, orig_dport, sk, true);
+	if (IS_ERR(rt)) {
+		err = PTR_ERR(rt);
+//ztg add
+	printk(KERN_INFO "MPTCP - IIIIII-err(%d) -ENETUNREACH(%d) - %s: %d: %s\n", err, -ENETUNREACH, __FILE__, __LINE__, __func__);
+								// nexthop(16915056) src(33692272) oif(0)
+		if (err == -ENETUNREACH)
+			IP_INC_STATS(sock_net(sk), IPSTATS_MIB_OUTNOROUTES);
+		return err;
+	}
+//ztg add
+	printk(KERN_INFO "MPTCP - JJJ - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+...
+
+//ztg add
+	printk(KERN_INFO "MPTCP - OKOK - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+
+	return 0;
+
+failure:
+}
+
+---------------------------------------------
+//	16915056	1.2.26.112	112.26.2.1
+//	33692272	2.2.26.112	112.26.2.2
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/include/net/route.h
+---------------------------------------------
+static inline struct rtable *ip_route_connect(struct flowi4 *fl4,
+{
+//ztg add
+	printk(KERN_INFO "MPTCP - LLL - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+	return ip_route_output_flow(net, fl4, sk);
+}
+		// 在该函数内多处放 printk，输出：D I L F, 定位到错误点：ip_route_output_flow
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/route.c
+---------------------------------------------
+struct rtable *ip_route_output_flow(struct net *net, struct flowi4 *flp4,
+				    struct sock *sk)
+{
+	struct rtable *rt = __ip_route_output_key(net, flp4);
+//ztg add
+	printk(KERN_INFO "MPTCP - MMM - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+
+	if (IS_ERR(rt))
+		return rt;
+//ztg add
+	printk(KERN_INFO "MPTCP - NNN - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+
+	if (flp4->flowi4_proto)
+		rt = (struct rtable *) xfrm_lookup(net, &rt->dst,
+						   flowi4_to_flowi(flp4),
+						   sk, 0);
+
+	return rt;
+}
+
+/*
+ * Major route resolver routine.
+ */
+
+struct rtable *__ip_route_output_key(struct net *net, struct flowi4 *fl4)
+{
+//ztg add
+	printk(KERN_INFO "MPTCP - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+}
+						// 在该函数内多处放 printk
+
+struct rtable *__ip_route_output_key(struct net *net, struct flowi4 *fl4)
+{
+//ztg add
+	if (!fl4->flowi4_oif) printk(KERN_INFO "MPTCP - RRR - daddr(%u) saddr(%u) oif(%d) - %s: %d: %s\n", fl4->daddr, fl4->saddr, fl4->flowi4_oif, __FILE__, __LINE__, __func__);
+							// daddr(16915056) saddr(33692272) oif(0)
+
+	if (fib_lookup(net, fl4, &res)) {		// fib_lookup 有问题
+//ztg add
+	printk(KERN_INFO "MPTCP - RRR - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+		res.fi = NULL;
+		res.table = NULL;
+							// 定位到了错点
+		if (fl4->flowi4_oif) {			// 这里有问题，应该 fl4->flowi4_oif 非零
+
+			if (fl4->saddr == 0)
+				fl4->saddr = inet_select_addr(dev_out, 0,
+							      RT_SCOPE_LINK);
+			res.type = RTN_UNICAST;
+			goto make_route;
+		}
+		rth = ERR_PTR(-ENETUNREACH);		// 执行了这条语句
+		goto out;
+	}
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/include/net/ip_fib.h
+---------------------------------------------
+static inline int fib_lookup(struct net *net, const struct flowi4 *flp,
+			     struct fib_result *res)
+{
+	struct fib_table *table;
+
+	table = fib_get_table(net, RT_TABLE_LOCAL);
+	if (!fib_table_lookup(table, flp, res, FIB_LOOKUP_NOREF))	// fib_table_lookup 有问题
+		return 0;
+
+	table = fib_get_table(net, RT_TABLE_MAIN);
+	if (!fib_table_lookup(table, flp, res, FIB_LOOKUP_NOREF))	// fib_table_lookup 有问题
+		return 0;
+	return -ENETUNREACH;						// 执行了这条语句
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/fib_trie.c
+---------------------------------------------
+int fib_table_lookup(struct fib_table *tb, const struct flowi4 *flp,
+		     struct fib_result *res, int fib_flags)
+{
+//ztg add
+	printk(KERN_INFO "MPTCP - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+}
+								// 在该函数内多处放 printk
+
+int fib_table_lookup(struct fib_table *tb, const struct flowi4 *flp,
+		     struct fib_result *res, int fib_flags)
+{
+			struct tnode *parent = node_parent_rcu((struct rt_trie_node *) pn);
+			if (!parent) {
+				goto failed;			// 执行了这条语句，node_parent_rcu 有问题
+			}
+}
+
+---------------------------------------------
+
+						================ // 经过前面的分析，定位到了错点
+---------------------------------------------
+gedit kernel/net/ipv4/route.c
+---------------------------------------------
+
+struct rtable *__ip_route_output_key(struct net *net, struct flowi4 *fl4)
+{
+//ztg add
+	if (!fl4->flowi4_oif) printk(KERN_INFO "MPTCP - RRR - daddr(%u) saddr(%u) oif(%d) - %s: %d: %s\n", fl4->daddr, fl4->saddr, fl4->flowi4_oif, __FILE__, __LINE__, __func__);
+							// daddr(16915056) saddr(33692272) oif(0)
+	if (fib_lookup(net, fl4, &res)) {		// fib_lookup 有问题
+//ztg add
+	printk(KERN_INFO "MPTCP - RRR - %s: %d: %s\n", __FILE__, __LINE__, __func__);
+		res.fi = NULL;
+		res.table = NULL;
+										// 定位到了错点
+		if (fl4->flowi4_oif) {						// 这里有问题，应该 fl4->flowi4_oif 非零
+
+			if (fl4->saddr == 0)
+				fl4->saddr = inet_select_addr(dev_out, 0,
+							      RT_SCOPE_LINK);
+			res.type = RTN_UNICAST;
+			goto make_route;
+		}
+		rth = ERR_PTR(-ENETUNREACH);		// 执行了这条语句
+		goto out;
+	}
+}
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_connect(struct sock *sk, struct sockaddr *uaddr, int addr_len)
+{
+	rt = ip_route_connect(fl4, nexthop, inet->inet_saddr,
+			      RT_CONN_FLAGS(sk), sk->sk_bound_dev_if,	// 此行有问题，即：
+									// fl4->flowi4_oif = sk->sk_bound_dev_if
+									// 经上面测试，sk->sk_bound_dev_if == 0
+									// 而应该 sk->sk_bound_dev_if != 0
+			      IPPROTO_TCP,
+			      orig_sport, orig_dport, sk, true);
+}
+---------------------------------------------
+tcp_v4_connect()								// kernel/net/ipv4/tcp_ipv4.c
+	----->ip_route_connect()						// kernel/include/net/route.h
+		----->ip_route_connect_init()					// kernel/include/net/route.h
+			----->flowi4_init_output(struct flowi4 *fl4, int oif)	// kernel/include/net/flow.h
+				-----> 其中：	fl4->flowi4_oif = oif;
+---------------------------------------------
+kernel/include/net/sock.h:	#define sk_bound_dev_if		__sk_common.skc_bound_dev_if
+kernel/include/net/sock.h:	int				skc_bound_dev_if;
+---------------------------------------------
+
+	=====// 经查：
+	=====// [root@localhost mptcp_v0.92]# grep sk_bound_dev_if -R .				// 有下面输出
+	=====// [root@localhost android-x86_64-nougat-mptcp]# grep sk_bound_dev_if -R kernel	// 没有下面输出
+
+---------------------------------------------
+./net/mptcp/mptcp_fullmesh.c:		loc.if_idx = mpcb->master_sk->sk_bound_dev_if;
+./net/mptcp/mptcp_fullmesh.c:			loc.if_idx = mpcb->master_sk->sk_bound_dev_if;
+./net/mptcp/mptcp_fullmesh.c:		if_idx = mpcb->master_sk->sk_bound_dev_if;
+./net/mptcp/mptcp_fullmesh.c:		if_idx = mpcb->master_sk->sk_bound_dev_if;
+
+./net/mptcp/mptcp_input.c:		sk->sk_bound_dev_if = skb->skb_iif;
+./net/mptcp/mptcp_ipv4.c:		sk->sk_bound_dev_if = loc->if_idx;
+./net/mptcp/mptcp_ipv6.c:		sk->sk_bound_dev_if = loc->if_idx;
+---------------------------------------------
+
+	=====// 下面尝试根据【mptcp_v0.92】修改【android-x86_64-nougat-mptcp】中的上面几个文件，关于 sk_bound_dev_if 的代码
+
+---------------------------------------------
+gedit kernel/net/mptcp/mptcp_fullmesh.c
+--------------------------------------------- 关于 sk_bound_dev_if 的代码
+struct mptcp_addr_event {
+	struct list_head list;
+	unsigned short	family;
+	u8	code:7,
+		low_prio:1;
+//ztg add
+	int	if_idx;
+	union inet_addr addr;
+};
+---------------------------------------------
+static void create_subflow_worker(struct work_struct *work)
+{
+		loc.low_prio = 0;
+//ztg add
+		loc.if_idx = mpcb->master_sk->sk_bound_dev_if;
+----------------------
+			loc.low_prio = 0;
+//ztg add
+			loc.if_idx = mpcb->master_sk->sk_bound_dev_if;
+}
+---------------------------------------------
+static void full_mesh_new_session(const struct sock *meta_sk)
+{
+//ztg alter
+//	int i, index;
+	int i, index, if_idx;
+----------------------
+	/* Create the additional subflows for the first pair */
+//ztg alter
+//	if (fmp->first_pair == 0) {
+	if (fmp->first_pair == 0 && mpcb->master_sk) {			// 以后如果有问题，考虑这行
+----------------------
+		daddr.ip = inet_sk(meta_sk)->inet_daddr;
+//ztg add
+		if_idx = mpcb->master_sk->sk_bound_dev_if;
+----------------------
+#if IS_ENABLED(CONFIG_IPV6)
+//ztg alter
+//	if (fmp->first_pair == 0) {
+	if (fmp->first_pair == 0 && mpcb->master_sk) {			// 以后如果有问题，考虑这行
+----------------------
+		daddr.in6 = meta_sk->sk_v6_daddr;
+//ztg add
+		if_idx = mpcb->master_sk->sk_bound_dev_if;
+----------------------
+		/* We do not need to announce the initial subflow's address again */
+//ztg alter
+//		if (family == AF_INET && saddr.ip == ifa_address)
+//--------------------------------------------------------------------
+		if (family == AF_INET &&
+		    (!if_idx || mptcp_local->locaddr4[i].if_idx == if_idx) &&
+		    saddr.ip == ifa_address)
+//--------------------------------------------------------------------
+----------------------
+		/* We do not need to announce the initial subflow's address again */
+//ztg alter
+//		if (family == AF_INET6 && ipv6_addr_equal(&saddr.in6, ifa6))
+//--------------------------------------------------------------------
+		if (family == AF_INET6 &&
+		    (!if_idx || mptcp_local->locaddr6[i].if_idx == if_idx) &&
+		    ipv6_addr_equal(&saddr.in6, ifa6))
+//--------------------------------------------------------------------
+}
+---------------------------------------------
+static int mptcp_find_address(const struct mptcp_loc_addr *mptcp_local,			// 需要修改该函数，共 4 次调用
+//ztg alter
+//			      sa_family_t family, const union inet_addr *addr)
+			      sa_family_t family, const union inet_addr *addr, int if_idx)
+{
+		if (family == AF_INET &&
+//ztg add
+		    (!if_idx || mptcp_local->locaddr4[i].if_idx == if_idx) &&
+		    mptcp_local->locaddr4[i].addr.s_addr == addr->in.s_addr) {
+			found = true;
+			break;
+		}
+		if (family == AF_INET6 &&
+//ztg add
+		    (!if_idx || mptcp_local->locaddr6[i].if_idx == if_idx) &&
+}
+---------------------------------------------
+//ztg alter
+//	index = mptcp_find_address(mptcp_local, family, &saddr);
+	index = mptcp_find_address(mptcp_local, family, &saddr, if_idx);
+----------------------
+//ztg alter
+//		id = mptcp_find_address(mptcp_local, event->family, &event->addr);
+		id = mptcp_find_address(mptcp_local, event->family, &event->addr, event->if_idx);
+----------------------
+//ztg alter
+//		int i = mptcp_find_address(mptcp_local, event->family, &event->addr);
+		int i = mptcp_find_address(mptcp_local, event->family, &event->addr, event->if_idx);
+----------------------
+//ztg alter
+//	index = mptcp_find_address(mptcp_local, family, addr);
+	index = mptcp_find_address(mptcp_local, family, addr, 0);
+---------------------------------------------
+		if (event->family == AF_INET) {
+			mptcp_local->locaddr4[i].addr.s_addr = event->addr.in.s_addr;
+			mptcp_local->locaddr4[i].loc4_id = i + 1;
+			mptcp_local->locaddr4[i].low_prio = event->low_prio;
+//ztg add
+			mptcp_local->locaddr4[i].if_idx = event->if_idx;
+		} else {
+			mptcp_local->locaddr6[i].addr = event->addr.in6;
+			mptcp_local->locaddr6[i].loc6_id = i + MPTCP_MAX_ADDR;
+			mptcp_local->locaddr6[i].low_prio = event->low_prio;
+//ztg add
+			mptcp_local->locaddr6[i].if_idx = event->if_idx;
+		}
+---------------------------------------------
+static void addr4_event_handler(const struct in_ifaddr *ifa, unsigned long event,
+{
+	mpevent.low_prio = (netdev->flags & IFF_MPBACKUP) ? 1 : 0;
+//ztg add
+	mpevent.if_idx  = netdev->ifindex;
+}
+---------------------------------------------
+static void addr6_event_handler(const struct inet6_ifaddr *ifa, unsigned long event,
+{
+	mpevent.low_prio = (netdev->flags & IFF_MPBACKUP) ? 1 : 0;
+//ztg add
+	mpevent.if_idx = netdev->ifindex;
+}
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/mptcp/mptcp_input.c
+--------------------------------------------- 关于 sk_bound_dev_if 的代码
+int mptcp_rcv_synsent_state_process(struct sock *sk, struct sock **skptr,
+{
+		tp = tcp_sk(sk);
+//ztg add
+		sk->sk_bound_dev_if = skb->skb_iif;
+}
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/mptcp/mptcp_ipv4.c
+--------------------------------------------- 关于 sk_bound_dev_if 的代码
+int mptcp_init4_subsockets(struct sock *meta_sk, const struct mptcp_loc4 *loc,
+{
+	rem_in.sin_addr = rem->addr;
+//ztg add
+//--------------------------------------------------------------------
+	if (loc->if_idx)
+		sk->sk_bound_dev_if = loc->if_idx;
+//--------------------------------------------------------------------
+}
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/mptcp/mptcp_ipv6.c
+--------------------------------------------- 关于 sk_bound_dev_if 的代码
+int mptcp_init6_subsockets(struct sock *meta_sk, const struct mptcp_loc6 *loc,
+{
+	rem_in.sin6_addr = rem->addr;
+//ztg add
+//--------------------------------------------------------------------
+	if (loc->if_idx)
+		sk->sk_bound_dev_if = loc->if_idx;
+//--------------------------------------------------------------------
+}
+---------------------------------------------
+
+--------------------------------------------- mptcp 中 涉及 if_idx 的 4 个 文件，根据【mptcp_v0.92】修改
+gedit kernel/include/net/mptcp.h
+gedit kernel/net/mptcp/mptcp_ipv4.c
+gedit kernel/net/mptcp/mptcp_fullmesh.c
+gedit kernel/net/mptcp/mptcp_ipv6.c
+---------------------------------------------
+
+================================ 解决【只有 master flow，没有 slave flow】的问题 - end
+================================ 至此，可以多路径传输了，但是，传了 2.5MB，停止。
+================================ 下面解决该问题
+
+
+
+================================ 解决【可以多路径传输了，但是，传了 2.5MB，停止】的问题 - begin
+
+--------------------------------------------- 
+gedit kernel/net/mptcp/Kconfig
+---------------------------------------------
+choice
+	prompt "Default MPTCP Scheduler"
+	default DEFAULT
+#	default Round-Robin
+	help
+	  Select the Scheduler of your choice
+
+	config DEFAULT_SCHEDULER
+		bool "Default"
+		---help---
+		  This is the default scheduler, sending first on the subflow
+		  with the lowest RTT.
+
+	config DEFAULT_ROUNDROBIN
+		bool "Round-Robin" if MPTCP_ROUNDROBIN=y
+		---help---
+		  This is the round-rob scheduler, sending in a round-robin
+		  fashion..
+---------------------------------------------
+							// 编译 安装，测试，可以多路径传输了，输出结果如下：
+--------------------------------------------- look
+saddr
+daddr
+//	20490432	1.56.168.192	192.168.56.1
+//	54044864	3.56.168.192	192.168.56.3
+//	16849520	1.1.26.112	112.26.1.1
+//	16915056	1.2.26.112	112.26.2.1
+
+//	70822080	4.56.168.192	192.168.56.4
+//	33626736	2.1.26.112	112.26.1.2
+//	33692272	2.2.26.112	112.26.2.2
+---------------------------------------------
+				// nexthop(16849520) src(33692272) oif(5) ---> D I L O P R U M N J ... OKOK E
+				// nexthop(16849520) src(70822080) oif(6) ---> D I L O P R U M N J ... OKOK E
+				// nexthop(16915056) src(33626736) oif(4) ---> D I L O P R U M N J ... OKOK E
+				// nexthop(16915056) src(33692272) oif(5) ---> D I L O P R U M N J OKOK E
+				// nexthop(16915056) src(70822080) oif(6) ---> D I L O P R U M N J ... OKOK E
+				// nexthop(54044864) src(33626736) oif(4) ---> D I L O P R U M N J ... OKOK E
+				// nexthop(54044864) src(33692272) oif(5) ---> D I L O P R U M N J ... OKOK E
+				// nexthop(54044864) src(70822080) oif(6) ---> D I L O P R U M N J ... OKOK E ?
+---------------------------------------------
+
+================================ 解决【可以多路径传输了，但是，传了 2.5MB，停止】的问题 - end
+
+
+
+-----------------------------------------------------------
+如果使用 3 个网卡（bridged，bridged，hostonly），流量主要通过 hostonly
+
+如果使用 2 个网卡（bridged，bridged），流量均分
+传输 64MB，使用时间：大约 3 分钟（08:03 ～ 08:05）
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+to verify that Multipath TCP works through your network
+-----------------------------------------------------------
+
+curl http://www.multipath-tcp.org
+
+(NO) Nay, Nay, Nay, your have an old computer that does not speak MPTCP. Shame on you!
+(YES) Yay, you are MPTCP-capable! You can now rest in peace.
+-----------------------------------------------------------
+http://amiusingmptcp.de/
+-----------------------------------------------------------
+
+
+=========================== 至此，(VirtualBox) OKOKOKOKOKOK
+=========================== 至此，(VirtualBox) OKOKOKOKOKOK
+=========================== 至此，(VirtualBox) OKOKOKOKOKOK
+
+
+
+
+
+
+##################################################### no use - begin
+
+=========== (分析 tcp_v4_rcv) 这段分析，确定，nc时，会执行 tcp_v4_do_rcv - begin
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	sk = __inet_lookup_skb(&tcp_hashinfo, skb, th->source, th->dest);
+//ztg add
+	if (is_meta_sk(sk) && th->syn && !th->ack && (ip_hdr(skb)->saddr == 33626736 || ip_hdr(skb)->saddr == 33692272)) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，no, 安装后，启动时，内核就崩溃了。还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	sk = __inet_lookup_skb(&tcp_hashinfo, skb, th->source, th->dest);
+//ztg add
+	if (tcp_sk(sk)->request_mptcp && mptcp(tcp_sk(sk))) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，no, 安装后，启动时，内核就崩溃了。还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	struct sock *sk, *meta_sk = NULL;
+	int ret;
+	struct net *net = dev_net(skb->dev);
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736 || ip_hdr(skb)->saddr == 33692272) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	struct sock *sk, *meta_sk = NULL;
+	int ret;
+	struct net *net = dev_net(skb->dev);
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	if (!sk && th->syn && !th->ack) {
+//ztg alter
+//		int ret = mptcp_lookup_join(skb, NULL);
+//---------------------------------
+		int ret;
+//		if (ip_hdr(skb)->saddr == 33626736 || ip_hdr(skb)->saddr == 33692272) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里
+							// 经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+							// 往前走
+		ret = mptcp_lookup_join(skb, NULL);
+//---------------------------------
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	sk = __inet_lookup_skb(&tcp_hashinfo, skb, th->source, th->dest);
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+							// 往后走
+	nf_reset(skb);
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	sock_put(sk);
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+	return ret;					// 到此就返回了，因此，往前走
+no_tcp_socket:
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+			if (!tcp_prequeue(meta_sk, skb)) {
+//ztg add
+				if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+				ret = tcp_v4_do_rcv(sk, skb);
+			}
+}
+---------------------------------------------
+
+=========== (分析 tcp_v4_rcv) 这段分析，确定，nc时，会执行 tcp_v4_do_rcv - end
+
+
+
+=========== (分析 tcp_v4_do_rcv) 这段分析， - begin
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_do_rcv(struct sock *sk, struct sk_buff *skb)
+{
+	if (is_meta_sk(sk)) {
+//ztg add
+		*(int*)0x00000010 = 0;				// 判断是否执行到这里
+								// 经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+		return mptcp_v4_do_rcv(sk, skb);
+	}
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_do_rcv(struct sock *sk, struct sk_buff *skb)
+{
+	if (sk->sk_state == TCP_LISTEN) {
+		struct sock *nsk = tcp_v4_hnd_req(sk, skb);
+//ztg add
+		if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+							// 判断是否执行到这里
+							// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+}
+=========== (分析 tcp_v4_do_rcv) 这段分析， - end
+
+ 
+=========== (分析 tcp_v4_hnd_req) 这段分析， - begin
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+struct sock *tcp_v4_hnd_req(struct sock *sk, struct sk_buff *skb)
+{
+	struct request_sock *req = inet_csk_search_req(sk, &prev, th->source,
+						       iph->saddr, iph->daddr);
+
+	if (req) {
+//ztg add
+		if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+								// 判断是否执行到这里
+								// 经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+								// 往后走
+		return tcp_check_req(sk, skb, req, prev, false);
+	}
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+struct sock *tcp_v4_hnd_req(struct sock *sk, struct sk_buff *skb)
+{
+//ztg add
+	if (ip_hdr(skb)->saddr == 33626736) *(int*)0x00000010 = 0;
+								// 判断是否执行到这里
+								// 判断是否执行到这里，yes, (执行1次nc,服务器崩溃)，还原
+	nsk = inet_lookup_established(sock_net(sk), &tcp_hashinfo, iph->saddr,
+			th->source, iph->daddr, th->dest, inet_iif(skb));
+}
+---------------------------------------------
+
+=========== (分析 tcp_v4_hnd_req) 这段分析， - end
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_output.c
+---------------------------------------------
+static unsigned int tcp_syn_options(struct sock *sk, struct sk_buff *skb,
+				struct tcp_out_options *opts,
+				struct tcp_md5sig_key **md5)
+{
+	if (tp->request_mptcp || mptcp(tp)) {
+//ztg add
+		*(int*)0x00000010 = 0;			//判断是否执行到这里，经测试，yes (NS3 没有绿色数据流动)，还原
+		mptcp_syn_options(sk, opts, &remaining);
+	}
+}
+---------------------------------------------
+static unsigned int tcp_synack_options(struct sock *sk,
+{
+	if (ireq->saw_mpc) {
+//ztg add
+		*(int*)0x00000010 = 0;		//判断是否执行到这里，经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+		mptcp_synack_options(req, opts, &remaining);
+	}
+}
+---------------------------------------------
+static unsigned int tcp_synack_options(struct sock *sk,
+{
+        unsigned int remaining = MAX_TCP_OPTION_SPACE;
+//ztg add, the 2 lines
+	struct tcp_sock *tp = tcp_sk(sk);
+	if (tp->request_mptcp || mptcp(tp)) *(int*)0x00000010 = 0;	//判断是否执行到这里
+								//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_send_synack(struct sock *sk, struct dst_entry *dst,
+{
+	struct sk_buff * skb;
+//ztg add, the 2 lines
+	struct tcp_sock *tp = tcp_sk(sk);
+	if (tp->request_mptcp || mptcp(tp)) *(int*)0x00000010 = 0;	// 判断是否执行到这里
+								//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	if (!sk && th->syn && !th->ack) {
+		int ret = mptcp_lookup_join(skb, NULL);
+//ztg add
+//		if (mptcp(tcp_sk(sk))) *(int*)0x00000010 = 0;	// 判断是否执行到这里，安装后，启动时，内核就崩溃了。还原
+//		if (is_meta_sk(sk)) *(int*)0x00000010 = 0;	// 判断是否执行到这里，安装后，启动时，内核就崩溃了。还原
+		if (ip_hdr(skb)->saddr == 33626736 || ip_hdr(skb)->saddr == 33692272) *(int*)0x00000010 = 0;
+								// 判断是否执行到这里
+								//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_rcv(struct sk_buff *skb)
+{
+	if (!sk && th->syn && !th->ack) {
+		int ret = mptcp_lookup_join(skb, NULL);
+		if (ret < 0) {
+//ztg add
+			if (mptcp(tcp_sk(sk))) *(int*)0x00000010 = 0;	// 判断是否执行到这里
+								//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+			tcp_v4_send_reset(NULL, skb);
+			goto discard_it;
+		} else if (ret > 0) {
+			return 0;
+		}
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_ipv4.c
+---------------------------------------------
+int tcp_v4_conn_request(struct sock *sk, struct sk_buff *skb)
+{
+	tcp_v4_conn_request_orig(NULL, NULL);	// no effection
+//ztg add
+	if (mptcp(tcp_sk(sk))) *(int*)0x00000010 = 0;		// 判断是否执行到这里
+								//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+}
+---------------------------------------------
+
+
+---------------------------------------------
+gedit kernel/net/mptcp/mptcp_input.c
+---------------------------------------------
+int mptcp_lookup_join(struct sk_buff *skb, struct inet_timewait_sock *tw)
+{
+	if (sock_owned_by_user(meta_sk)) {
+//ztg add
+		*(int*)0x00000010 = 0;		// 判断是否执行到这里
+						//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------------------
+int tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb,
+{
+		if (th->syn) {
+//ztg add
+			if (mptcp(tp)) *(int*)0x00000010 = 0;	// 判断是否执行到这里
+						//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+}
+---------------------------------------------
+
+---------------------------------------------
+gedit kernel/net/ipv4/tcp_input.c
+---------------------------------------------
+int tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb,
+{
+	tp->rx_opt.saw_tstamp = 0;
+//ztg add
+	if (mptcp(tp)) *(int*)0x00000010 = 0;	// 判断是否执行到这里
+						//经测试，no (可以执行多次nc, or 服务器没有崩溃)，还原
+}
+---------------------------------------------
+##################################################### no use - end
+
+======================== MPTCP, only one handshake，下面解决该问题 - end
+
+
+---------------------------------------------
+cd kernel/; make mrproper; cd -
+rm out/target/product/android_x86_64/obj/kernel/ -rf
+m -j32 iso_img
+---------------------------------------------
+
