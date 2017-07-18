@@ -1,3 +1,43 @@
+
+# The improved algorithm of MHRP (improve multi-hop routing protocol), the algorithm written in C language
+#------------------------------------------------------------------------
+route_multipath (struct rib *rib, int num_nexthop, int no_if)
+{
+  int hop_use = 0;
+  for (nexthop = rib->nexthop; nexthop nexthop = nexthop->next)
+  {
+    ++hop_use;
+    if (num_nexthop == 1 || (num_nexthop == 2 && (no_if == 1 || no_if == 3)) || (num_nexthop == 3 && (no_if == 1 || no_if == 4)) || (num_nexthop == 4 && no_if == 1))
+    {
+      // use the first hop
+      if (hop_use < 1) continue;
+      if (hop_use > 1) break;
+    }
+    if ((num_nexthop == 2 && (no_if == 2 || no_if == 4)) || (num_nexthop == 3 && no_if == 2) || (num_nexthop == 4 && no_if == 2))
+    {
+      // use the second hop
+      if (hop_use < 2) continue;
+      if (hop_use > 2) break;
+    }
+    if ((num_nexthop == 3 && no_if == 3) || (num_nexthop == 4 && no_if == 3))
+    {
+      // use the third hop
+      if (hop_use < 3) continue;
+      if (hop_use > 3) break;
+    }
+    if (num_nexthop == 4 && no_if == 4)
+    {
+      // use the fourth hop
+      if (hop_use < 4) continue;
+      if (hop_use > 4) break;
+    }
+    insert_nexthop_to_routingtable (nexthop);
+  }
+}
+#------------------------------------------------------------------------
+
+
+
 # add one routing entry per destination
 #------------------------------------------------------
 num_nexthop:	The number of nexthop 
@@ -125,40 +165,3 @@ if ((num_nexthop == 3 && no_if == 3) || (num_nexthop == 4 && no_if == 3)) 使用
 if (num_nexthop == 4 && no_if == 4) 使用第四跳
 #------------------------------------------------------------------------
 
-
-# C语言写的算法：
-#------------------------------------------------------------------------
-route_multipath (struct rib *rib, int num_nexthop, int no_if)
-{
-  int hop_use = 0;
-  for (nexthop = rib->nexthop; nexthop nexthop = nexthop->next)
-  {
-    ++hop_use;
-    if (num_nexthop == 1 || (num_nexthop == 2 && (no_if == 1 || no_if == 3)) || (num_nexthop == 3 && (no_if == 1 || no_if == 4)) || (num_nexthop == 4 && no_if == 1))
-    {
-      // use the first hop
-      if (hop_use < 1) continue;
-      if (hop_use > 1) break;
-    }
-    if ((num_nexthop == 2 && (no_if == 2 || no_if == 4)) || (num_nexthop == 3 && no_if == 2) || (num_nexthop == 4 && no_if == 2))
-    {
-      // use the second hop
-      if (hop_use < 2) continue;
-      if (hop_use > 2) break;
-    }
-    if ((num_nexthop == 3 && no_if == 3) || (num_nexthop == 4 && no_if == 3))
-    {
-      // use the third hop
-      if (hop_use < 3) continue;
-      if (hop_use > 3) break;
-    }
-    if (num_nexthop == 4 && no_if == 4)
-    {
-      // use the fourth hop
-      if (hop_use < 4) continue;
-      if (hop_use > 4) break;
-    }
-    insert_nexthop_to_routingtable (nexthop);
-  }
-}
-#------------------------------------------------------------------------
