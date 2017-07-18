@@ -27,15 +27,15 @@ The above 3 sub-algorithms are summarized as follows.
 ----------------------------------------------------------------------------
 Algorithm 1: Improving Multi-hop Routing Protocol
 ----------------------------------------------------------------------------
-// num_nexthop:  The number of next hops.
-// no_if: Network interface number, corresponding to network interface (e.g., e1,e2,e3).
-if (num_nexthop == 1 || (num_nexthop == 2 && (no_if == 1 || no_if == 3)) || (num_nexthop == 3 && no_if == 1))
-    use the first hop
-end if
-if ((num_nexthop == 2 && no_if == 2) || (num_nexthop == 3 && no_if == 2))
-    use the second hop
-end if
-if (num_nexthop == 3 && no_if == 3)
-    use the third hop
-end if
+  1: // num_nexthop:  The number of next hops.
+  2: // no_if: Network interface number, corresponding to network interface (e.g., e1,e2,e3).
+  3: if (num_nexthop == 1 || (num_nexthop == 2 && (no_if == 1 || no_if == 3)) || (num_nexthop == 3 && no_if == 1))
+  4:     use the first hop
+  5: end if
+  6: if ((num_nexthop == 2 && no_if == 2) || (num_nexthop == 3 && no_if == 2))
+  7:     use the second hop
+  8: end if
+  9: if (num_nexthop == 3 && no_if == 3)
+10:     use the third hop
+11: end if
 ----------------------------------------------------------------------------
