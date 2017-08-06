@@ -1,4 +1,4 @@
-MIM testing screenshot
+MIM testing screenshot 
 
 route-n.png: shows the routing tables of M1 & M5
 
