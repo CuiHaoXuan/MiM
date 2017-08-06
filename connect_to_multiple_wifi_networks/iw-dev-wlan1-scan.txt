@@ -1,4 +1,4 @@
-kiwi:/ # iw dev wlan1 scan
+kiwi:/ # iw dev wlan1 scan 
                                                   
 BSS c8:3a:35:14:ab:18(on wlan1)
 	TSF: 1673803881 usec (0d, 00:27:53)
