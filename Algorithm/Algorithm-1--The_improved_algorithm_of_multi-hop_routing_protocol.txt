@@ -1,5 +1,5 @@
 The improved algorithm of multi-hop routing is detailed as follows.
-
+ 
 1. If the number of next hops from M1 to M5 is 3, then add 3 routing table entries, as represented in equation 4.
 The sub-algorithm 1 is as follows:
 num_nexthop:  The number of next hops.
