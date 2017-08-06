@@ -1,6 +1,6 @@
 
 # The improved algorithm of MHRP (improve multi-hop routing protocol), the algorithm written in C language
-#------------------------------------------------------------------------
+#------------------------------------------------------------------------ 
 route_multipath (struct rib *rib, int num_nexthop, int no_if)
 {
   int hop_use = 0;
