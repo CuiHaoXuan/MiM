@@ -1,4 +1,4 @@
 # MiM
 MiM: MultiPath TCP in MANETs
 
-Multipath Routing-based Scheduling for MPTCP in QoS-Oriented MANETs
+QoE-Driven MPTCP-Based Content Delivery Scheme in MANETs
