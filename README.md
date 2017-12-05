@@ -2,7 +2,6 @@
 
 Performance Enhancement of Multipath TCP in Mobile Ad Hoc Networks
 
-QoE-Driven MPTCP-Based Content Delivery Scheme in MANETs
 
 # Routing Algorithms used in MANETs
 This software builds on the Quagga Routing Software Suite which is licensed under the
