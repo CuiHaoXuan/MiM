@@ -1,0 +1,12 @@
+10:29:25.781497 IP 112.26.0.8.54050 > 112.26.0.1.46615: Flags [S], seq 3691055875, win 65535, options [mss 1460,sackOK,TS val 4294849452 ecr 0,nop,wscale 6,mptcp capable csum {0xf3f641e5c9e720a6}], length 0
+10:29:25.781775 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [S.], seq 406276099, ack 3691055876, win 65535, options [mss 1460,sackOK,TS val 95900 ecr 4294849452,nop,wscale 6,mptcp capable csum {0x6a6e46fcfc41c11a}], length 0
+10:29:25.973053 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [S.], seq 406276099, ack 3691055876, win 65535, options [mss 1460,sackOK,TS val 95900 ecr 4294849452,nop,wscale 6,mptcp capable csum {0x6a6e46fcfc41c11a}], length 0
+10:29:25.997482 IP 112.26.0.8.54050 > 112.26.0.1.46615: Flags [.], ack 1, win 1369, options [nop,nop,TS val 4294849933 ecr 95900,mptcp capable csum {0xf3f641e5c9e720a6,0x6a6e46fcfc41c11a},mptcp dss ack 3758104649], length 0
+10:29:25.997746 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [.], ack 1, win 1339, options [nop,nop,TS val 96116 ecr 4294849933,mptcp add-addr id 3 112.26.1.1,mptcp dss ack 2843715367], length 0
+10:29:25.997781 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [.], ack 1, win 1339, options [nop,nop,TS val 96116 ecr 4294849933,mptcp add-addr id 5 112.26.3.1,mptcp dss ack 2843715367], length 0
+10:29:25.997808 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [.], ack 1, win 1339, options [nop,nop,TS val 96116 ecr 4294849933,mptcp add-addr id 6 112.26.2.1,mptcp dss ack 2843715367], length 0
+10:30:16.938877 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [.], seq 516749:518177, ack 1, win 4017, options [nop,nop,TS val 146456 ecr 4294899605,mptcp dss ack 2843715367 seq 3760012269 subseq 516749 len 1428 csum 0x78da], length 1428
+10:30:17.056446 IP 112.26.0.8.54050 > 112.26.0.1.46615: Flags [.], ack 505325, win 24487, options [nop,nop,TS val 4294900373 ecr 145445,nop,nop,sack 2 {509609:512465}{506753:508181},mptcp dss ack 3759959433], length 0
+10:30:17.056799 IP 112.26.0.1.46615 > 112.26.0.8.54050: Flags [.], seq 508181:509609, ack 1, win 4017, options [nop,nop,TS val 147175 ecr 4294900373,mptcp dss ack 2843715367 seq 3759975141 subseq 508181 len 1428 csum 0xbc0c], length 1428
+10:30:17.132924 IP 112.26.0.8.54050 > 112.26.0.1.46615: Flags [.], ack 505325, win 24487, options [nop,nop,TS val 4294900481 ecr 145445,nop,nop,sack 2 {513893:515321}{509609:512465},mptcp dss ack 3759959433], length 0
+10:30:43.850155 IP 112.26.0.8.54050 > 112.26.0.1.46615: Flags [.], ack 768077, win 23957, options [nop,nop,TS val 4294927122 ecr 172715,mptcp dss ack 3761036145], length 0
