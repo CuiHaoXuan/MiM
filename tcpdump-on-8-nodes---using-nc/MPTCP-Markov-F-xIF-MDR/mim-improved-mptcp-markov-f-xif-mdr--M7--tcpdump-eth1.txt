@@ -1,0 +1,958 @@
+10:52:44.098617 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [S], seq 1087380066, win 65535, options [mss 1460,sackOK,TS val 4294873966 ecr 0,nop,wscale 6,mptcp join id 3 token 0xd15e4cde nonce 0x9c43d22d], length 0
+10:52:44.159030 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [S], seq 1087380066, win 65535, options [mss 1460,sackOK,TS val 4294873966 ecr 0,nop,wscale 6,mptcp join id 3 token 0xd15e4cde nonce 0x9c43d22d], length 0
+10:52:44.252005 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [S], seq 1087380066, win 65535, options [mss 1460,sackOK,TS val 4294873966 ecr 0,nop,wscale 6,mptcp join id 3 token 0xd15e4cde nonce 0x9c43d22d], length 0
+10:52:44.540233 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 1073520418, win 7027, options [nop,nop,TS val 4294874344 ecr 120893,mptcp join hmac 0x5931aad495df313330019ba94d2f4c13f575bb46], length 0
+10:52:44.616020 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 1, win 7027, options [nop,nop,TS val 4294874344 ecr 120893,mptcp join hmac 0x5931aad495df313330019ba94d2f4c13f575bb46], length 0
+10:52:44.620076 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 1, win 7027, options [nop,nop,TS val 4294874344 ecr 120893,mptcp join hmac 0x5931aad495df313330019ba94d2f4c13f575bb46], length 0
+10:52:44.827404 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 1429, win 7300, options [nop,nop,TS val 4294874719 ecr 121261,mptcp dss ack 3912793866], length 0
+10:53:14.637262 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 299881, win 23958, options [nop,nop,TS val 4294904529 ecr 150510,mptcp dss ack 3913980534], length 0
+10:53:14.715998 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 299881, win 23958, options [nop,nop,TS val 4294904529 ecr 150510,mptcp dss ack 3913980534], length 0
+10:53:14.749240 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 297025, win 24129, options [nop,nop,TS val 4294904286 ecr 150404,mptcp dss ack 3913959114], length 0
+10:53:14.777628 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 301309, win 24112, options [nop,nop,TS val 4294904662 ecr 150687,mptcp dss ack 3914007666], length 0
+10:53:14.789496 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 301309, win 24112, options [nop,nop,TS val 4294904662 ecr 150687,mptcp dss ack 3914007666], length 0
+10:53:14.902973 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 302737, win 24112, options [nop,nop,TS val 4294904794 ecr 150897,mptcp dss ack 3914007666], length 0
+10:53:14.920166 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 298453, win 23958, options [nop,nop,TS val 4294904407 ecr 150404,mptcp dss ack 3913980534], length 0
+10:53:14.950445 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 302737, win 24112, options [nop,nop,TS val 4294904794 ecr 150897,mptcp dss ack 3914007666], length 0
+10:53:15.017974 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 304165, win 24112, options [nop,nop,TS val 4294904881 ecr 151093,mptcp dss ack 3914007666], length 0
+10:53:15.019899 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 304165, win 24112, options [nop,nop,TS val 4294904881 ecr 151093,mptcp dss ack 3914007666], length 0
+10:53:15.036932 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 299881, win 23958, options [nop,nop,TS val 4294904529 ecr 150510,mptcp dss ack 3913980534], length 0
+10:53:15.120342 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 301309, win 24112, options [nop,nop,TS val 4294904662 ecr 150687,mptcp dss ack 3914007666], length 0
+10:53:15.198305 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 305593, win 24112, options [nop,nop,TS val 4294905090 ecr 151228,mptcp dss ack 3914007666], length 0
+10:53:15.200389 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 305593, win 24112, options [nop,nop,TS val 4294905090 ecr 151228,mptcp dss ack 3914007666], length 0
+10:53:15.243929 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 302737, win 24112, options [nop,nop,TS val 4294904794 ecr 150897,mptcp dss ack 3914007666], length 0
+10:53:15.389802 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 304165, win 24112, options [nop,nop,TS val 4294904881 ecr 151093,mptcp dss ack 3914007666], length 0
+10:53:15.415158 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 307021, win 24241, options [nop,nop,TS val 4294905304 ecr 151390,mptcp dss ack 3914040510], length 0
+10:53:15.419034 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 307021, win 24241, options [nop,nop,TS val 4294905304 ecr 151390,mptcp dss ack 3914040510], length 0
+10:53:15.531399 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 305593, win 24112, options [nop,nop,TS val 4294905090 ecr 151228,mptcp dss ack 3914007666], length 0
+10:53:15.673224 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 311305, win 24241, options [nop,nop,TS val 4294905565 ecr 151561,mptcp dss ack 3914040510], length 0
+10:53:15.675912 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 311305, win 24241, options [nop,nop,TS val 4294905565 ecr 151561,mptcp dss ack 3914040510], length 0
+10:53:15.717461 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 307021, win 24241, options [nop,nop,TS val 4294905304 ecr 151390,mptcp dss ack 3914040510], length 0
+10:53:15.865443 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 311305, win 24241, options [nop,nop,TS val 4294905565 ecr 151561,mptcp dss ack 3914040510], length 0
+10:53:16.067254 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 314161, win 23973, options [nop,nop,TS val 4294905890 ecr 151761,mptcp dss ack 3914063358], length 0
+10:53:16.069740 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 314161, win 23973, options [nop,nop,TS val 4294905890 ecr 151761,mptcp dss ack 3914063358], length 0
+10:53:16.096720 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 314161, win 23973, options [nop,nop,TS val 4294905890 ecr 151761,mptcp dss ack 3914063358], length 0
+10:53:16.171943 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 317017, win 24224, options [nop,nop,TS val 4294906062 ecr 152030,mptcp dss ack 3914063358], length 0
+10:53:16.182009 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 317017, win 24224, options [nop,nop,TS val 4294906062 ecr 152030,mptcp dss ack 3914063358], length 0
+10:53:16.194332 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 317017, win 24224, options [nop,nop,TS val 4294906062 ecr 152030,mptcp dss ack 3914063358], length 0
+10:53:16.563924 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 321301, win 24224, options [nop,nop,TS val 4294906456 ecr 152358,mptcp dss ack 3914063358], length 0
+10:53:16.576029 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 321301, win 24224, options [nop,nop,TS val 4294906456 ecr 152358,mptcp dss ack 3914063358], length 0
+10:53:16.582978 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 321301, win 24224, options [nop,nop,TS val 4294906456 ecr 152358,mptcp dss ack 3914063358], length 0
+10:53:16.953043 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 324157, win 24033, options [nop,nop,TS val 4294906844 ecr 152506,mptcp dss ack 3914091918], length 0
+10:53:16.967677 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 324157, win 24033, options [nop,nop,TS val 4294906844 ecr 152506,mptcp dss ack 3914091918], length 0
+10:53:16.975588 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 324157, win 24033, options [nop,nop,TS val 4294906844 ecr 152506,mptcp dss ack 3914091918], length 0
+10:53:17.115534 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 327013, win 24216, options [nop,nop,TS val 4294907007 ecr 152737,mptcp dss ack 3914106198], length 0
+10:53:17.118058 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 327013, win 24216, options [nop,nop,TS val 4294907007 ecr 152737,mptcp dss ack 3914106198], length 0
+10:53:17.124412 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 327013, win 24216, options [nop,nop,TS val 4294907007 ecr 152737,mptcp dss ack 3914106198], length 0
+10:53:17.523141 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 331297, win 24216, options [nop,nop,TS val 4294907416 ecr 152825,mptcp dss ack 3914106198], length 0
+10:53:17.530013 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 331297, win 24216, options [nop,nop,TS val 4294907416 ecr 152825,mptcp dss ack 3914106198], length 0
+10:53:17.533140 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 331297, win 24216, options [nop,nop,TS val 4294907416 ecr 152825,mptcp dss ack 3914106198], length 0
+10:53:17.918860 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 338437, win 24216, options [nop,nop,TS val 4294907810 ecr 153223,mptcp dss ack 3914106198], length 0
+10:53:17.926888 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 338437, win 24216, options [nop,nop,TS val 4294907810 ecr 153223,mptcp dss ack 3914106198], length 0
+10:53:17.930070 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 338437, win 24216, options [nop,nop,TS val 4294907810 ecr 153223,mptcp dss ack 3914106198], length 0
+10:53:18.323791 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 341293, win 24295, options [nop,nop,TS val 4294908216 ecr 153764,mptcp dss ack 3914167602], length 0
+10:53:18.325566 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 341293, win 24295, options [nop,nop,TS val 4294908216 ecr 153764,mptcp dss ack 3914167602], length 0
+10:53:18.332253 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 341293, win 24295, options [nop,nop,TS val 4294908216 ecr 153764,mptcp dss ack 3914167602], length 0
+10:53:18.514059 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 344149, win 24003, options [nop,nop,TS val 4294908403 ecr 154173,mptcp dss ack 3914211870], length 0
+10:53:18.517194 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 344149, win 24003, options [nop,nop,TS val 4294908403 ecr 154173,mptcp dss ack 3914211870], length 0
+10:53:18.524542 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 344149, win 24003, options [nop,nop,TS val 4294908403 ecr 154173,mptcp dss ack 3914211870], length 0
+10:53:18.741455 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908631 ecr 154173,nop,nop,sack 1 {347005:348433},mptcp dss ack 3914213298], length 0
+10:53:18.748165 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908631 ecr 154173,nop,nop,sack 1 {347005:348433},mptcp dss ack 3914213298], length 0
+10:53:18.755275 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908631 ecr 154173,nop,nop,sack 1 {347005:348433},mptcp dss ack 3914213298], length 0
+10:53:18.900128 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908768 ecr 154173,nop,nop,sack 1 {347005:349861},mptcp dss ack 3914213298], length 0
+10:53:18.909602 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908768 ecr 154173,nop,nop,sack 1 {347005:349861},mptcp dss ack 3914213298], length 0
+10:53:18.925724 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908768 ecr 154173,nop,nop,sack 1 {347005:349861},mptcp dss ack 3914213298], length 0
+10:53:19.042888 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908934 ecr 154173,nop,nop,sack 1 {347005:351289},mptcp dss ack 3914213298], length 0
+10:53:19.048602 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908934 ecr 154173,nop,nop,sack 1 {347005:351289},mptcp dss ack 3914213298], length 0
+10:53:19.121998 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294908934 ecr 154173,nop,nop,sack 1 {347005:351289},mptcp dss ack 3914213298], length 0
+10:53:19.169446 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909061 ecr 154173,nop,nop,sack 1 {347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.259334 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909061 ecr 154173,nop,nop,sack 1 {347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.305009 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909061 ecr 154173,nop,nop,sack 1 {347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.379709 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909267 ecr 154173,nop,nop,sack 2 {355573:357001}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.380968 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909267 ecr 154173,nop,nop,sack 2 {355573:357001}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.448484 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909267 ecr 154173,nop,nop,sack 2 {355573:357001}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.517060 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909406 ecr 154173,nop,nop,sack 2 {355573:358429}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.539211 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909406 ecr 154173,nop,nop,sack 2 {355573:358429}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.579190 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909406 ecr 154173,nop,nop,sack 2 {355573:358429}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.632883 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909522 ecr 154173,nop,nop,sack 2 {355573:359857}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.672666 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909522 ecr 154173,nop,nop,sack 2 {355573:359857}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.726191 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909522 ecr 154173,nop,nop,sack 2 {355573:359857}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.776435 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909668 ecr 154173,nop,nop,sack 2 {355573:361285}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.782769 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909668 ecr 154173,nop,nop,sack 2 {355573:361285}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.881143 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909773 ecr 154173,nop,nop,sack 2 {355573:362713}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.895388 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909668 ecr 154173,nop,nop,sack 2 {355573:361285}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.929670 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909773 ecr 154173,nop,nop,sack 2 {355573:362713}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.951425 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909773 ecr 154173,nop,nop,sack 2 {355573:362713}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:19.997067 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909889 ecr 154173,nop,nop,sack 2 {355573:364141}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:20.096380 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909889 ecr 154173,nop,nop,sack 2 {355573:364141}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:20.101679 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294909889 ecr 154173,nop,nop,sack 2 {355573:364141}{347005:352717},mptcp dss ack 3914213298], length 0
+10:53:20.169153 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294910060 ecr 154173,nop,nop,sack 2 {365569:366997}{355573:364141},mptcp dss ack 3914213298], length 0
+10:53:20.290727 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294910060 ecr 154173,nop,nop,sack 2 {365569:366997}{355573:364141},mptcp dss ack 3914213298], length 0
+10:53:20.330931 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294910223 ecr 154173,nop,nop,sack 2 {365569:368425}{355573:364141},mptcp dss ack 3914213298], length 0
+10:53:20.357993 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294910223 ecr 154173,nop,nop,sack 2 {365569:368425}{355573:364141},mptcp dss ack 3914213298], length 0
+10:53:20.386971 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294910060 ecr 154173,nop,nop,sack 2 {365569:366997}{355573:364141},mptcp dss ack 3914213298], length 0
+10:53:20.463606 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910352 ecr 155762,nop,nop,sack 2 {365569:368425}{355573:364141},mptcp dss ack 3914226150], length 0
+10:53:20.516661 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910352 ecr 155762,nop,nop,sack 2 {365569:368425}{355573:364141},mptcp dss ack 3914226150], length 0
+10:53:20.547792 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 345577, win 24467, options [nop,nop,TS val 4294910223 ecr 154173,nop,nop,sack 2 {365569:368425}{355573:364141},mptcp dss ack 3914213298], length 0
+10:53:20.581217 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910469 ecr 155762,nop,nop,sack 2 {365569:369853}{355573:364141},mptcp dss ack 3914226150], length 0
+10:53:20.657536 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910352 ecr 155762,nop,nop,sack 2 {365569:368425}{355573:364141},mptcp dss ack 3914226150], length 0
+10:53:20.694923 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910469 ecr 155762,nop,nop,sack 2 {365569:369853}{355573:364141},mptcp dss ack 3914226150], length 0
+10:53:20.715794 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910469 ecr 155762,nop,nop,sack 2 {365569:369853}{355573:364141},mptcp dss ack 3914226150], length 0
+10:53:20.762569 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910653 ecr 155762,nop,nop,sack 2 {354145:364141}{365569:369853},mptcp dss ack 3914226150], length 0
+10:53:20.773497 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910653 ecr 155762,nop,nop,sack 2 {354145:364141}{365569:369853},mptcp dss ack 3914226150], length 0
+10:53:20.859806 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910653 ecr 155762,nop,nop,sack 2 {354145:364141}{365569:369853},mptcp dss ack 3914226150], length 0
+10:53:20.911992 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910799 ecr 155762,nop,nop,sack 2 {365569:371281}{354145:364141},mptcp dss ack 3914226150], length 0
+10:53:20.935897 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910799 ecr 155762,nop,nop,sack 2 {365569:371281}{354145:364141},mptcp dss ack 3914226150], length 0
+10:53:21.037638 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910922 ecr 155762,nop,nop,sack 1 {354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.038667 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910922 ecr 155762,nop,nop,sack 1 {354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.072627 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910799 ecr 155762,nop,nop,sack 2 {365569:371281}{354145:364141},mptcp dss ack 3914226150], length 0
+10:53:21.131245 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294910922 ecr 155762,nop,nop,sack 1 {354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.181186 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911071 ecr 155762,nop,nop,sack 2 {372709:374137}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.189600 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911071 ecr 155762,nop,nop,sack 2 {372709:374137}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.192887 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911071 ecr 155762,nop,nop,sack 2 {372709:374137}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.306903 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911197 ecr 155762,nop,nop,sack 2 {372709:375565}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.312935 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911197 ecr 155762,nop,nop,sack 2 {372709:375565}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.329928 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911197 ecr 155762,nop,nop,sack 2 {372709:375565}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.471322 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911362 ecr 155762,nop,nop,sack 2 {372709:376993}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.473111 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911362 ecr 155762,nop,nop,sack 2 {372709:376993}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.478569 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 352717, win 24267, options [nop,nop,TS val 4294911362 ecr 155762,nop,nop,sack 2 {372709:376993}{354145:371281},mptcp dss ack 3914226150], length 0
+10:53:21.625210 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 371281, win 23379, options [nop,nop,TS val 4294911517 ecr 157500,nop,nop,sack 1 {372709:376993},mptcp dss ack 3914290410], length 0
+10:53:21.627831 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 371281, win 23379, options [nop,nop,TS val 4294911517 ecr 157500,nop,nop,sack 1 {372709:376993},mptcp dss ack 3914290410], length 0
+10:53:21.648431 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 371281, win 23379, options [nop,nop,TS val 4294911517 ecr 157500,nop,nop,sack 1 {372709:376993},mptcp dss ack 3914290410], length 0
+10:53:21.717663 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 371281, win 24257, options [nop,nop,TS val 4294911609 ecr 157500,nop,nop,sack 1 {372709:378421},mptcp dss ack 3914317542], length 0
+10:53:21.801662 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 371281, win 24257, options [nop,nop,TS val 4294911609 ecr 157500,nop,nop,sack 1 {372709:378421},mptcp dss ack 3914317542], length 0
+10:53:21.810695 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 371281, win 24257, options [nop,nop,TS val 4294911609 ecr 157500,nop,nop,sack 1 {372709:378421},mptcp dss ack 3914317542], length 0
+10:53:21.847807 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 378421, win 24148, options [nop,nop,TS val 4294911720 ecr 157772,mptcp dss ack 3914351814], length 0
+10:53:21.917323 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 378421, win 24148, options [nop,nop,TS val 4294911720 ecr 157772,mptcp dss ack 3914351814], length 0
+10:53:21.946951 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 379849, win 24525, options [nop,nop,TS val 4294911797 ecr 157879,mptcp dss ack 3914357526], length 0
+10:53:21.980437 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 378421, win 24148, options [nop,nop,TS val 4294911720 ecr 157772,mptcp dss ack 3914351814], length 0
+10:53:22.030203 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 381277, win 24522, options [nop,nop,TS val 4294911922 ecr 157983,mptcp dss ack 3914363238], length 0
+10:53:22.060122 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 379849, win 24525, options [nop,nop,TS val 4294911797 ecr 157879,mptcp dss ack 3914357526], length 0
+10:53:22.075131 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 379849, win 24525, options [nop,nop,TS val 4294911797 ecr 157879,mptcp dss ack 3914357526], length 0
+10:53:22.140249 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 382705, win 24522, options [nop,nop,TS val 4294912031 ecr 158153,mptcp dss ack 3914363238], length 0
+10:53:22.162357 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 381277, win 24522, options [nop,nop,TS val 4294911922 ecr 157983,mptcp dss ack 3914363238], length 0
+10:53:22.229250 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 384133, win 24476, options [nop,nop,TS val 4294912107 ecr 158289,mptcp dss ack 3914368950], length 0
+10:53:22.235524 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 381277, win 24522, options [nop,nop,TS val 4294911922 ecr 157983,mptcp dss ack 3914363238], length 0
+10:53:22.251038 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 382705, win 24522, options [nop,nop,TS val 4294912031 ecr 158153,mptcp dss ack 3914363238], length 0
+10:53:22.320634 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 385561, win 24473, options [nop,nop,TS val 4294912205 ecr 158485,mptcp dss ack 3914373234], length 0
+10:53:22.360418 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 384133, win 24476, options [nop,nop,TS val 4294912107 ecr 158289,mptcp dss ack 3914368950], length 0
+10:53:22.379562 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 382705, win 24522, options [nop,nop,TS val 4294912031 ecr 158153,mptcp dss ack 3914363238], length 0
+10:53:22.428746 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 386989, win 24458, options [nop,nop,TS val 4294912320 ecr 158621,mptcp dss ack 3914378946], length 0
+10:53:22.480126 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 385561, win 24473, options [nop,nop,TS val 4294912205 ecr 158485,mptcp dss ack 3914373234], length 0
+10:53:22.514819 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 384133, win 24476, options [nop,nop,TS val 4294912107 ecr 158289,mptcp dss ack 3914368950], length 0
+10:53:22.553641 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 386989, win 24458, options [nop,nop,TS val 4294912320 ecr 158621,mptcp dss ack 3914378946], length 0
+10:53:22.598006 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 388417, win 24507, options [nop,nop,TS val 4294912490 ecr 158716,mptcp dss ack 3914388942], length 0
+10:53:22.682526 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 388417, win 24507, options [nop,nop,TS val 4294912490 ecr 158716,mptcp dss ack 3914388942], length 0
+10:53:22.697671 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 385561, win 24473, options [nop,nop,TS val 4294912205 ecr 158485,mptcp dss ack 3914373234], length 0
+10:53:22.720912 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 389845, win 24507, options [nop,nop,TS val 4294912612 ecr 158876,mptcp dss ack 3914393226], length 0
+10:53:22.801099 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 389845, win 24507, options [nop,nop,TS val 4294912612 ecr 158876,mptcp dss ack 3914393226], length 0
+10:53:22.832586 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 391273, win 24507, options [nop,nop,TS val 4294912676 ecr 159020,mptcp dss ack 3914393226], length 0
+10:53:22.855976 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 386989, win 24458, options [nop,nop,TS val 4294912320 ecr 158621,mptcp dss ack 3914378946], length 0
+10:53:22.913049 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 392701, win 24504, options [nop,nop,TS val 4294912804 ecr 159155,mptcp dss ack 3914398938], length 0
+10:53:22.979072 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 391273, win 24507, options [nop,nop,TS val 4294912676 ecr 159020,mptcp dss ack 3914393226], length 0
+10:53:22.989764 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 388417, win 24507, options [nop,nop,TS val 4294912490 ecr 158716,mptcp dss ack 3914388942], length 0
+10:53:23.029789 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 394129, win 24504, options [nop,nop,TS val 4294912921 ecr 159338,mptcp dss ack 3914398938], length 0
+10:53:23.135622 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 392701, win 24504, options [nop,nop,TS val 4294912804 ecr 159155,mptcp dss ack 3914398938], length 0
+10:53:23.139370 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 389845, win 24507, options [nop,nop,TS val 4294912612 ecr 158876,mptcp dss ack 3914393226], length 0
+10:53:23.178329 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 395557, win 24504, options [nop,nop,TS val 4294913070 ecr 159496,mptcp dss ack 3914398938], length 0
+10:53:23.187072 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 394129, win 24504, options [nop,nop,TS val 4294912921 ecr 159338,mptcp dss ack 3914398938], length 0
+10:53:23.272334 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 391273, win 24507, options [nop,nop,TS val 4294912676 ecr 159020,mptcp dss ack 3914393226], length 0
+10:53:23.301455 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 395557, win 24504, options [nop,nop,TS val 4294913070 ecr 159496,mptcp dss ack 3914398938], length 0
+10:53:23.307001 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 396985, win 24504, options [nop,nop,TS val 4294913199 ecr 159630,mptcp dss ack 3914398938], length 0
+10:53:23.390862 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 396985, win 24504, options [nop,nop,TS val 4294913199 ecr 159630,mptcp dss ack 3914398938], length 0
+10:53:23.445035 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 392701, win 24504, options [nop,nop,TS val 4294912804 ecr 159155,mptcp dss ack 3914398938], length 0
+10:53:23.464676 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 398413, win 24373, options [nop,nop,TS val 4294913356 ecr 159770,mptcp dss ack 3914417502], length 0
+10:53:23.470148 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 398413, win 24373, options [nop,nop,TS val 4294913356 ecr 159770,mptcp dss ack 3914417502], length 0
+10:53:23.590364 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 394129, win 24504, options [nop,nop,TS val 4294912921 ecr 159338,mptcp dss ack 3914398938], length 0
+10:53:23.624825 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 399841, win 24442, options [nop,nop,TS val 4294913517 ecr 159770,mptcp dss ack 3914430354], length 0
+10:53:23.625639 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 399841, win 24442, options [nop,nop,TS val 4294913517 ecr 159770,mptcp dss ack 3914430354], length 0
+10:53:23.736072 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 395557, win 24504, options [nop,nop,TS val 4294913070 ecr 159496,mptcp dss ack 3914398938], length 0
+10:53:23.763422 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 401269, win 24455, options [nop,nop,TS val 4294913656 ecr 159913,mptcp dss ack 3914440350], length 0
+10:53:23.764836 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 401269, win 24455, options [nop,nop,TS val 4294913656 ecr 159913,mptcp dss ack 3914440350], length 0
+10:53:23.862384 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 404125, win 24433, options [nop,nop,TS val 4294913754 ecr 160085,mptcp dss ack 3914441778], length 0
+10:53:23.926627 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 404125, win 24433, options [nop,nop,TS val 4294913754 ecr 160085,mptcp dss ack 3914441778], length 0
+10:53:23.933790 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 396985, win 24504, options [nop,nop,TS val 4294913199 ecr 159630,mptcp dss ack 3914398938], length 0
+10:53:24.019514 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 405553, win 24393, options [nop,nop,TS val 4294913912 ecr 160377,mptcp dss ack 3914448918], length 0
+10:53:24.027464 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 405553, win 24393, options [nop,nop,TS val 4294913912 ecr 160377,mptcp dss ack 3914448918], length 0
+10:53:24.059107 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 398413, win 24373, options [nop,nop,TS val 4294913356 ecr 159770,mptcp dss ack 3914417502], length 0
+10:53:24.139800 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 408409, win 24422, options [nop,nop,TS val 4294914032 ecr 160574,mptcp dss ack 3914456058], length 0
+10:53:24.150357 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 408409, win 24422, options [nop,nop,TS val 4294914032 ecr 160574,mptcp dss ack 3914456058], length 0
+10:53:24.178538 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 399841, win 24442, options [nop,nop,TS val 4294913517 ecr 159770,mptcp dss ack 3914430354], length 0
+10:53:24.248773 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 401269, win 24455, options [nop,nop,TS val 4294913656 ecr 159913,mptcp dss ack 3914440350], length 0
+10:53:24.387438 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 411265, win 24473, options [nop,nop,TS val 4294914280 ecr 160819,mptcp dss ack 3914473194], length 0
+10:53:24.392940 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 411265, win 24473, options [nop,nop,TS val 4294914280 ecr 160819,mptcp dss ack 3914473194], length 0
+10:53:24.418261 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 404125, win 24433, options [nop,nop,TS val 4294913754 ecr 160085,mptcp dss ack 3914441778], length 0
+10:53:24.552031 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 405553, win 24393, options [nop,nop,TS val 4294913912 ecr 160377,mptcp dss ack 3914448918], length 0
+10:53:24.634119 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 408409, win 24422, options [nop,nop,TS val 4294914032 ecr 160574,mptcp dss ack 3914456058], length 0
+10:53:24.693546 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 411265, win 24473, options [nop,nop,TS val 4294914280 ecr 160819,mptcp dss ack 3914473194], length 0
+10:53:24.754823 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 414121, win 24388, options [nop,nop,TS val 4294914647 ecr 161059,mptcp dss ack 3914491758], length 0
+10:53:24.760201 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 414121, win 24388, options [nop,nop,TS val 4294914647 ecr 161059,mptcp dss ack 3914491758], length 0
+10:53:24.869053 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 414121, win 24388, options [nop,nop,TS val 4294914647 ecr 161059,mptcp dss ack 3914491758], length 0
+10:53:24.944957 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 416977, win 24397, options [nop,nop,TS val 4294914837 ecr 161193,mptcp dss ack 3914493186], length 0
+10:53:24.946821 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 416977, win 24397, options [nop,nop,TS val 4294914837 ecr 161193,mptcp dss ack 3914493186], length 0
+10:53:24.957211 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 416977, win 24397, options [nop,nop,TS val 4294914837 ecr 161193,mptcp dss ack 3914493186], length 0
+10:53:25.116196 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 419833, win 24442, options [nop,nop,TS val 4294915008 ecr 161275,mptcp dss ack 3914504610], length 0
+10:53:25.118383 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 419833, win 24442, options [nop,nop,TS val 4294915008 ecr 161275,mptcp dss ack 3914504610], length 0
+10:53:25.132497 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 419833, win 24442, options [nop,nop,TS val 4294915008 ecr 161275,mptcp dss ack 3914504610], length 0
+10:53:25.377797 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 422689, win 24378, options [nop,nop,TS val 4294915269 ecr 161334,mptcp dss ack 3914516034], length 0
+10:53:25.379541 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 422689, win 24378, options [nop,nop,TS val 4294915269 ecr 161334,mptcp dss ack 3914516034], length 0
+10:53:25.389244 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 422689, win 24378, options [nop,nop,TS val 4294915269 ecr 161334,mptcp dss ack 3914516034], length 0
+10:53:25.581487 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 425545, win 24393, options [nop,nop,TS val 4294915474 ecr 161509,mptcp dss ack 3914528886], length 0
+10:53:25.587073 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 425545, win 24393, options [nop,nop,TS val 4294915474 ecr 161509,mptcp dss ack 3914528886], length 0
+10:53:25.598769 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 425545, win 24393, options [nop,nop,TS val 4294915474 ecr 161509,mptcp dss ack 3914528886], length 0
+10:53:25.776506 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 428401, win 24349, options [nop,nop,TS val 4294915668 ecr 161598,mptcp dss ack 3914531742], length 0
+10:53:25.778041 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 428401, win 24349, options [nop,nop,TS val 4294915668 ecr 161598,mptcp dss ack 3914531742], length 0
+10:53:25.788448 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 428401, win 24349, options [nop,nop,TS val 4294915668 ecr 161598,mptcp dss ack 3914531742], length 0
+10:53:25.952473 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 431257, win 24360, options [nop,nop,TS val 4294915844 ecr 161770,mptcp dss ack 3914547450], length 0
+10:53:25.957368 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 431257, win 24360, options [nop,nop,TS val 4294915844 ecr 161770,mptcp dss ack 3914547450], length 0
+10:53:25.959737 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 431257, win 24360, options [nop,nop,TS val 4294915844 ecr 161770,mptcp dss ack 3914547450], length 0
+10:53:26.174239 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 434113, win 24418, options [nop,nop,TS val 4294916065 ecr 162024,mptcp dss ack 3914563158], length 0
+10:53:26.178297 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 434113, win 24418, options [nop,nop,TS val 4294916065 ecr 162024,mptcp dss ack 3914563158], length 0
+10:53:26.191384 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 434113, win 24418, options [nop,nop,TS val 4294916065 ecr 162024,mptcp dss ack 3914563158], length 0
+10:53:26.502963 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 438397, win 24418, options [nop,nop,TS val 4294916395 ecr 162024,mptcp dss ack 3914563158], length 0
+10:53:26.509026 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 438397, win 24418, options [nop,nop,TS val 4294916395 ecr 162024,mptcp dss ack 3914563158], length 0
+10:53:26.514952 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 438397, win 24418, options [nop,nop,TS val 4294916395 ecr 162024,mptcp dss ack 3914563158], length 0
+10:53:26.862232 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 441253, win 24418, options [nop,nop,TS val 4294916752 ecr 162429,mptcp dss ack 3914563158], length 0
+10:53:26.863633 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 441253, win 24418, options [nop,nop,TS val 4294916752 ecr 162429,mptcp dss ack 3914563158], length 0
+10:53:26.868223 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 441253, win 24418, options [nop,nop,TS val 4294916752 ecr 162429,mptcp dss ack 3914563158], length 0
+10:53:27.229221 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 446965, win 24418, options [nop,nop,TS val 4294917121 ecr 162429,mptcp dss ack 3914563158], length 0
+10:53:27.230823 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 446965, win 24418, options [nop,nop,TS val 4294917121 ecr 162429,mptcp dss ack 3914563158], length 0
+10:53:27.238995 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 446965, win 24418, options [nop,nop,TS val 4294917121 ecr 162429,mptcp dss ack 3914563158], length 0
+10:53:27.523231 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 449821, win 24418, options [nop,nop,TS val 4294917416 ecr 162823,mptcp dss ack 3914563158], length 0
+10:53:27.524448 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 449821, win 24418, options [nop,nop,TS val 4294917416 ecr 162823,mptcp dss ack 3914563158], length 0
+10:53:27.530678 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 449821, win 24418, options [nop,nop,TS val 4294917416 ecr 162823,mptcp dss ack 3914563158], length 0
+10:53:27.793459 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 454105, win 23995, options [nop,nop,TS val 4294917679 ecr 163155,mptcp dss ack 3914590290], length 0
+10:53:27.829759 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 454105, win 23995, options [nop,nop,TS val 4294917679 ecr 163155,mptcp dss ack 3914590290], length 0
+10:53:27.835503 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 454105, win 23995, options [nop,nop,TS val 4294917679 ecr 163155,mptcp dss ack 3914590290], length 0
+10:53:28.172922 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 458389, win 24078, options [nop,nop,TS val 4294918056 ecr 163155,mptcp dss ack 3914590290], length 0
+10:53:28.175705 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 458389, win 24078, options [nop,nop,TS val 4294918056 ecr 163155,mptcp dss ack 3914590290], length 0
+10:53:28.198316 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 458389, win 24078, options [nop,nop,TS val 4294918056 ecr 163155,mptcp dss ack 3914590290], length 0
+10:53:28.456741 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 464101, win 24078, options [nop,nop,TS val 4294918349 ecr 163508,mptcp dss ack 3914590290], length 0
+10:53:28.460564 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 464101, win 24078, options [nop,nop,TS val 4294918349 ecr 163508,mptcp dss ack 3914590290], length 0
+10:53:28.462788 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 464101, win 24078, options [nop,nop,TS val 4294918349 ecr 163508,mptcp dss ack 3914590290], length 0
+10:53:28.789694 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24078, options [nop,nop,TS val 4294918681 ecr 163880,mptcp dss ack 3914590290], length 0
+10:53:28.793759 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24078, options [nop,nop,TS val 4294918681 ecr 163880,mptcp dss ack 3914590290], length 0
+10:53:28.796560 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24078, options [nop,nop,TS val 4294918681 ecr 163880,mptcp dss ack 3914590290], length 0
+10:53:28.977094 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24078, options [nop,nop,TS val 4294918868 ecr 163880,nop,nop,sack 1 {469813:471241},mptcp dss ack 3914590290], length 0
+10:53:28.987790 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24078, options [nop,nop,TS val 4294918868 ecr 163880,nop,nop,sack 1 {469813:471241},mptcp dss ack 3914590290], length 0
+10:53:28.990693 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24078, options [nop,nop,TS val 4294918868 ecr 163880,nop,nop,sack 1 {469813:471241},mptcp dss ack 3914590290], length 0
+10:53:29.143277 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919035 ecr 163880,nop,nop,sack 1 {469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.149126 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919035 ecr 163880,nop,nop,sack 1 {469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.161761 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919035 ecr 163880,nop,nop,sack 1 {469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.273907 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919164 ecr 163880,nop,nop,sack 2 {474097:475525}{469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.299700 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919164 ecr 163880,nop,nop,sack 2 {474097:475525}{469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.305850 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919164 ecr 163880,nop,nop,sack 2 {474097:475525}{469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.390406 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919281 ecr 163880,nop,nop,sack 2 {474097:476953}{469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.428510 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919281 ecr 163880,nop,nop,sack 2 {474097:476953}{469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.446183 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 23862, options [nop,nop,TS val 4294919281 ecr 163880,nop,nop,sack 2 {474097:476953}{469813:472669},mptcp dss ack 3914645982], length 0
+10:53:29.538781 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919431 ecr 163880,nop,nop,sack 2 {479809:481237}{474097:476953},mptcp dss ack 3914707386], length 0
+10:53:29.539864 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919431 ecr 163880,nop,nop,sack 2 {479809:481237}{474097:476953},mptcp dss ack 3914707386], length 0
+10:53:29.571858 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919431 ecr 163880,nop,nop,sack 2 {479809:481237}{474097:476953},mptcp dss ack 3914707386], length 0
+10:53:29.711358 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919604 ecr 163880,nop,nop,sack 2 {479809:482665}{474097:476953},mptcp dss ack 3914707386], length 0
+10:53:29.715272 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919604 ecr 163880,nop,nop,sack 2 {479809:482665}{474097:476953},mptcp dss ack 3914707386], length 0
+10:53:29.733073 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919604 ecr 163880,nop,nop,sack 2 {479809:482665}{474097:476953},mptcp dss ack 3914707386], length 0
+10:53:29.858349 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919750 ecr 163880,nop,nop,sack 2 {484093:485521}{479809:482665},mptcp dss ack 3914707386], length 0
+10:53:29.865716 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919750 ecr 163880,nop,nop,sack 2 {484093:485521}{479809:482665},mptcp dss ack 3914707386], length 0
+10:53:29.874433 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919750 ecr 163880,nop,nop,sack 2 {484093:485521}{479809:482665},mptcp dss ack 3914707386], length 0
+10:53:30.012824 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919905 ecr 163880,nop,nop,sack 2 {486949:488377}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.031287 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919905 ecr 163880,nop,nop,sack 2 {486949:488377}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.042419 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294919905 ecr 163880,nop,nop,sack 2 {486949:488377}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.123164 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920016 ecr 163880,nop,nop,sack 2 {486949:489805}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.146031 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920016 ecr 163880,nop,nop,sack 2 {486949:489805}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.246762 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920138 ecr 163880,nop,nop,sack 2 {486949:491233}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.248538 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920138 ecr 163880,nop,nop,sack 2 {486949:491233}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.257558 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920016 ecr 163880,nop,nop,sack 2 {486949:489805}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.375131 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920265 ecr 163880,nop,nop,sack 2 {492661:494089}{486949:491233},mptcp dss ack 3914707386], length 0
+10:53:30.383253 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920265 ecr 163880,nop,nop,sack 2 {492661:494089}{486949:491233},mptcp dss ack 3914707386], length 0
+10:53:30.441143 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920138 ecr 163880,nop,nop,sack 2 {486949:491233}{484093:485521},mptcp dss ack 3914707386], length 0
+10:53:30.518410 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920265 ecr 163880,nop,nop,sack 2 {492661:494089}{486949:491233},mptcp dss ack 3914707386], length 0
+10:53:30.573527 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920466 ecr 163880,nop,nop,sack 2 {495517:496945}{492661:494089},mptcp dss ack 3914707386], length 0
+10:53:30.577292 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920466 ecr 163880,nop,nop,sack 2 {495517:496945}{492661:494089},mptcp dss ack 3914707386], length 0
+10:53:30.659908 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920466 ecr 163880,nop,nop,sack 2 {495517:496945}{492661:494089},mptcp dss ack 3914707386], length 0
+10:53:30.678023 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920569 ecr 163880,nop,nop,sack 2 {495517:498373}{492661:494089},mptcp dss ack 3914707386], length 0
+10:53:30.688191 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920569 ecr 163880,nop,nop,sack 2 {495517:498373}{492661:494089},mptcp dss ack 3914707386], length 0
+10:53:30.785181 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920661 ecr 163880,nop,nop,sack 2 {472669:474097}{495517:498373},mptcp dss ack 3914707386], length 0
+10:53:30.817307 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920569 ecr 163880,nop,nop,sack 2 {495517:498373}{492661:494089},mptcp dss ack 3914707386], length 0
+10:53:30.825241 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920661 ecr 163880,nop,nop,sack 2 {472669:474097}{495517:498373},mptcp dss ack 3914707386], length 0
+10:53:30.918249 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920661 ecr 163880,nop,nop,sack 2 {472669:474097}{495517:498373},mptcp dss ack 3914707386], length 0
+10:53:30.925380 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920817 ecr 163880,nop,nop,sack 2 {478381:479809}{472669:474097},mptcp dss ack 3914707386], length 0
+10:53:30.930117 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920817 ecr 163880,nop,nop,sack 2 {478381:479809}{472669:474097},mptcp dss ack 3914707386], length 0
+10:53:31.059121 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920951 ecr 163880,nop,nop,sack 2 {482665:484093}{478381:479809},mptcp dss ack 3914707386], length 0
+10:53:31.077899 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920951 ecr 163880,nop,nop,sack 2 {482665:484093}{478381:479809},mptcp dss ack 3914707386], length 0
+10:53:31.092463 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920817 ecr 163880,nop,nop,sack 2 {478381:479809}{472669:474097},mptcp dss ack 3914707386], length 0
+10:53:31.165348 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921054 ecr 163880,nop,nop,sack 2 {485521:486949}{482665:484093},mptcp dss ack 3914707386], length 0
+10:53:31.177403 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294920951 ecr 163880,nop,nop,sack 2 {482665:484093}{478381:479809},mptcp dss ack 3914707386], length 0
+10:53:31.245447 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921054 ecr 163880,nop,nop,sack 2 {485521:486949}{482665:484093},mptcp dss ack 3914707386], length 0
+10:53:31.305720 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921054 ecr 163880,nop,nop,sack 2 {485521:486949}{482665:484093},mptcp dss ack 3914707386], length 0
+10:53:31.317540 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921209 ecr 163880,nop,nop,sack 2 {498373:499801}{485521:486949},mptcp dss ack 3914707386], length 0
+10:53:31.320867 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921209 ecr 163880,nop,nop,sack 2 {498373:499801}{485521:486949},mptcp dss ack 3914707386], length 0
+10:53:31.461260 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921209 ecr 163880,nop,nop,sack 2 {498373:499801}{485521:486949},mptcp dss ack 3914707386], length 0
+10:53:31.474047 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921332 ecr 163880,nop,nop,sack 2 {491233:492661}{498373:499801},mptcp dss ack 3914707386], length 0
+10:53:31.479102 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921332 ecr 163880,nop,nop,sack 2 {491233:492661}{498373:499801},mptcp dss ack 3914707386], length 0
+10:53:31.568905 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921332 ecr 163880,nop,nop,sack 2 {491233:492661}{498373:499801},mptcp dss ack 3914707386], length 0
+10:53:31.608435 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921497 ecr 163880,nop,nop,sack 2 {494089:495517}{491233:492661},mptcp dss ack 3914707386], length 0
+10:53:31.641045 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921497 ecr 163880,nop,nop,sack 2 {494089:495517}{491233:492661},mptcp dss ack 3914707386], length 0
+10:53:31.715489 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921607 ecr 163880,nop,nop,sack 2 {498373:501229}{494089:495517},mptcp dss ack 3914707386], length 0
+10:53:31.733093 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921497 ecr 163880,nop,nop,sack 2 {494089:495517}{491233:492661},mptcp dss ack 3914707386], length 0
+10:53:31.761379 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921607 ecr 163880,nop,nop,sack 2 {498373:501229}{494089:495517},mptcp dss ack 3914707386], length 0
+10:53:31.820822 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 468385, win 24275, options [nop,nop,TS val 4294921607 ecr 163880,nop,nop,sack 2 {498373:501229}{494089:495517},mptcp dss ack 3914707386], length 0
+10:53:31.896410 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 476953, win 23918, options [nop,nop,TS val 4294921786 ecr 167559,nop,nop,sack 2 {498373:501229}{494089:495517},mptcp dss ack 3914730234], length 0
+10:53:32.018102 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 501229, win 23598, options [nop,nop,TS val 4294921910 ecr 167733,mptcp dss ack 3914787354], length 0
+10:53:32.019546 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 476953, win 23918, options [nop,nop,TS val 4294921786 ecr 167559,nop,nop,sack 2 {498373:501229}{494089:495517},mptcp dss ack 3914730234], length 0
+10:53:32.028455 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 476953, win 23918, options [nop,nop,TS val 4294921786 ecr 167559,nop,nop,sack 2 {498373:501229}{494089:495517},mptcp dss ack 3914730234], length 0
+10:53:32.132287 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 501229, win 23598, options [nop,nop,TS val 4294921910 ecr 167733,mptcp dss ack 3914787354], length 0
+10:53:32.143519 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 501229, win 23598, options [nop,nop,TS val 4294921910 ecr 167733,mptcp dss ack 3914787354], length 0
+10:53:32.157259 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 502657, win 24154, options [nop,nop,TS val 4294922050 ecr 167893,mptcp dss ack 3914787354], length 0
+10:53:32.236428 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 502657, win 24154, options [nop,nop,TS val 4294922050 ecr 167893,mptcp dss ack 3914787354], length 0
+10:53:32.255890 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 502657, win 24154, options [nop,nop,TS val 4294922050 ecr 167893,mptcp dss ack 3914787354], length 0
+10:53:32.309193 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 504085, win 24154, options [nop,nop,TS val 4294922199 ecr 167990,mptcp dss ack 3914787354], length 0
+10:53:32.332869 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 504085, win 24154, options [nop,nop,TS val 4294922199 ecr 167990,mptcp dss ack 3914787354], length 0
+10:53:32.431345 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 505513, win 24154, options [nop,nop,TS val 4294922323 ecr 168141,mptcp dss ack 3914787354], length 0
+10:53:32.456492 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 504085, win 24154, options [nop,nop,TS val 4294922199 ecr 167990,mptcp dss ack 3914787354], length 0
+10:53:32.488886 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 505513, win 24154, options [nop,nop,TS val 4294922323 ecr 168141,mptcp dss ack 3914787354], length 0
+10:53:32.594900 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922485 ecr 168261,mptcp dss ack 3914833050], length 0
+10:53:32.597000 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922485 ecr 168261,mptcp dss ack 3914833050], length 0
+10:53:32.613847 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 505513, win 24154, options [nop,nop,TS val 4294922323 ecr 168141,mptcp dss ack 3914787354], length 0
+10:53:32.685442 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922485 ecr 168261,mptcp dss ack 3914833050], length 0
+10:53:32.731305 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922623 ecr 168261,nop,nop,sack 1 {508369:509797},mptcp dss ack 3914833050], length 0
+10:53:32.760863 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922623 ecr 168261,nop,nop,sack 1 {508369:509797},mptcp dss ack 3914833050], length 0
+10:53:32.825862 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922623 ecr 168261,nop,nop,sack 1 {508369:509797},mptcp dss ack 3914833050], length 0
+10:53:32.855215 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922747 ecr 168261,nop,nop,sack 1 {508369:511225},mptcp dss ack 3914833050], length 0
+10:53:32.901184 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922747 ecr 168261,nop,nop,sack 1 {508369:511225},mptcp dss ack 3914833050], length 0
+10:53:32.986821 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922747 ecr 168261,nop,nop,sack 1 {508369:511225},mptcp dss ack 3914833050], length 0
+10:53:33.021111 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922913 ecr 168261,nop,nop,sack 1 {508369:512653},mptcp dss ack 3914833050], length 0
+10:53:33.026781 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922913 ecr 168261,nop,nop,sack 1 {508369:512653},mptcp dss ack 3914833050], length 0
+10:53:33.114124 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24151, options [nop,nop,TS val 4294922913 ecr 168261,nop,nop,sack 1 {508369:512653},mptcp dss ack 3914833050], length 0
+10:53:33.135285 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923025 ecr 168261,nop,nop,sack 1 {508369:514081},mptcp dss ack 3914834478], length 0
+10:53:33.141915 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923025 ecr 168261,nop,nop,sack 1 {508369:514081},mptcp dss ack 3914834478], length 0
+10:53:33.218097 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923025 ecr 168261,nop,nop,sack 1 {508369:514081},mptcp dss ack 3914834478], length 0
+10:53:33.288970 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923180 ecr 168261,nop,nop,sack 1 {508369:515509},mptcp dss ack 3914834478], length 0
+10:53:33.294539 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923180 ecr 168261,nop,nop,sack 1 {508369:515509},mptcp dss ack 3914834478], length 0
+10:53:33.406163 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923290 ecr 168261,nop,nop,sack 1 {508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.410268 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923180 ecr 168261,nop,nop,sack 1 {508369:515509},mptcp dss ack 3914834478], length 0
+10:53:33.436495 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923290 ecr 168261,nop,nop,sack 1 {508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.524524 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923290 ecr 168261,nop,nop,sack 1 {508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.538323 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923429 ecr 168261,nop,nop,sack 2 {518365:519793}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.553455 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923429 ecr 168261,nop,nop,sack 2 {518365:519793}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.660970 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923429 ecr 168261,nop,nop,sack 2 {518365:519793}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.771636 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923663 ecr 168261,nop,nop,sack 2 {518365:521221}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.773201 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923663 ecr 168261,nop,nop,sack 2 {518365:521221}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.825231 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923663 ecr 168261,nop,nop,sack 2 {518365:521221}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.886854 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923735 ecr 168261,nop,nop,sack 2 {518365:522649}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.922978 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923735 ecr 168261,nop,nop,sack 2 {518365:522649}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:33.974990 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923735 ecr 168261,nop,nop,sack 2 {518365:522649}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.018995 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923891 ecr 168261,nop,nop,sack 2 {518365:524077}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.022724 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923891 ecr 168261,nop,nop,sack 2 {518365:524077}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.097221 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294923891 ecr 168261,nop,nop,sack 2 {518365:524077}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.192778 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924085 ecr 168261,nop,nop,sack 2 {518365:525505}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.195395 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924085 ecr 168261,nop,nop,sack 2 {518365:525505}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.291226 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924085 ecr 168261,nop,nop,sack 2 {518365:525505}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.310885 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924177 ecr 168261,nop,nop,sack 2 {518365:526933}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.346027 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924177 ecr 168261,nop,nop,sack 2 {518365:526933}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.421443 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924314 ecr 168261,nop,nop,sack 2 {518365:528361}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.430756 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924314 ecr 168261,nop,nop,sack 2 {518365:528361}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.445811 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924177 ecr 168261,nop,nop,sack 2 {518365:526933}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.507815 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 516937, win 23919, options [nop,nop,TS val 4294924400 ecr 169755,nop,nop,sack 1 {518365:528361},mptcp dss ack 3914858754], length 0
+10:53:34.548079 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 516937, win 23919, options [nop,nop,TS val 4294924400 ecr 169755,nop,nop,sack 1 {518365:528361},mptcp dss ack 3914858754], length 0
+10:53:34.581310 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 506941, win 24129, options [nop,nop,TS val 4294924314 ecr 168261,nop,nop,sack 2 {518365:528361}{508369:516937},mptcp dss ack 3914834478], length 0
+10:53:34.634104 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 516937, win 23919, options [nop,nop,TS val 4294924526 ecr 169755,nop,nop,sack 2 {529789:531217}{518365:528361},mptcp dss ack 3914858754], length 0
+10:53:34.661025 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 516937, win 23919, options [nop,nop,TS val 4294924526 ecr 169755,nop,nop,sack 2 {529789:531217}{518365:528361},mptcp dss ack 3914858754], length 0
+10:53:34.684272 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 516937, win 23919, options [nop,nop,TS val 4294924400 ecr 169755,nop,nop,sack 1 {518365:528361},mptcp dss ack 3914858754], length 0
+10:53:34.779935 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924666 ecr 170301,nop,nop,sack 1 {529789:531217},mptcp dss ack 3914858754], length 0
+10:53:34.783888 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924666 ecr 170301,nop,nop,sack 1 {529789:531217},mptcp dss ack 3914858754], length 0
+10:53:34.826373 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 516937, win 23919, options [nop,nop,TS val 4294924526 ecr 169755,nop,nop,sack 2 {529789:531217}{518365:528361},mptcp dss ack 3914858754], length 0
+10:53:34.860857 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924752 ecr 170301,nop,nop,sack 2 {532645:534073}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:34.865374 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924752 ecr 170301,nop,nop,sack 2 {532645:534073}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:34.954675 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924666 ecr 170301,nop,nop,sack 1 {529789:531217},mptcp dss ack 3914858754], length 0
+10:53:34.977991 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924869 ecr 170301,nop,nop,sack 2 {532645:535501}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:34.979737 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924869 ecr 170301,nop,nop,sack 2 {532645:535501}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:35.045825 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924752 ecr 170301,nop,nop,sack 2 {532645:534073}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:35.121449 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294925014 ecr 170301,nop,nop,sack 2 {532645:536929}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:35.126387 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294925014 ecr 170301,nop,nop,sack 2 {532645:536929}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:35.183413 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294924869 ecr 170301,nop,nop,sack 2 {532645:535501}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:35.262555 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 24226, options [nop,nop,TS val 4294925152 ecr 170301,nop,nop,sack 2 {532645:538357}{529789:531217},mptcp dss ack 3914955858], length 0
+10:53:35.264663 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 24226, options [nop,nop,TS val 4294925152 ecr 170301,nop,nop,sack 2 {532645:538357}{529789:531217},mptcp dss ack 3914955858], length 0
+10:53:35.378278 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24172, options [nop,nop,TS val 4294925270 ecr 171325,nop,nop,sack 1 {532645:538357},mptcp dss ack 3914972994], length 0
+10:53:35.380277 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24172, options [nop,nop,TS val 4294925270 ecr 171325,nop,nop,sack 1 {532645:538357},mptcp dss ack 3914972994], length 0
+10:53:35.405723 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 23919, options [nop,nop,TS val 4294925014 ecr 170301,nop,nop,sack 2 {532645:536929}{529789:531217},mptcp dss ack 3914858754], length 0
+10:53:35.544579 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24342, options [nop,nop,TS val 4294925436 ecr 171325,nop,nop,sack 1 {532645:539785},mptcp dss ack 3914972994], length 0
+10:53:35.550468 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24342, options [nop,nop,TS val 4294925436 ecr 171325,nop,nop,sack 1 {532645:539785},mptcp dss ack 3914972994], length 0
+10:53:35.563039 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 528361, win 24226, options [nop,nop,TS val 4294925152 ecr 170301,nop,nop,sack 2 {532645:538357}{529789:531217},mptcp dss ack 3914955858], length 0
+10:53:35.662808 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24342, options [nop,nop,TS val 4294925552 ecr 171325,nop,nop,sack 1 {532645:541213},mptcp dss ack 3914972994], length 0
+10:53:35.699349 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24342, options [nop,nop,TS val 4294925552 ecr 171325,nop,nop,sack 1 {532645:541213},mptcp dss ack 3914972994], length 0
+10:53:35.771565 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24172, options [nop,nop,TS val 4294925270 ecr 171325,nop,nop,sack 1 {532645:538357},mptcp dss ack 3914972994], length 0
+10:53:35.809833 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 541213, win 24298, options [nop,nop,TS val 4294925700 ecr 171595,mptcp dss ack 3914975850], length 0
+10:53:35.850594 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 541213, win 24298, options [nop,nop,TS val 4294925700 ecr 171595,mptcp dss ack 3914975850], length 0
+10:53:35.940339 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24342, options [nop,nop,TS val 4294925436 ecr 171325,nop,nop,sack 1 {532645:539785},mptcp dss ack 3914972994], length 0
+10:53:35.965241 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 542641, win 24298, options [nop,nop,TS val 4294925857 ecr 171595,mptcp dss ack 3914975850], length 0
+10:53:35.992452 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 542641, win 24298, options [nop,nop,TS val 4294925857 ecr 171595,mptcp dss ack 3914975850], length 0
+10:53:36.065842 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 531217, win 24342, options [nop,nop,TS val 4294925552 ecr 171325,nop,nop,sack 1 {532645:541213},mptcp dss ack 3914972994], length 0
+10:53:36.102936 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 544069, win 24476, options [nop,nop,TS val 4294925991 ecr 171697,mptcp dss ack 3915021546], length 0
+10:53:36.157380 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 541213, win 24298, options [nop,nop,TS val 4294925700 ecr 171595,mptcp dss ack 3914975850], length 0
+10:53:36.162193 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 544069, win 24476, options [nop,nop,TS val 4294925991 ecr 171697,mptcp dss ack 3915021546], length 0
+10:53:36.225722 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 545497, win 24460, options [nop,nop,TS val 4294926117 ecr 171827,mptcp dss ack 3915027258], length 0
+10:53:36.291774 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 542641, win 24298, options [nop,nop,TS val 4294925857 ecr 171595,mptcp dss ack 3914975850], length 0
+10:53:36.302408 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 545497, win 24460, options [nop,nop,TS val 4294926117 ecr 171827,mptcp dss ack 3915027258], length 0
+10:53:36.374099 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 546925, win 24460, options [nop,nop,TS val 4294926257 ecr 172066,mptcp dss ack 3915027258], length 0
+10:53:36.413624 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 546925, win 24460, options [nop,nop,TS val 4294926257 ecr 172066,mptcp dss ack 3915027258], length 0
+10:53:36.458328 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 544069, win 24476, options [nop,nop,TS val 4294925991 ecr 171697,mptcp dss ack 3915021546], length 0
+10:53:36.510469 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 545497, win 24460, options [nop,nop,TS val 4294926117 ecr 171827,mptcp dss ack 3915027258], length 0
+10:53:36.572967 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 548353, win 24460, options [nop,nop,TS val 4294926464 ecr 172232,mptcp dss ack 3915027258], length 0
+10:53:36.590894 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 548353, win 24460, options [nop,nop,TS val 4294926464 ecr 172232,mptcp dss ack 3915027258], length 0
+10:53:36.650184 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 546925, win 24460, options [nop,nop,TS val 4294926257 ecr 172066,mptcp dss ack 3915027258], length 0
+10:53:36.664037 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 549781, win 24460, options [nop,nop,TS val 4294926555 ecr 172412,mptcp dss ack 3915027258], length 0
+10:53:36.677983 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 549781, win 24460, options [nop,nop,TS val 4294926555 ecr 172412,mptcp dss ack 3915027258], length 0
+10:53:36.788860 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 551209, win 24460, options [nop,nop,TS val 4294926671 ecr 172629,mptcp dss ack 3915027258], length 0
+10:53:36.802636 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 551209, win 24460, options [nop,nop,TS val 4294926671 ecr 172629,mptcp dss ack 3915027258], length 0
+10:53:36.819162 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 548353, win 24460, options [nop,nop,TS val 4294926464 ecr 172232,mptcp dss ack 3915027258], length 0
+10:53:36.888301 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 552637, win 24460, options [nop,nop,TS val 4294926780 ecr 172798,mptcp dss ack 3915027258], length 0
+10:53:36.934905 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 549781, win 24460, options [nop,nop,TS val 4294926555 ecr 172412,mptcp dss ack 3915027258], length 0
+10:53:36.942190 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 552637, win 24460, options [nop,nop,TS val 4294926780 ecr 172798,mptcp dss ack 3915027258], length 0
+10:53:37.021589 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 554065, win 24460, options [nop,nop,TS val 4294926914 ecr 172932,mptcp dss ack 3915027258], length 0
+10:53:37.031289 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 554065, win 24460, options [nop,nop,TS val 4294926914 ecr 172932,mptcp dss ack 3915027258], length 0
+10:53:37.057880 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 551209, win 24460, options [nop,nop,TS val 4294926671 ecr 172629,mptcp dss ack 3915027258], length 0
+10:53:37.161853 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 552637, win 24460, options [nop,nop,TS val 4294926780 ecr 172798,mptcp dss ack 3915027258], length 0
+10:53:37.171877 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 555493, win 24460, options [nop,nop,TS val 4294927063 ecr 173291,mptcp dss ack 3915027258], length 0
+10:53:37.173893 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 555493, win 24460, options [nop,nop,TS val 4294927063 ecr 173291,mptcp dss ack 3915027258], length 0
+10:53:37.303106 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 556921, win 24460, options [nop,nop,TS val 4294927195 ecr 173460,mptcp dss ack 3915027258], length 0
+10:53:37.304965 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 556921, win 24460, options [nop,nop,TS val 4294927195 ecr 173460,mptcp dss ack 3915027258], length 0
+10:53:37.333966 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 554065, win 24460, options [nop,nop,TS val 4294926914 ecr 172932,mptcp dss ack 3915027258], length 0
+10:53:37.424622 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 558349, win 24460, options [nop,nop,TS val 4294927316 ecr 173576,mptcp dss ack 3915027258], length 0
+10:53:37.432490 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 558349, win 24460, options [nop,nop,TS val 4294927316 ecr 173576,mptcp dss ack 3915027258], length 0
+10:53:37.444712 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 555493, win 24460, options [nop,nop,TS val 4294927063 ecr 173291,mptcp dss ack 3915027258], length 0
+10:53:37.526982 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 556921, win 24460, options [nop,nop,TS val 4294927195 ecr 173460,mptcp dss ack 3915027258], length 0
+10:53:37.569251 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 559777, win 24489, options [nop,nop,TS val 4294927461 ecr 173698,mptcp dss ack 3915091518], length 0
+10:53:37.570768 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 559777, win 24489, options [nop,nop,TS val 4294927461 ecr 173698,mptcp dss ack 3915091518], length 0
+10:53:37.690640 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 561205, win 24522, options [nop,nop,TS val 4294927582 ecr 173802,mptcp dss ack 3915098658], length 0
+10:53:37.694893 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 561205, win 24522, options [nop,nop,TS val 4294927582 ecr 173802,mptcp dss ack 3915098658], length 0
+10:53:37.719631 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 558349, win 24460, options [nop,nop,TS val 4294927316 ecr 173576,mptcp dss ack 3915027258], length 0
+10:53:37.838490 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 559777, win 24489, options [nop,nop,TS val 4294927461 ecr 173698,mptcp dss ack 3915091518], length 0
+10:53:37.842996 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 562633, win 24500, options [nop,nop,TS val 4294927735 ecr 173974,mptcp dss ack 3915100086], length 0
+10:53:37.847496 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 562633, win 24500, options [nop,nop,TS val 4294927735 ecr 173974,mptcp dss ack 3915100086], length 0
+10:53:37.978878 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 561205, win 24522, options [nop,nop,TS val 4294927582 ecr 173802,mptcp dss ack 3915098658], length 0
+10:53:38.012320 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 564061, win 24489, options [nop,nop,TS val 4294927904 ecr 174081,mptcp dss ack 3915110082], length 0
+10:53:38.014142 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 564061, win 24489, options [nop,nop,TS val 4294927904 ecr 174081,mptcp dss ack 3915110082], length 0
+10:53:38.108178 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 562633, win 24500, options [nop,nop,TS val 4294927735 ecr 173974,mptcp dss ack 3915100086], length 0
+10:53:38.234762 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 566917, win 24409, options [nop,nop,TS val 4294928127 ecr 174081,mptcp dss ack 3915120078], length 0
+10:53:38.236995 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 566917, win 24409, options [nop,nop,TS val 4294928127 ecr 174081,mptcp dss ack 3915120078], length 0
+10:53:38.256527 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 564061, win 24489, options [nop,nop,TS val 4294927904 ecr 174081,mptcp dss ack 3915110082], length 0
+10:53:38.448294 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 569773, win 24489, options [nop,nop,TS val 4294928334 ecr 174360,mptcp dss ack 3915128646], length 0
+10:53:38.450678 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 566917, win 24409, options [nop,nop,TS val 4294928127 ecr 174081,mptcp dss ack 3915120078], length 0
+10:53:38.453941 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 569773, win 24489, options [nop,nop,TS val 4294928334 ecr 174360,mptcp dss ack 3915128646], length 0
+10:53:38.622896 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 569773, win 24489, options [nop,nop,TS val 4294928334 ecr 174360,mptcp dss ack 3915128646], length 0
+10:53:38.779417 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 572629, win 24467, options [nop,nop,TS val 4294928672 ecr 174619,mptcp dss ack 3915130074], length 0
+10:53:38.796889 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 572629, win 24467, options [nop,nop,TS val 4294928672 ecr 174619,mptcp dss ack 3915130074], length 0
+10:53:38.804873 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 572629, win 24467, options [nop,nop,TS val 4294928672 ecr 174619,mptcp dss ack 3915130074], length 0
+10:53:39.202236 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 579769, win 24467, options [nop,nop,TS val 4294929094 ecr 174882,mptcp dss ack 3915130074], length 0
+10:53:39.204124 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 579769, win 24467, options [nop,nop,TS val 4294929094 ecr 174882,mptcp dss ack 3915130074], length 0
+10:53:39.207071 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 579769, win 24467, options [nop,nop,TS val 4294929094 ecr 174882,mptcp dss ack 3915130074], length 0
+10:53:39.530457 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 584053, win 24467, options [nop,nop,TS val 4294929422 ecr 175445,mptcp dss ack 3915130074], length 0
+10:53:39.531537 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 584053, win 24467, options [nop,nop,TS val 4294929422 ecr 175445,mptcp dss ack 3915130074], length 0
+10:53:39.545156 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 584053, win 24467, options [nop,nop,TS val 4294929422 ecr 175445,mptcp dss ack 3915130074], length 0
+10:53:39.875969 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 586909, win 24467, options [nop,nop,TS val 4294929768 ecr 175847,mptcp dss ack 3915130074], length 0
+10:53:39.899101 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 586909, win 24467, options [nop,nop,TS val 4294929768 ecr 175847,mptcp dss ack 3915130074], length 0
+10:53:39.908052 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 586909, win 24467, options [nop,nop,TS val 4294929768 ecr 175847,mptcp dss ack 3915130074], length 0
+10:53:40.002823 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 589765, win 23848, options [nop,nop,TS val 4294929893 ecr 175847,mptcp dss ack 3915200046], length 0
+10:53:40.014318 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 589765, win 23848, options [nop,nop,TS val 4294929893 ecr 175847,mptcp dss ack 3915200046], length 0
+10:53:40.023784 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 589765, win 23848, options [nop,nop,TS val 4294929893 ecr 175847,mptcp dss ack 3915200046], length 0
+10:53:40.274969 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 592621, win 24358, options [nop,nop,TS val 4294930166 ecr 176185,mptcp dss ack 3915202902], length 0
+10:53:40.285721 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 592621, win 24358, options [nop,nop,TS val 4294930166 ecr 176185,mptcp dss ack 3915202902], length 0
+10:53:40.289862 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 592621, win 24358, options [nop,nop,TS val 4294930166 ecr 176185,mptcp dss ack 3915202902], length 0
+10:53:40.699830 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 596905, win 24393, options [nop,nop,TS val 4294930592 ecr 176185,mptcp dss ack 3915212898], length 0
+10:53:40.701290 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 596905, win 24393, options [nop,nop,TS val 4294930592 ecr 176185,mptcp dss ack 3915212898], length 0
+10:53:40.703548 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 596905, win 24393, options [nop,nop,TS val 4294930592 ecr 176185,mptcp dss ack 3915212898], length 0
+10:53:41.095347 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 602617, win 24393, options [nop,nop,TS val 4294930985 ecr 176664,mptcp dss ack 3915212898], length 0
+10:53:41.106351 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 602617, win 24393, options [nop,nop,TS val 4294930985 ecr 176664,mptcp dss ack 3915212898], length 0
+10:53:41.109331 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 602617, win 24393, options [nop,nop,TS val 4294930985 ecr 176664,mptcp dss ack 3915212898], length 0
+10:53:41.537342 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 606901, win 24393, options [nop,nop,TS val 4294931429 ecr 176930,mptcp dss ack 3915212898], length 0
+10:53:41.541345 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 606901, win 24393, options [nop,nop,TS val 4294931429 ecr 176930,mptcp dss ack 3915212898], length 0
+10:53:41.555243 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 606901, win 24393, options [nop,nop,TS val 4294931429 ecr 176930,mptcp dss ack 3915212898], length 0
+10:53:41.924751 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 612613, win 24393, options [nop,nop,TS val 4294931816 ecr 177343,mptcp dss ack 3915212898], length 0
+10:53:41.926281 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 612613, win 24393, options [nop,nop,TS val 4294931816 ecr 177343,mptcp dss ack 3915212898], length 0
+10:53:41.929113 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 612613, win 24393, options [nop,nop,TS val 4294931816 ecr 177343,mptcp dss ack 3915212898], length 0
+10:53:42.331465 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 616897, win 24393, options [nop,nop,TS val 4294932224 ecr 177750,mptcp dss ack 3915212898], length 0
+10:53:42.332949 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 616897, win 24393, options [nop,nop,TS val 4294932224 ecr 177750,mptcp dss ack 3915212898], length 0
+10:53:42.348616 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 616897, win 24393, options [nop,nop,TS val 4294932224 ecr 177750,mptcp dss ack 3915212898], length 0
+10:53:42.493879 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 619753, win 24126, options [nop,nop,TS val 4294932386 ecr 177750,mptcp dss ack 3915230034], length 0
+10:53:42.498894 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 619753, win 24126, options [nop,nop,TS val 4294932386 ecr 177750,mptcp dss ack 3915230034], length 0
+10:53:42.504700 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 619753, win 24126, options [nop,nop,TS val 4294932386 ecr 177750,mptcp dss ack 3915230034], length 0
+10:53:42.813769 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 622609, win 23602, options [nop,nop,TS val 4294932705 ecr 178194,mptcp dss ack 3915264306], length 0
+10:53:42.816794 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 622609, win 23602, options [nop,nop,TS val 4294932705 ecr 178194,mptcp dss ack 3915264306], length 0
+10:53:42.834488 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 622609, win 23602, options [nop,nop,TS val 4294932705 ecr 178194,mptcp dss ack 3915264306], length 0
+10:53:42.998691 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23744, options [nop,nop,TS val 4294932890 ecr 178194,mptcp dss ack 3915264306], length 0
+10:53:43.000300 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23744, options [nop,nop,TS val 4294932890 ecr 178194,mptcp dss ack 3915264306], length 0
+10:53:43.010373 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23744, options [nop,nop,TS val 4294932890 ecr 178194,mptcp dss ack 3915264306], length 0
+10:53:43.170549 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23808, options [nop,nop,TS val 4294933061 ecr 178194,nop,nop,sack 1 {626893:628321},mptcp dss ack 3915280014], length 0
+10:53:43.179013 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23808, options [nop,nop,TS val 4294933061 ecr 178194,nop,nop,sack 1 {626893:628321},mptcp dss ack 3915280014], length 0
+10:53:43.183495 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23808, options [nop,nop,TS val 4294933061 ecr 178194,nop,nop,sack 1 {626893:628321},mptcp dss ack 3915280014], length 0
+10:53:43.283053 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23808, options [nop,nop,TS val 4294933175 ecr 178194,nop,nop,sack 1 {626893:629749},mptcp dss ack 3915280014], length 0
+10:53:43.316540 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23808, options [nop,nop,TS val 4294933175 ecr 178194,nop,nop,sack 1 {626893:629749},mptcp dss ack 3915280014], length 0
+10:53:43.319127 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 23808, options [nop,nop,TS val 4294933175 ecr 178194,nop,nop,sack 1 {626893:629749},mptcp dss ack 3915280014], length 0
+10:53:43.443673 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24172, options [nop,nop,TS val 4294933335 ecr 178194,nop,nop,sack 2 {631177:632605}{626893:629749},mptcp dss ack 3915327138], length 0
+10:53:43.447249 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24172, options [nop,nop,TS val 4294933335 ecr 178194,nop,nop,sack 2 {631177:632605}{626893:629749},mptcp dss ack 3915327138], length 0
+10:53:43.493700 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24172, options [nop,nop,TS val 4294933335 ecr 178194,nop,nop,sack 2 {631177:632605}{626893:629749},mptcp dss ack 3915327138], length 0
+10:53:43.575811 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24172, options [nop,nop,TS val 4294933466 ecr 178194,nop,nop,sack 2 {634033:635461}{631177:632605},mptcp dss ack 3915327138], length 0
+10:53:43.622538 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24172, options [nop,nop,TS val 4294933466 ecr 178194,nop,nop,sack 2 {634033:635461}{631177:632605},mptcp dss ack 3915327138], length 0
+10:53:43.657414 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24172, options [nop,nop,TS val 4294933466 ecr 178194,nop,nop,sack 2 {634033:635461}{631177:632605},mptcp dss ack 3915327138], length 0
+10:53:43.720377 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24223, options [nop,nop,TS val 4294933580 ecr 178194,nop,nop,sack 2 {634033:636889}{631177:632605},mptcp dss ack 3915337134], length 0
+10:53:43.746674 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24223, options [nop,nop,TS val 4294933580 ecr 178194,nop,nop,sack 2 {634033:636889}{631177:632605},mptcp dss ack 3915337134], length 0
+10:53:43.783669 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24223, options [nop,nop,TS val 4294933580 ecr 178194,nop,nop,sack 2 {634033:636889}{631177:632605},mptcp dss ack 3915337134], length 0
+10:53:43.802226 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24223, options [nop,nop,TS val 4294933683 ecr 178194,nop,nop,sack 2 {634033:638317}{631177:632605},mptcp dss ack 3915337134], length 0
+10:53:43.884915 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24223, options [nop,nop,TS val 4294933683 ecr 178194,nop,nop,sack 2 {634033:638317}{631177:632605},mptcp dss ack 3915337134], length 0
+10:53:43.936649 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24223, options [nop,nop,TS val 4294933683 ecr 178194,nop,nop,sack 2 {634033:638317}{631177:632605},mptcp dss ack 3915337134], length 0
+10:53:43.953322 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294933845 ecr 178194,nop,nop,sack 2 {639745:641173}{634033:638317},mptcp dss ack 3915354270], length 0
+10:53:43.974667 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294933845 ecr 178194,nop,nop,sack 2 {639745:641173}{634033:638317},mptcp dss ack 3915354270], length 0
+10:53:44.025636 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294933845 ecr 178194,nop,nop,sack 2 {639745:641173}{634033:638317},mptcp dss ack 3915354270], length 0
+10:53:44.075150 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294933952 ecr 178194,nop,nop,sack 2 {642601:644029}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.080178 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294933952 ecr 178194,nop,nop,sack 2 {642601:644029}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.142289 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294933952 ecr 178194,nop,nop,sack 2 {642601:644029}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.195568 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934087 ecr 178194,nop,nop,sack 2 {642601:645457}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.197540 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934087 ecr 178194,nop,nop,sack 2 {642601:645457}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.286924 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934087 ecr 178194,nop,nop,sack 2 {642601:645457}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.314018 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934205 ecr 178194,nop,nop,sack 2 {642601:646885}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.323880 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934205 ecr 178194,nop,nop,sack 2 {642601:646885}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.365625 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934205 ecr 178194,nop,nop,sack 2 {642601:646885}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.445702 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934338 ecr 178194,nop,nop,sack 2 {642601:648313}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.451974 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934338 ecr 178194,nop,nop,sack 2 {642601:648313}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.455170 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934338 ecr 178194,nop,nop,sack 2 {642601:648313}{639745:641173},mptcp dss ack 3915354270], length 0
+10:53:44.548352 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934440 ecr 178194,nop,nop,sack 2 {649741:651169}{642601:648313},mptcp dss ack 3915354270], length 0
+10:53:44.551067 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934440 ecr 178194,nop,nop,sack 2 {649741:651169}{642601:648313},mptcp dss ack 3915354270], length 0
+10:53:44.605388 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934440 ecr 178194,nop,nop,sack 2 {649741:651169}{642601:648313},mptcp dss ack 3915354270], length 0
+10:53:44.704508 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934597 ecr 178194,nop,nop,sack 2 {629749:631177}{649741:651169},mptcp dss ack 3915354270], length 0
+10:53:44.713605 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934597 ecr 178194,nop,nop,sack 2 {629749:631177}{649741:651169},mptcp dss ack 3915354270], length 0
+10:53:44.738514 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934597 ecr 178194,nop,nop,sack 2 {629749:631177}{649741:651169},mptcp dss ack 3915354270], length 0
+10:53:44.849895 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934741 ecr 178194,nop,nop,sack 2 {632605:634033}{629749:631177},mptcp dss ack 3915354270], length 0
+10:53:44.854146 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934741 ecr 178194,nop,nop,sack 2 {632605:634033}{629749:631177},mptcp dss ack 3915354270], length 0
+10:53:44.873288 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934741 ecr 178194,nop,nop,sack 2 {632605:634033}{629749:631177},mptcp dss ack 3915354270], length 0
+10:53:44.975176 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934866 ecr 178194,nop,nop,sack 2 {638317:639745}{632605:634033},mptcp dss ack 3915354270], length 0
+10:53:44.987518 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934866 ecr 178194,nop,nop,sack 2 {638317:639745}{632605:634033},mptcp dss ack 3915354270], length 0
+10:53:44.996046 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294934866 ecr 178194,nop,nop,sack 2 {638317:639745}{632605:634033},mptcp dss ack 3915354270], length 0
+10:53:45.108263 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935000 ecr 178194,nop,nop,sack 2 {641173:642601}{638317:639745},mptcp dss ack 3915354270], length 0
+10:53:45.110400 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935000 ecr 178194,nop,nop,sack 2 {641173:642601}{638317:639745},mptcp dss ack 3915354270], length 0
+10:53:45.186663 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935000 ecr 178194,nop,nop,sack 2 {641173:642601}{638317:639745},mptcp dss ack 3915354270], length 0
+10:53:45.199561 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935092 ecr 178194,nop,nop,sack 2 {651169:652597}{641173:642601},mptcp dss ack 3915354270], length 0
+10:53:45.272634 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935092 ecr 178194,nop,nop,sack 2 {651169:652597}{641173:642601},mptcp dss ack 3915354270], length 0
+10:53:45.316479 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935209 ecr 178194,nop,nop,sack 2 {651169:654025}{641173:642601},mptcp dss ack 3915354270], length 0
+10:53:45.332677 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935092 ecr 178194,nop,nop,sack 2 {651169:652597}{641173:642601},mptcp dss ack 3915354270], length 0
+10:53:45.393902 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935209 ecr 178194,nop,nop,sack 2 {651169:654025}{641173:642601},mptcp dss ack 3915354270], length 0
+10:53:45.434842 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935209 ecr 178194,nop,nop,sack 2 {651169:654025}{641173:642601},mptcp dss ack 3915354270], length 0
+10:53:45.465274 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935356 ecr 178194,nop,nop,sack 2 {648313:649741}{651169:654025},mptcp dss ack 3915354270], length 0
+10:53:45.502476 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935356 ecr 178194,nop,nop,sack 2 {648313:649741}{651169:654025},mptcp dss ack 3915354270], length 0
+10:53:45.570363 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 625465, win 24226, options [nop,nop,TS val 4294935356 ecr 178194,nop,nop,sack 2 {648313:649741}{651169:654025},mptcp dss ack 3915354270], length 0
+10:53:45.586321 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 654025, win 23226, options [nop,nop,TS val 4294935478 ecr 181379,mptcp dss ack 3915469938], length 0
+10:53:45.644972 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 654025, win 23226, options [nop,nop,TS val 4294935478 ecr 181379,mptcp dss ack 3915469938], length 0
+10:53:45.672935 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 654025, win 23226, options [nop,nop,TS val 4294935478 ecr 181379,mptcp dss ack 3915469938], length 0
+10:53:45.770593 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 655453, win 24473, options [nop,nop,TS val 4294935661 ecr 181534,mptcp dss ack 3915481362], length 0
+10:53:45.779293 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 655453, win 24473, options [nop,nop,TS val 4294935661 ecr 181534,mptcp dss ack 3915481362], length 0
+10:53:45.831257 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 655453, win 24473, options [nop,nop,TS val 4294935661 ecr 181534,mptcp dss ack 3915481362], length 0
+10:53:45.943772 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 656881, win 24424, options [nop,nop,TS val 4294935834 ecr 181673,mptcp dss ack 3915487074], length 0
+10:53:45.946145 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 656881, win 24424, options [nop,nop,TS val 4294935834 ecr 181673,mptcp dss ack 3915487074], length 0
+10:53:45.971162 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 656881, win 24424, options [nop,nop,TS val 4294935834 ecr 181673,mptcp dss ack 3915487074], length 0
+10:53:46.095919 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 658309, win 24489, options [nop,nop,TS val 4294935987 ecr 181861,mptcp dss ack 3915488502], length 0
+10:53:46.106957 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 658309, win 24489, options [nop,nop,TS val 4294935987 ecr 181861,mptcp dss ack 3915488502], length 0
+10:53:46.134786 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 658309, win 24489, options [nop,nop,TS val 4294935987 ecr 181861,mptcp dss ack 3915488502], length 0
+10:53:46.211831 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 659737, win 24455, options [nop,nop,TS val 4294936104 ecr 181979,mptcp dss ack 3915498498], length 0
+10:53:46.224822 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 659737, win 24455, options [nop,nop,TS val 4294936104 ecr 181979,mptcp dss ack 3915498498], length 0
+10:53:46.236025 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 659737, win 24455, options [nop,nop,TS val 4294936104 ecr 181979,mptcp dss ack 3915498498], length 0
+10:53:46.368830 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 661165, win 24489, options [nop,nop,TS val 4294936260 ecr 182086,mptcp dss ack 3915499926], length 0
+10:53:46.370098 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 661165, win 24489, options [nop,nop,TS val 4294936260 ecr 182086,mptcp dss ack 3915499926], length 0
+10:53:46.374893 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 661165, win 24489, options [nop,nop,TS val 4294936260 ecr 182086,mptcp dss ack 3915499926], length 0
+10:53:46.516634 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 662593, win 24467, options [nop,nop,TS val 4294936408 ecr 182232,mptcp dss ack 3915501354], length 0
+10:53:46.532613 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 662593, win 24467, options [nop,nop,TS val 4294936408 ecr 182232,mptcp dss ack 3915501354], length 0
+10:53:46.537044 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 662593, win 24467, options [nop,nop,TS val 4294936408 ecr 182232,mptcp dss ack 3915501354], length 0
+10:53:46.656694 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 664021, win 24471, options [nop,nop,TS val 4294936548 ecr 182313,mptcp dss ack 3915511350], length 0
+10:53:46.664677 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 664021, win 24471, options [nop,nop,TS val 4294936548 ecr 182313,mptcp dss ack 3915511350], length 0
+10:53:46.669251 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 664021, win 24471, options [nop,nop,TS val 4294936548 ecr 182313,mptcp dss ack 3915511350], length 0
+10:53:46.759321 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936651 ecr 182313,mptcp dss ack 3915512778], length 0
+10:53:46.799229 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936651 ecr 182313,mptcp dss ack 3915512778], length 0
+10:53:46.802106 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936651 ecr 182313,mptcp dss ack 3915512778], length 0
+10:53:46.893778 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936785 ecr 182313,nop,nop,sack 1 {666877:668305},mptcp dss ack 3915512778], length 0
+10:53:46.930948 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936785 ecr 182313,nop,nop,sack 1 {666877:668305},mptcp dss ack 3915512778], length 0
+10:53:46.938704 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936785 ecr 182313,nop,nop,sack 1 {666877:668305},mptcp dss ack 3915512778], length 0
+10:53:47.036421 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936928 ecr 182313,nop,nop,sack 1 {666877:669733},mptcp dss ack 3915512778], length 0
+10:53:47.037874 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936928 ecr 182313,nop,nop,sack 1 {666877:669733},mptcp dss ack 3915512778], length 0
+10:53:47.086912 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294936928 ecr 182313,nop,nop,sack 1 {666877:669733},mptcp dss ack 3915512778], length 0
+10:53:47.139074 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937027 ecr 182313,nop,nop,sack 1 {666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.150683 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937027 ecr 182313,nop,nop,sack 1 {666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.234261 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937027 ecr 182313,nop,nop,sack 1 {666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.282523 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937174 ecr 182313,nop,nop,sack 2 {672589:674017}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.284038 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937174 ecr 182313,nop,nop,sack 2 {672589:674017}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.358078 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937174 ecr 182313,nop,nop,sack 2 {672589:674017}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.492943 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937384 ecr 182313,nop,nop,sack 2 {672589:675445}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.504880 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937384 ecr 182313,nop,nop,sack 2 {672589:675445}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.506812 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937384 ecr 182313,nop,nop,sack 2 {672589:675445}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.628188 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937520 ecr 182313,nop,nop,sack 2 {672589:676873}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.632802 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937520 ecr 182313,nop,nop,sack 2 {672589:676873}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.716112 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937520 ecr 182313,nop,nop,sack 2 {672589:676873}{666877:671161},mptcp dss ack 3915512778], length 0
+10:53:47.844505 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937652 ecr 182313,nop,nop,sack 2 {678301:679729}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:47.846072 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937652 ecr 182313,nop,nop,sack 2 {678301:679729}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:47.872056 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937652 ecr 182313,nop,nop,sack 2 {678301:679729}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:47.963086 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937794 ecr 182313,nop,nop,sack 2 {678301:681157}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.039593 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937914 ecr 182313,nop,nop,sack 2 {678301:682585}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.062098 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937794 ecr 182313,nop,nop,sack 2 {678301:681157}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.064888 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937794 ecr 182313,nop,nop,sack 2 {678301:681157}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.104267 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937914 ecr 182313,nop,nop,sack 2 {678301:682585}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.129369 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294938022 ecr 182313,nop,nop,sack 2 {678301:684013}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.141975 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294937914 ecr 182313,nop,nop,sack 2 {678301:682585}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.278264 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294938022 ecr 182313,nop,nop,sack 2 {678301:684013}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.291863 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294938183 ecr 182313,nop,nop,sack 2 {678301:685441}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.316035 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294938022 ecr 182313,nop,nop,sack 2 {678301:684013}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.371776 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294938183 ecr 182313,nop,nop,sack 2 {678301:685441}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.389646 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 665449, win 24449, options [nop,nop,TS val 4294938183 ecr 182313,nop,nop,sack 2 {678301:685441}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.456866 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938347 ecr 183875,nop,nop,sack 2 {678301:685441}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.484073 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938347 ecr 183875,nop,nop,sack 2 {678301:685441}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.549432 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938347 ecr 183875,nop,nop,sack 2 {678301:685441}{672589:676873},mptcp dss ack 3915512778], length 0
+10:53:48.566863 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938452 ecr 183875,nop,nop,sack 2 {686869:688297}{678301:685441},mptcp dss ack 3915512778], length 0
+10:53:48.621645 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938452 ecr 183875,nop,nop,sack 2 {686869:688297}{678301:685441},mptcp dss ack 3915512778], length 0
+10:53:48.666858 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938452 ecr 183875,nop,nop,sack 2 {686869:688297}{678301:685441},mptcp dss ack 3915512778], length 0
+10:53:48.706010 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938598 ecr 183875,nop,nop,sack 2 {672589:685441}{686869:688297},mptcp dss ack 3915512778], length 0
+10:53:48.709976 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938598 ecr 183875,nop,nop,sack 2 {672589:685441}{686869:688297},mptcp dss ack 3915512778], length 0
+10:53:48.760368 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938598 ecr 183875,nop,nop,sack 2 {672589:685441}{686869:688297},mptcp dss ack 3915512778], length 0
+10:53:48.858470 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938747 ecr 183875,nop,nop,sack 2 {686869:689725}{672589:685441},mptcp dss ack 3915512778], length 0
+10:53:48.863857 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938747 ecr 183875,nop,nop,sack 2 {686869:689725}{672589:685441},mptcp dss ack 3915512778], length 0
+10:53:48.879193 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938747 ecr 183875,nop,nop,sack 2 {686869:689725}{672589:685441},mptcp dss ack 3915512778], length 0
+10:53:49.021283 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938913 ecr 183875,nop,nop,sack 2 {686869:691153}{672589:685441},mptcp dss ack 3915512778], length 0
+10:53:49.022859 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938913 ecr 183875,nop,nop,sack 2 {686869:691153}{672589:685441},mptcp dss ack 3915512778], length 0
+10:53:49.045085 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24449, options [nop,nop,TS val 4294938913 ecr 183875,nop,nop,sack 2 {686869:691153}{672589:685441},mptcp dss ack 3915512778], length 0
+10:53:49.165121 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939054 ecr 183875,nop,nop,sack 2 {686869:692581}{672589:685441},mptcp dss ack 3915539910], length 0
+10:53:49.166934 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939054 ecr 183875,nop,nop,sack 2 {686869:692581}{672589:685441},mptcp dss ack 3915539910], length 0
+10:53:49.170397 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939054 ecr 183875,nop,nop,sack 2 {686869:692581}{672589:685441},mptcp dss ack 3915539910], length 0
+10:53:49.260955 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939141 ecr 183875,nop,nop,sack 1 {672589:692581},mptcp dss ack 3915539910], length 0
+10:53:49.365497 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939141 ecr 183875,nop,nop,sack 1 {672589:692581},mptcp dss ack 3915539910], length 0
+10:53:49.369516 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939141 ecr 183875,nop,nop,sack 1 {672589:692581},mptcp dss ack 3915539910], length 0
+10:53:49.373713 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939212 ecr 183875,nop,nop,sack 1 {672589:694009},mptcp dss ack 3915539910], length 0
+10:53:49.478828 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939212 ecr 183875,nop,nop,sack 1 {672589:694009},mptcp dss ack 3915539910], length 0
+10:53:49.486494 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939212 ecr 183875,nop,nop,sack 1 {672589:694009},mptcp dss ack 3915539910], length 0
+10:53:49.518563 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939392 ecr 183875,nop,nop,sack 1 {672589:695437},mptcp dss ack 3915539910], length 0
+10:53:49.586676 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939392 ecr 183875,nop,nop,sack 1 {672589:695437},mptcp dss ack 3915539910], length 0
+10:53:49.649706 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 695437, win 23285, options [nop,nop,TS val 4294939540 ecr 185307,mptcp dss ack 3915651294], length 0
+10:53:49.680099 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 671161, win 24026, options [nop,nop,TS val 4294939392 ecr 183875,nop,nop,sack 1 {672589:695437},mptcp dss ack 3915539910], length 0
+10:53:49.699120 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 695437, win 23285, options [nop,nop,TS val 4294939540 ecr 185307,mptcp dss ack 3915651294], length 0
+10:53:49.797269 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 696865, win 24440, options [nop,nop,TS val 4294939688 ecr 185433,mptcp dss ack 3915655578], length 0
+10:53:49.812238 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 696865, win 24440, options [nop,nop,TS val 4294939688 ecr 185433,mptcp dss ack 3915655578], length 0
+10:53:49.854726 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 695437, win 23285, options [nop,nop,TS val 4294939540 ecr 185307,mptcp dss ack 3915651294], length 0
+10:53:49.912522 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 698293, win 24424, options [nop,nop,TS val 4294939802 ecr 185536,mptcp dss ack 3915661290], length 0
+10:53:49.916387 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 698293, win 24424, options [nop,nop,TS val 4294939802 ecr 185536,mptcp dss ack 3915661290], length 0
+10:53:49.958939 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 696865, win 24440, options [nop,nop,TS val 4294939688 ecr 185433,mptcp dss ack 3915655578], length 0
+10:53:50.066924 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 699721, win 24471, options [nop,nop,TS val 4294939957 ecr 185688,mptcp dss ack 3915661290], length 0
+10:53:50.067948 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 699721, win 24471, options [nop,nop,TS val 4294939957 ecr 185688,mptcp dss ack 3915661290], length 0
+10:53:50.111376 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 698293, win 24424, options [nop,nop,TS val 4294939802 ecr 185536,mptcp dss ack 3915661290], length 0
+10:53:50.204066 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 701149, win 24427, options [nop,nop,TS val 4294940092 ecr 185826,mptcp dss ack 3915664146], length 0
+10:53:50.206306 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 701149, win 24427, options [nop,nop,TS val 4294940092 ecr 185826,mptcp dss ack 3915664146], length 0
+10:53:50.229050 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 699721, win 24471, options [nop,nop,TS val 4294939957 ecr 185688,mptcp dss ack 3915661290], length 0
+10:53:50.330762 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 701149, win 24427, options [nop,nop,TS val 4294940092 ecr 185826,mptcp dss ack 3915664146], length 0
+10:53:50.408918 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 702577, win 24486, options [nop,nop,TS val 4294940301 ecr 186022,mptcp dss ack 3915679854], length 0
+10:53:50.413644 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 702577, win 24486, options [nop,nop,TS val 4294940301 ecr 186022,mptcp dss ack 3915679854], length 0
+10:53:50.477603 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 702577, win 24486, options [nop,nop,TS val 4294940301 ecr 186022,mptcp dss ack 3915679854], length 0
+10:53:50.529469 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 704005, win 24468, options [nop,nop,TS val 4294940421 ecr 186195,mptcp dss ack 3915681282], length 0
+10:53:50.598834 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 704005, win 24468, options [nop,nop,TS val 4294940421 ecr 186195,mptcp dss ack 3915681282], length 0
+10:53:50.644102 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 704005, win 24468, options [nop,nop,TS val 4294940421 ecr 186195,mptcp dss ack 3915681282], length 0
+10:53:50.678291 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 705433, win 24446, options [nop,nop,TS val 4294940569 ecr 186337,mptcp dss ack 3915682710], length 0
+10:53:50.760652 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 705433, win 24446, options [nop,nop,TS val 4294940569 ecr 186337,mptcp dss ack 3915682710], length 0
+10:53:50.766521 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 705433, win 24446, options [nop,nop,TS val 4294940569 ecr 186337,mptcp dss ack 3915682710], length 0
+10:53:50.870862 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 706861, win 24473, options [nop,nop,TS val 4294940762 ecr 186495,mptcp dss ack 3915692706], length 0
+10:53:50.874801 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 706861, win 24473, options [nop,nop,TS val 4294940762 ecr 186495,mptcp dss ack 3915692706], length 0
+10:53:50.932594 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 706861, win 24473, options [nop,nop,TS val 4294940762 ecr 186495,mptcp dss ack 3915692706], length 0
+10:53:51.002519 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 708289, win 24451, options [nop,nop,TS val 4294940889 ecr 186495,mptcp dss ack 3915694134], length 0
+10:53:51.047357 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 708289, win 24451, options [nop,nop,TS val 4294940889 ecr 186495,mptcp dss ack 3915694134], length 0
+10:53:51.063358 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 708289, win 24451, options [nop,nop,TS val 4294940889 ecr 186495,mptcp dss ack 3915694134], length 0
+10:53:51.124929 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941016 ecr 186599,mptcp dss ack 3915705558], length 0
+10:53:51.180105 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941016 ecr 186599,mptcp dss ack 3915705558], length 0
+10:53:51.182642 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941016 ecr 186599,mptcp dss ack 3915705558], length 0
+10:53:51.286364 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941178 ecr 186599,nop,nop,sack 1 {711145:712573},mptcp dss ack 3915705558], length 0
+10:53:51.344793 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941178 ecr 186599,nop,nop,sack 1 {711145:712573},mptcp dss ack 3915705558], length 0
+10:53:51.351896 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941178 ecr 186599,nop,nop,sack 1 {711145:712573},mptcp dss ack 3915705558], length 0
+10:53:51.439321 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941330 ecr 186599,nop,nop,sack 2 {714001:715429}{711145:712573},mptcp dss ack 3915705558], length 0
+10:53:51.466460 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941330 ecr 186599,nop,nop,sack 2 {714001:715429}{711145:712573},mptcp dss ack 3915705558], length 0
+10:53:51.493787 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941330 ecr 186599,nop,nop,sack 2 {714001:715429}{711145:712573},mptcp dss ack 3915705558], length 0
+10:53:51.594998 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941486 ecr 186599,nop,nop,sack 2 {716857:718285}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.602844 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941486 ecr 186599,nop,nop,sack 2 {716857:718285}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.637212 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941486 ecr 186599,nop,nop,sack 2 {716857:718285}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.751473 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941643 ecr 186599,nop,nop,sack 2 {716857:719713}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.759965 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941643 ecr 186599,nop,nop,sack 2 {716857:719713}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.762035 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941643 ecr 186599,nop,nop,sack 2 {716857:719713}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.903983 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941795 ecr 186599,nop,nop,sack 2 {716857:721141}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.908554 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941795 ecr 186599,nop,nop,sack 2 {716857:721141}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.911174 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941795 ecr 186599,nop,nop,sack 2 {716857:721141}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:51.987036 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941879 ecr 186599,nop,nop,sack 2 {716857:722569}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.052776 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941879 ecr 186599,nop,nop,sack 2 {716857:722569}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.090004 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294941879 ecr 186599,nop,nop,sack 2 {716857:722569}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.126233 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294942018 ecr 186599,nop,nop,sack 2 {716857:723997}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.202122 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294942018 ecr 186599,nop,nop,sack 2 {716857:723997}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.224277 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294942116 ecr 186599,nop,nop,sack 2 {716857:725425}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.235225 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294942018 ecr 186599,nop,nop,sack 2 {716857:723997}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.296663 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294942116 ecr 186599,nop,nop,sack 2 {716857:725425}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.314218 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 709717, win 24471, options [nop,nop,TS val 4294942116 ecr 186599,nop,nop,sack 2 {716857:725425}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.326711 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 712573, win 24471, options [nop,nop,TS val 4294942218 ecr 188134,nop,nop,sack 2 {716857:725425}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.428311 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 712573, win 24471, options [nop,nop,TS val 4294942218 ecr 188134,nop,nop,sack 2 {716857:725425}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.483454 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 715429, win 24471, options [nop,nop,TS val 4294942350 ecr 188277,nop,nop,sack 1 {716857:725425},mptcp dss ack 3915705558], length 0
+10:53:52.505186 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 712573, win 24471, options [nop,nop,TS val 4294942218 ecr 188134,nop,nop,sack 2 {716857:725425}{714001:715429},mptcp dss ack 3915705558], length 0
+10:53:52.542493 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 715429, win 24471, options [nop,nop,TS val 4294942350 ecr 188277,nop,nop,sack 1 {716857:725425},mptcp dss ack 3915705558], length 0
+10:53:52.609296 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 725425, win 24471, options [nop,nop,TS val 4294942500 ecr 188403,mptcp dss ack 3915705558], length 0
+10:53:52.633523 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 715429, win 24471, options [nop,nop,TS val 4294942350 ecr 188277,nop,nop,sack 1 {716857:725425},mptcp dss ack 3915705558], length 0
+10:53:52.654471 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 725425, win 24471, options [nop,nop,TS val 4294942500 ecr 188403,mptcp dss ack 3915705558], length 0
+10:53:52.707472 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 725425, win 24471, options [nop,nop,TS val 4294942500 ecr 188403,mptcp dss ack 3915705558], length 0
+10:53:52.743520 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 726853, win 24181, options [nop,nop,TS val 4294942636 ecr 188578,mptcp dss ack 3915724122], length 0
+10:53:52.790979 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 726853, win 24181, options [nop,nop,TS val 4294942636 ecr 188578,mptcp dss ack 3915724122], length 0
+10:53:52.833947 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 726853, win 24181, options [nop,nop,TS val 4294942636 ecr 188578,mptcp dss ack 3915724122], length 0
+10:53:52.847778 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 728281, win 24181, options [nop,nop,TS val 4294942739 ecr 188831,mptcp dss ack 3915724122], length 0
+10:53:52.916022 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 728281, win 24181, options [nop,nop,TS val 4294942739 ecr 188831,mptcp dss ack 3915724122], length 0
+10:53:52.923072 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 728281, win 24181, options [nop,nop,TS val 4294942739 ecr 188831,mptcp dss ack 3915724122], length 0
+10:53:52.982197 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 729709, win 24164, options [nop,nop,TS val 4294942874 ecr 188955,mptcp dss ack 3915742686], length 0
+10:53:53.014413 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 729709, win 24164, options [nop,nop,TS val 4294942874 ecr 188955,mptcp dss ack 3915742686], length 0
+10:53:53.069107 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 729709, win 24164, options [nop,nop,TS val 4294942874 ecr 188955,mptcp dss ack 3915742686], length 0
+10:53:53.119982 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 731137, win 24298, options [nop,nop,TS val 4294943012 ecr 188977,mptcp dss ack 3915764106], length 0
+10:53:53.125872 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 731137, win 24298, options [nop,nop,TS val 4294943012 ecr 188977,mptcp dss ack 3915764106], length 0
+10:53:53.212971 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 731137, win 24298, options [nop,nop,TS val 4294943012 ecr 188977,mptcp dss ack 3915764106], length 0
+10:53:53.247039 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 732565, win 24298, options [nop,nop,TS val 4294943137 ecr 189146,mptcp dss ack 3915764106], length 0
+10:53:53.252504 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 732565, win 24298, options [nop,nop,TS val 4294943137 ecr 189146,mptcp dss ack 3915764106], length 0
+10:53:53.403501 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 732565, win 24298, options [nop,nop,TS val 4294943137 ecr 189146,mptcp dss ack 3915764106], length 0
+10:53:53.406047 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 733993, win 24298, options [nop,nop,TS val 4294943289 ecr 189274,mptcp dss ack 3915764106], length 0
+10:53:53.409417 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 733993, win 24298, options [nop,nop,TS val 4294943289 ecr 189274,mptcp dss ack 3915764106], length 0
+10:53:53.518911 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 735421, win 24298, options [nop,nop,TS val 4294943398 ecr 189348,mptcp dss ack 3915764106], length 0
+10:53:53.553737 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 733993, win 24298, options [nop,nop,TS val 4294943289 ecr 189274,mptcp dss ack 3915764106], length 0
+10:53:53.559766 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 735421, win 24298, options [nop,nop,TS val 4294943398 ecr 189348,mptcp dss ack 3915764106], length 0
+10:53:53.634296 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 736849, win 24298, options [nop,nop,TS val 4294943522 ecr 189474,mptcp dss ack 3915764106], length 0
+10:53:53.636703 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 736849, win 24298, options [nop,nop,TS val 4294943522 ecr 189474,mptcp dss ack 3915764106], length 0
+10:53:53.696166 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 735421, win 24298, options [nop,nop,TS val 4294943398 ecr 189348,mptcp dss ack 3915764106], length 0
+10:53:53.775636 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 738277, win 24298, options [nop,nop,TS val 4294943666 ecr 189563,mptcp dss ack 3915764106], length 0
+10:53:53.794607 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 738277, win 24298, options [nop,nop,TS val 4294943666 ecr 189563,mptcp dss ack 3915764106], length 0
+10:53:53.851403 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 736849, win 24298, options [nop,nop,TS val 4294943522 ecr 189474,mptcp dss ack 3915764106], length 0
+10:53:53.904735 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 739705, win 24298, options [nop,nop,TS val 4294943796 ecr 189709,mptcp dss ack 3915764106], length 0
+10:53:53.906409 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 739705, win 24298, options [nop,nop,TS val 4294943796 ecr 189709,mptcp dss ack 3915764106], length 0
+10:53:53.941160 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 738277, win 24298, options [nop,nop,TS val 4294943666 ecr 189563,mptcp dss ack 3915764106], length 0
+10:53:54.033846 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 741133, win 24298, options [nop,nop,TS val 4294943925 ecr 189853,mptcp dss ack 3915764106], length 0
+10:53:54.039803 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 741133, win 24298, options [nop,nop,TS val 4294943925 ecr 189853,mptcp dss ack 3915764106], length 0
+10:53:54.063392 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 739705, win 24298, options [nop,nop,TS val 4294943796 ecr 189709,mptcp dss ack 3915764106], length 0
+10:53:54.158935 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 742561, win 24298, options [nop,nop,TS val 4294944050 ecr 190044,mptcp dss ack 3915764106], length 0
+10:53:54.196046 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 742561, win 24298, options [nop,nop,TS val 4294944050 ecr 190044,mptcp dss ack 3915764106], length 0
+10:53:54.206805 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 741133, win 24298, options [nop,nop,TS val 4294943925 ecr 189853,mptcp dss ack 3915764106], length 0
+10:53:54.260257 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 743989, win 24298, options [nop,nop,TS val 4294944149 ecr 190187,mptcp dss ack 3915764106], length 0
+10:53:54.300787 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 743989, win 24298, options [nop,nop,TS val 4294944149 ecr 190187,mptcp dss ack 3915764106], length 0
+10:53:54.350747 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 742561, win 24298, options [nop,nop,TS val 4294944050 ecr 190044,mptcp dss ack 3915764106], length 0
+10:53:54.440386 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 745417, win 24298, options [nop,nop,TS val 4294944333 ecr 190187,mptcp dss ack 3915764106], length 0
+10:53:54.443628 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 745417, win 24298, options [nop,nop,TS val 4294944333 ecr 190187,mptcp dss ack 3915764106], length 0
+10:53:54.499447 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 743989, win 24298, options [nop,nop,TS val 4294944149 ecr 190187,mptcp dss ack 3915764106], length 0
+10:53:54.627769 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 746845, win 24454, options [nop,nop,TS val 4294944520 ecr 190337,mptcp dss ack 3915859782], length 0
+10:53:54.630165 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 746845, win 24454, options [nop,nop,TS val 4294944520 ecr 190337,mptcp dss ack 3915859782], length 0
+10:53:54.666453 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 745417, win 24298, options [nop,nop,TS val 4294944333 ecr 190187,mptcp dss ack 3915764106], length 0
+10:53:54.778893 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 746845, win 24454, options [nop,nop,TS val 4294944520 ecr 190337,mptcp dss ack 3915859782], length 0
+10:53:54.792508 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 749701, win 24324, options [nop,nop,TS val 4294944684 ecr 190492,mptcp dss ack 3915869778], length 0
+10:53:54.812796 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 749701, win 24324, options [nop,nop,TS val 4294944684 ecr 190492,mptcp dss ack 3915869778], length 0
+10:53:54.926204 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 749701, win 24324, options [nop,nop,TS val 4294944684 ecr 190492,mptcp dss ack 3915869778], length 0
+10:53:54.961058 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 752557, win 24364, options [nop,nop,TS val 4294944852 ecr 190704,mptcp dss ack 3915871206], length 0
+10:53:54.983367 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 752557, win 24364, options [nop,nop,TS val 4294944852 ecr 190704,mptcp dss ack 3915871206], length 0
+10:53:55.058619 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 752557, win 24364, options [nop,nop,TS val 4294944852 ecr 190704,mptcp dss ack 3915871206], length 0
+10:53:55.336514 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 756841, win 24364, options [nop,nop,TS val 4294945228 ecr 190991,mptcp dss ack 3915871206], length 0
+10:53:55.358052 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 756841, win 24364, options [nop,nop,TS val 4294945228 ecr 190991,mptcp dss ack 3915871206], length 0
+10:53:55.368879 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 756841, win 24364, options [nop,nop,TS val 4294945228 ecr 190991,mptcp dss ack 3915871206], length 0
+10:53:55.707607 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 761125, win 24364, options [nop,nop,TS val 4294945600 ecr 191419,mptcp dss ack 3915871206], length 0
+10:53:55.710296 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 761125, win 24364, options [nop,nop,TS val 4294945600 ecr 191419,mptcp dss ack 3915871206], length 0
+10:53:55.718915 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 761125, win 24364, options [nop,nop,TS val 4294945600 ecr 191419,mptcp dss ack 3915871206], length 0
+10:53:56.064727 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 765409, win 24364, options [nop,nop,TS val 4294945956 ecr 191699,mptcp dss ack 3915871206], length 0
+10:53:56.066269 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 765409, win 24364, options [nop,nop,TS val 4294945956 ecr 191699,mptcp dss ack 3915871206], length 0
+10:53:56.118302 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 765409, win 24364, options [nop,nop,TS val 4294945956 ecr 191699,mptcp dss ack 3915871206], length 0
+10:53:56.482101 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 769693, win 24364, options [nop,nop,TS val 4294946368 ecr 192009,mptcp dss ack 3915871206], length 0
+10:53:56.487445 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 769693, win 24364, options [nop,nop,TS val 4294946368 ecr 192009,mptcp dss ack 3915871206], length 0
+10:53:56.490719 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 769693, win 24364, options [nop,nop,TS val 4294946368 ecr 192009,mptcp dss ack 3915871206], length 0
+10:53:56.799720 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 773977, win 23985, options [nop,nop,TS val 4294946692 ecr 192359,mptcp dss ack 3915895482], length 0
+10:53:56.804767 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 773977, win 23985, options [nop,nop,TS val 4294946692 ecr 192359,mptcp dss ack 3915895482], length 0
+10:53:56.807405 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 773977, win 23985, options [nop,nop,TS val 4294946692 ecr 192359,mptcp dss ack 3915895482], length 0
+10:53:57.100186 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 778261, win 23673, options [nop,nop,TS val 4294946992 ecr 192759,mptcp dss ack 3915915474], length 0
+10:53:57.102752 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 778261, win 23673, options [nop,nop,TS val 4294946992 ecr 192759,mptcp dss ack 3915915474], length 0
+10:53:57.106462 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 778261, win 23673, options [nop,nop,TS val 4294946992 ecr 192759,mptcp dss ack 3915915474], length 0
+10:53:57.367563 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 781117, win 23860, options [nop,nop,TS val 4294947257 ecr 192759,mptcp dss ack 3915915474], length 0
+10:53:57.388888 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 781117, win 23860, options [nop,nop,TS val 4294947257 ecr 192759,mptcp dss ack 3915915474], length 0
+10:53:57.399681 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 781117, win 23860, options [nop,nop,TS val 4294947257 ecr 192759,mptcp dss ack 3915915474], length 0
+10:53:57.619400 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947510 ecr 193131,nop,nop,sack 1 {783973:785401},mptcp dss ack 3915915474], length 0
+10:53:57.624446 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947510 ecr 193131,nop,nop,sack 1 {783973:785401},mptcp dss ack 3915915474], length 0
+10:53:57.634336 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947510 ecr 193131,nop,nop,sack 1 {783973:785401},mptcp dss ack 3915915474], length 0
+10:53:57.748651 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947640 ecr 193131,nop,nop,sack 1 {783973:786829},mptcp dss ack 3915915474], length 0
+10:53:57.758796 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947640 ecr 193131,nop,nop,sack 1 {783973:786829},mptcp dss ack 3915915474], length 0
+10:53:57.761510 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947640 ecr 193131,nop,nop,sack 1 {783973:786829},mptcp dss ack 3915915474], length 0
+10:53:57.861568 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947754 ecr 193131,nop,nop,sack 2 {788257:789685}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:57.898145 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947754 ecr 193131,nop,nop,sack 2 {788257:789685}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:57.965627 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947754 ecr 193131,nop,nop,sack 2 {788257:789685}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.041077 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947926 ecr 193131,nop,nop,sack 2 {788257:791113}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.042980 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947926 ecr 193131,nop,nop,sack 2 {788257:791113}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.172901 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948013 ecr 193131,nop,nop,sack 2 {788257:792541}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.174674 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948013 ecr 193131,nop,nop,sack 2 {788257:792541}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.205602 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294947926 ecr 193131,nop,nop,sack 2 {788257:791113}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.306467 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948198 ecr 193131,nop,nop,sack 2 {788257:793969}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.307671 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948198 ecr 193131,nop,nop,sack 2 {788257:793969}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.397178 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948013 ecr 193131,nop,nop,sack 2 {788257:792541}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.436943 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948329 ecr 193131,nop,nop,sack 2 {788257:795397}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.460523 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948329 ecr 193131,nop,nop,sack 2 {788257:795397}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.516808 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948198 ecr 193131,nop,nop,sack 2 {788257:793969}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.553156 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24262, options [nop,nop,TS val 4294948444 ecr 193131,nop,nop,sack 2 {788257:796825}{783973:786829},mptcp dss ack 3916005438], length 0
+10:53:58.555295 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24262, options [nop,nop,TS val 4294948444 ecr 193131,nop,nop,sack 2 {788257:796825}{783973:786829},mptcp dss ack 3916005438], length 0
+10:53:58.563109 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 23860, options [nop,nop,TS val 4294948329 ecr 193131,nop,nop,sack 2 {788257:795397}{783973:786829},mptcp dss ack 3915915474], length 0
+10:53:58.682825 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24262, options [nop,nop,TS val 4294948444 ecr 193131,nop,nop,sack 2 {788257:796825}{783973:786829},mptcp dss ack 3916005438], length 0
+10:53:58.700115 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948589 ecr 193131,nop,nop,sack 2 {788257:798253}{783973:786829},mptcp dss ack 3916012578], length 0
+10:53:58.701299 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948589 ecr 193131,nop,nop,sack 2 {788257:798253}{783973:786829},mptcp dss ack 3916012578], length 0
+10:53:58.789585 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948681 ecr 193131,nop,nop,sack 2 {799681:801109}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:58.825030 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948681 ecr 193131,nop,nop,sack 2 {799681:801109}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:58.920922 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948589 ecr 193131,nop,nop,sack 2 {788257:798253}{783973:786829},mptcp dss ack 3916012578], length 0
+10:53:58.935252 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948827 ecr 193131,nop,nop,sack 2 {799681:802537}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:58.937781 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948827 ecr 193131,nop,nop,sack 2 {799681:802537}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.030521 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948681 ecr 193131,nop,nop,sack 2 {799681:801109}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.056742 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948944 ecr 193131,nop,nop,sack 2 {799681:803965}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.057805 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948944 ecr 193131,nop,nop,sack 2 {799681:803965}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.143022 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948827 ecr 193131,nop,nop,sack 2 {799681:802537}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.181894 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949073 ecr 193131,nop,nop,sack 2 {799681:805393}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.196331 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949073 ecr 193131,nop,nop,sack 2 {799681:805393}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.290810 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294948944 ecr 193131,nop,nop,sack 2 {799681:803965}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.311793 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949202 ecr 193131,nop,nop,sack 2 {783973:798253}{799681:805393},mptcp dss ack 3916012578], length 0
+10:53:59.313378 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949202 ecr 193131,nop,nop,sack 2 {783973:798253}{799681:805393},mptcp dss ack 3916012578], length 0
+10:53:59.464796 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949073 ecr 193131,nop,nop,sack 2 {799681:805393}{788257:798253},mptcp dss ack 3916012578], length 0
+10:53:59.476588 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949349 ecr 193131,nop,nop,sack 2 {799681:806821}{783973:798253},mptcp dss ack 3916012578], length 0
+10:53:59.477821 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949349 ecr 193131,nop,nop,sack 2 {799681:806821}{783973:798253},mptcp dss ack 3916012578], length 0
+10:53:59.547074 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949202 ecr 193131,nop,nop,sack 2 {783973:798253}{799681:805393},mptcp dss ack 3916012578], length 0
+10:53:59.582718 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949470 ecr 193131,nop,nop,sack 2 {799681:808249}{783973:798253},mptcp dss ack 3916012578], length 0
+10:53:59.585028 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949470 ecr 193131,nop,nop,sack 2 {799681:808249}{783973:798253},mptcp dss ack 3916012578], length 0
+10:53:59.688429 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949349 ecr 193131,nop,nop,sack 2 {799681:806821}{783973:798253},mptcp dss ack 3916012578], length 0
+10:53:59.698898 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949585 ecr 193131,nop,nop,sack 1 {783973:808249},mptcp dss ack 3916012578], length 0
+10:53:59.736167 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949585 ecr 193131,nop,nop,sack 1 {783973:808249},mptcp dss ack 3916012578], length 0
+10:53:59.800642 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949692 ecr 193131,nop,nop,sack 1 {783973:809677},mptcp dss ack 3916012578], length 0
+10:53:59.820545 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949470 ecr 193131,nop,nop,sack 2 {799681:808249}{783973:798253},mptcp dss ack 3916012578], length 0
+10:53:59.858805 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949692 ecr 193131,nop,nop,sack 1 {783973:809677},mptcp dss ack 3916012578], length 0
+10:53:59.913241 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949805 ecr 193131,nop,nop,sack 1 {783973:811105},mptcp dss ack 3916012578], length 0
+10:53:59.943510 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949805 ecr 193131,nop,nop,sack 1 {783973:811105},mptcp dss ack 3916012578], length 0
+10:53:59.969777 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949585 ecr 193131,nop,nop,sack 1 {783973:808249},mptcp dss ack 3916012578], length 0
+10:54:00.031827 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949900 ecr 193131,nop,nop,sack 1 {783973:812533},mptcp dss ack 3916012578], length 0
+10:54:00.034399 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949900 ecr 193131,nop,nop,sack 1 {783973:812533},mptcp dss ack 3916012578], length 0
+10:54:00.049400 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949692 ecr 193131,nop,nop,sack 1 {783973:809677},mptcp dss ack 3916012578], length 0
+10:54:00.164047 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 812533, win 23208, options [nop,nop,TS val 4294950056 ecr 196188,mptcp dss ack 3916113966], length 0
+10:54:00.207290 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 812533, win 23208, options [nop,nop,TS val 4294950056 ecr 196188,mptcp dss ack 3916113966], length 0
+10:54:00.214580 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949805 ecr 193131,nop,nop,sack 1 {783973:811105},mptcp dss ack 3916012578], length 0
+10:54:00.268731 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 813961, win 24370, options [nop,nop,TS val 4294950161 ecr 196386,mptcp dss ack 3916122534], length 0
+10:54:00.308977 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 813961, win 24370, options [nop,nop,TS val 4294950161 ecr 196386,mptcp dss ack 3916122534], length 0
+10:54:00.401285 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 782545, win 24208, options [nop,nop,TS val 4294949900 ecr 193131,nop,nop,sack 1 {783973:812533},mptcp dss ack 3916012578], length 0
+10:54:00.402468 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 815389, win 24355, options [nop,nop,TS val 4294950290 ecr 196492,mptcp dss ack 3916123962], length 0
+10:54:00.406384 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 815389, win 24355, options [nop,nop,TS val 4294950290 ecr 196492,mptcp dss ack 3916123962], length 0
+10:54:00.487928 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 816817, win 24333, options [nop,nop,TS val 4294950367 ecr 196659,mptcp dss ack 3916125390], length 0
+10:54:00.510882 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 816817, win 24333, options [nop,nop,TS val 4294950367 ecr 196659,mptcp dss ack 3916125390], length 0
+10:54:00.522925 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 812533, win 23208, options [nop,nop,TS val 4294950056 ecr 196188,mptcp dss ack 3916113966], length 0
+10:54:00.606531 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 818245, win 24311, options [nop,nop,TS val 4294950477 ecr 196701,mptcp dss ack 3916126818], length 0
+10:54:00.625790 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 818245, win 24311, options [nop,nop,TS val 4294950477 ecr 196701,mptcp dss ack 3916126818], length 0
+10:54:00.683507 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 813961, win 24370, options [nop,nop,TS val 4294950161 ecr 196386,mptcp dss ack 3916122534], length 0
+10:54:00.723311 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 819673, win 24289, options [nop,nop,TS val 4294950614 ecr 196868,mptcp dss ack 3916128246], length 0
+10:54:00.724899 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 819673, win 24289, options [nop,nop,TS val 4294950614 ecr 196868,mptcp dss ack 3916128246], length 0
+10:54:00.772666 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 815389, win 24355, options [nop,nop,TS val 4294950290 ecr 196492,mptcp dss ack 3916123962], length 0
+10:54:00.823357 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 816817, win 24333, options [nop,nop,TS val 4294950367 ecr 196659,mptcp dss ack 3916125390], length 0
+10:54:00.859209 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 821101, win 24289, options [nop,nop,TS val 4294950750 ecr 197058,mptcp dss ack 3916128246], length 0
+10:54:00.889247 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 821101, win 24289, options [nop,nop,TS val 4294950750 ecr 197058,mptcp dss ack 3916128246], length 0
+10:54:00.953810 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 818245, win 24311, options [nop,nop,TS val 4294950477 ecr 196701,mptcp dss ack 3916126818], length 0
+10:54:01.047511 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 822529, win 24289, options [nop,nop,TS val 4294950939 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.054530 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 822529, win 24289, options [nop,nop,TS val 4294950939 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.057515 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 819673, win 24289, options [nop,nop,TS val 4294950614 ecr 196868,mptcp dss ack 3916128246], length 0
+10:54:01.188924 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 821101, win 24289, options [nop,nop,TS val 4294950750 ecr 197058,mptcp dss ack 3916128246], length 0
+10:54:01.216365 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 823957, win 24289, options [nop,nop,TS val 4294951108 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.218024 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 823957, win 24289, options [nop,nop,TS val 4294951108 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.355156 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 822529, win 24289, options [nop,nop,TS val 4294950939 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.373831 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951266 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.376202 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951266 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.466955 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 823957, win 24289, options [nop,nop,TS val 4294951108 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.529602 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951420 ecr 197158,nop,nop,sack 1 {826813:828241},mptcp dss ack 3916128246], length 0
+10:54:01.533649 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951420 ecr 197158,nop,nop,sack 1 {826813:828241},mptcp dss ack 3916128246], length 0
+10:54:01.621378 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951496 ecr 197158,nop,nop,sack 1 {826813:829669},mptcp dss ack 3916128246], length 0
+10:54:01.651520 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951496 ecr 197158,nop,nop,sack 1 {826813:829669},mptcp dss ack 3916128246], length 0
+10:54:01.677926 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951266 ecr 197158,mptcp dss ack 3916128246], length 0
+10:54:01.741174 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951632 ecr 197158,nop,nop,sack 1 {826813:831097},mptcp dss ack 3916128246], length 0
+10:54:01.800892 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951632 ecr 197158,nop,nop,sack 1 {826813:831097},mptcp dss ack 3916128246], length 0
+10:54:01.817943 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951420 ecr 197158,nop,nop,sack 1 {826813:828241},mptcp dss ack 3916128246], length 0
+10:54:01.896921 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951788 ecr 197158,nop,nop,sack 2 {832525:833953}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:01.904066 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951788 ecr 197158,nop,nop,sack 2 {832525:833953}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:01.991070 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951496 ecr 197158,nop,nop,sack 1 {826813:829669},mptcp dss ack 3916128246], length 0
+10:54:02.026386 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951918 ecr 197158,nop,nop,sack 2 {832525:835381}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.050049 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951918 ecr 197158,nop,nop,sack 2 {832525:835381}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.097364 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951632 ecr 197158,nop,nop,sack 1 {826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.140781 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952033 ecr 197158,nop,nop,sack 2 {832525:836809}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.150802 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952033 ecr 197158,nop,nop,sack 2 {832525:836809}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.222185 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951788 ecr 197158,nop,nop,sack 2 {832525:833953}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.284768 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294951918 ecr 197158,nop,nop,sack 2 {832525:835381}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.297952 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952190 ecr 197158,nop,nop,sack 2 {832525:838237}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.308945 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952190 ecr 197158,nop,nop,sack 2 {832525:838237}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.383359 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952033 ecr 197158,nop,nop,sack 2 {832525:836809}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.443793 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952334 ecr 197158,nop,nop,sack 2 {832525:839665}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.459173 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952334 ecr 197158,nop,nop,sack 2 {832525:839665}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.534262 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952190 ecr 197158,nop,nop,sack 2 {832525:838237}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.663859 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952334 ecr 197158,nop,nop,sack 2 {832525:839665}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.665400 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952543 ecr 197158,nop,nop,sack 2 {832525:841093}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.666922 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952543 ecr 197158,nop,nop,sack 2 {832525:841093}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.749935 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23976, options [nop,nop,TS val 4294952642 ecr 197158,nop,nop,sack 2 {832525:842521}{826813:831097},mptcp dss ack 3916178226], length 0
+10:54:02.816880 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 24289, options [nop,nop,TS val 4294952543 ecr 197158,nop,nop,sack 2 {832525:841093}{826813:831097},mptcp dss ack 3916128246], length 0
+10:54:02.834920 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23976, options [nop,nop,TS val 4294952642 ecr 197158,nop,nop,sack 2 {832525:842521}{826813:831097},mptcp dss ack 3916178226], length 0
+10:54:02.851678 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23976, options [nop,nop,TS val 4294952743 ecr 197158,nop,nop,sack 2 {832525:843949}{826813:831097},mptcp dss ack 3916178226], length 0
+10:54:02.920271 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23976, options [nop,nop,TS val 4294952743 ecr 197158,nop,nop,sack 2 {832525:843949}{826813:831097},mptcp dss ack 3916178226], length 0
+10:54:02.952473 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23976, options [nop,nop,TS val 4294952642 ecr 197158,nop,nop,sack 2 {832525:842521}{826813:831097},mptcp dss ack 3916178226], length 0
+10:54:02.991265 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23932, options [nop,nop,TS val 4294952875 ecr 197158,nop,nop,sack 2 {832525:845377}{826813:831097},mptcp dss ack 3916181082], length 0
+10:54:03.049520 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23932, options [nop,nop,TS val 4294952875 ecr 197158,nop,nop,sack 2 {832525:845377}{826813:831097},mptcp dss ack 3916181082], length 0
+10:54:03.084624 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23976, options [nop,nop,TS val 4294952743 ecr 197158,nop,nop,sack 2 {832525:843949}{826813:831097},mptcp dss ack 3916178226], length 0
+10:54:03.173942 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 825385, win 23932, options [nop,nop,TS val 4294952875 ecr 197158,nop,nop,sack 2 {832525:845377}{826813:831097},mptcp dss ack 3916181082], length 0
+10:54:03.189628 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23894, options [nop,nop,TS val 4294953014 ecr 198738,nop,nop,sack 1 {832525:845377},mptcp dss ack 3916183938], length 0
+10:54:03.269443 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23894, options [nop,nop,TS val 4294953014 ecr 198738,nop,nop,sack 1 {832525:845377},mptcp dss ack 3916183938], length 0
+10:54:03.295600 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23894, options [nop,nop,TS val 4294953014 ecr 198738,nop,nop,sack 1 {832525:845377},mptcp dss ack 3916183938], length 0
+10:54:03.299449 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953110 ecr 198738,nop,nop,sack 1 {832525:846805},mptcp dss ack 3916192506], length 0
+10:54:03.375543 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953235 ecr 198738,nop,nop,sack 1 {832525:848233},mptcp dss ack 3916192506], length 0
+10:54:03.413841 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953110 ecr 198738,nop,nop,sack 1 {832525:846805},mptcp dss ack 3916192506], length 0
+10:54:03.443058 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953110 ecr 198738,nop,nop,sack 1 {832525:846805},mptcp dss ack 3916192506], length 0
+10:54:03.467077 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953359 ecr 198738,nop,nop,sack 1 {832525:849661},mptcp dss ack 3916192506], length 0
+10:54:03.544358 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953235 ecr 198738,nop,nop,sack 1 {832525:848233},mptcp dss ack 3916192506], length 0
+10:54:03.546745 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953235 ecr 198738,nop,nop,sack 1 {832525:848233},mptcp dss ack 3916192506], length 0
+10:54:03.594022 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953484 ecr 198738,nop,nop,sack 1 {832525:851089},mptcp dss ack 3916192506], length 0
+10:54:03.694362 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953359 ecr 198738,nop,nop,sack 1 {832525:849661},mptcp dss ack 3916192506], length 0
+10:54:03.699591 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953359 ecr 198738,nop,nop,sack 1 {832525:849661},mptcp dss ack 3916192506], length 0
+10:54:03.715358 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953605 ecr 198738,nop,nop,sack 1 {832525:852517},mptcp dss ack 3916192506], length 0
+10:54:03.812213 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953704 ecr 198738,nop,nop,sack 1 {832525:853945},mptcp dss ack 3916192506], length 0
+10:54:03.888345 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953484 ecr 198738,nop,nop,sack 1 {832525:851089},mptcp dss ack 3916192506], length 0
+10:54:03.896092 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953484 ecr 198738,nop,nop,sack 1 {832525:851089},mptcp dss ack 3916192506], length 0
+10:54:03.935793 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953825 ecr 198738,nop,nop,sack 1 {832525:855373},mptcp dss ack 3916192506], length 0
+10:54:03.996764 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953605 ecr 198738,nop,nop,sack 1 {832525:852517},mptcp dss ack 3916192506], length 0
+10:54:04.029512 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953605 ecr 198738,nop,nop,sack 1 {832525:852517},mptcp dss ack 3916192506], length 0
+10:54:04.051930 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953704 ecr 198738,nop,nop,sack 1 {832525:853945},mptcp dss ack 3916192506], length 0
+10:54:04.085860 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 855373, win 23886, options [nop,nop,TS val 4294953978 ecr 200084,mptcp dss ack 3916192506], length 0
+10:54:04.175256 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953825 ecr 198738,nop,nop,sack 1 {832525:855373},mptcp dss ack 3916192506], length 0
+10:54:04.182511 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953704 ecr 198738,nop,nop,sack 1 {832525:853945},mptcp dss ack 3916192506], length 0
+10:54:04.213236 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 856801, win 23886, options [nop,nop,TS val 4294954103 ecr 200253,mptcp dss ack 3916192506], length 0
+10:54:04.293946 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 855373, win 23886, options [nop,nop,TS val 4294953978 ecr 200084,mptcp dss ack 3916192506], length 0
+10:54:04.316744 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 831097, win 23886, options [nop,nop,TS val 4294953825 ecr 198738,nop,nop,sack 1 {832525:855373},mptcp dss ack 3916192506], length 0
+10:54:04.367264 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 858229, win 23886, options [nop,nop,TS val 4294954251 ecr 200371,mptcp dss ack 3916192506], length 0
+10:54:04.380075 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 856801, win 23886, options [nop,nop,TS val 4294954103 ecr 200253,mptcp dss ack 3916192506], length 0
+10:54:04.444830 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 855373, win 23886, options [nop,nop,TS val 4294953978 ecr 200084,mptcp dss ack 3916192506], length 0
+10:54:04.459846 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 858229, win 23886, options [nop,nop,TS val 4294954251 ecr 200371,mptcp dss ack 3916192506], length 0
+10:54:04.513804 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 859657, win 23886, options [nop,nop,TS val 4294954405 ecr 200539,mptcp dss ack 3916192506], length 0
+10:54:04.548644 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 859657, win 23886, options [nop,nop,TS val 4294954405 ecr 200539,mptcp dss ack 3916192506], length 0
+10:54:04.566744 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 856801, win 23886, options [nop,nop,TS val 4294954103 ecr 200253,mptcp dss ack 3916192506], length 0
+10:54:04.666334 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 861085, win 23736, options [nop,nop,TS val 4294954558 ecr 200700,mptcp dss ack 3916252482], length 0
+10:54:04.694049 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 861085, win 23736, options [nop,nop,TS val 4294954558 ecr 200700,mptcp dss ack 3916252482], length 0
+10:54:04.736941 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 858229, win 23886, options [nop,nop,TS val 4294954251 ecr 200371,mptcp dss ack 3916192506], length 0
+10:54:04.792458 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 862513, win 23736, options [nop,nop,TS val 4294954684 ecr 200842,mptcp dss ack 3916252482], length 0
+10:54:04.797415 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 862513, win 23736, options [nop,nop,TS val 4294954684 ecr 200842,mptcp dss ack 3916252482], length 0
+10:54:04.860532 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 859657, win 23886, options [nop,nop,TS val 4294954405 ecr 200539,mptcp dss ack 3916192506], length 0
+10:54:04.919040 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 863941, win 23736, options [nop,nop,TS val 4294954807 ecr 200974,mptcp dss ack 3916252482], length 0
+10:54:04.921471 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 863941, win 23736, options [nop,nop,TS val 4294954807 ecr 200974,mptcp dss ack 3916252482], length 0
+10:54:04.952338 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 861085, win 23736, options [nop,nop,TS val 4294954558 ecr 200700,mptcp dss ack 3916252482], length 0
+10:54:05.037449 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 865369, win 23736, options [nop,nop,TS val 4294954929 ecr 201085,mptcp dss ack 3916252482], length 0
+10:54:05.046989 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 865369, win 23736, options [nop,nop,TS val 4294954929 ecr 201085,mptcp dss ack 3916252482], length 0
+10:54:05.071159 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 862513, win 23736, options [nop,nop,TS val 4294954684 ecr 200842,mptcp dss ack 3916252482], length 0
+10:54:05.103953 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 863941, win 23736, options [nop,nop,TS val 4294954807 ecr 200974,mptcp dss ack 3916252482], length 0
+10:54:05.181528 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 866797, win 23736, options [nop,nop,TS val 4294955074 ecr 201085,mptcp dss ack 3916252482], length 0
+10:54:05.182805 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 866797, win 23736, options [nop,nop,TS val 4294955074 ecr 201085,mptcp dss ack 3916252482], length 0
+10:54:05.216698 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 865369, win 23736, options [nop,nop,TS val 4294954929 ecr 201085,mptcp dss ack 3916252482], length 0
+10:54:05.265826 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868225, win 23736, options [nop,nop,TS val 4294955149 ecr 201207,mptcp dss ack 3916252482], length 0
+10:54:05.301805 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 866797, win 23736, options [nop,nop,TS val 4294955074 ecr 201085,mptcp dss ack 3916252482], length 0
+10:54:05.310953 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868225, win 23736, options [nop,nop,TS val 4294955149 ecr 201207,mptcp dss ack 3916252482], length 0
+10:54:05.366366 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868817, win 24004, options [nop,nop,TS val 4294955237 ecr 201377,mptcp dss ack 3916295322], length 0
+10:54:05.396990 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868225, win 23736, options [nop,nop,TS val 4294955149 ecr 201207,mptcp dss ack 3916252482], length 0
+10:54:05.427580 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868817, win 24004, options [nop,nop,TS val 4294955237 ecr 201377,mptcp dss ack 3916295322], length 0
+10:54:05.462325 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868817, win 24004, options [nop,nop,TS val 4294955237 ecr 201377,mptcp dss ack 3916295322], length 0
+10:54:05.740017 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868817, win 24576, options [nop,nop,TS val 4294955632 ecr 201377,mptcp dss fin ack 3916393019 seq 2295998090 subseq 0 len 1 csum 0xb0f6], length 0
+10:54:05.741833 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868817, win 24576, options [nop,nop,TS val 4294955632 ecr 201377,mptcp dss fin ack 3916393019 seq 2295998090 subseq 0 len 1 csum 0xb0f6], length 0
+10:54:05.743778 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868817, win 24576, options [nop,nop,TS val 4294955632 ecr 201377,mptcp dss fin ack 3916393019 seq 2295998090 subseq 0 len 1 csum 0xb0f6], length 0
+10:54:05.844145 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868818, win 24576, options [nop,nop,TS val 4294955704 ecr 202384,mptcp dss ack 3916393019], length 0
+10:54:05.846326 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868818, win 24576, options [nop,nop,TS val 4294955704 ecr 202384,mptcp dss ack 3916393019], length 0
+10:54:05.857108 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [.], ack 868818, win 24576, options [nop,nop,TS val 4294955704 ecr 202384,mptcp dss ack 3916393019], length 0
+10:54:05.935823 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [F.], seq 0, ack 868818, win 24576, options [nop,nop,TS val 4294955779 ecr 202384,mptcp dss ack 3916393019], length 0
+10:54:05.952787 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [F.], seq 0, ack 868818, win 24576, options [nop,nop,TS val 4294955779 ecr 202384,mptcp dss ack 3916393019], length 0
+10:54:05.956544 IP 112.26.1.8.37887 > 112.26.1.1.37753: Flags [F.], seq 0, ack 868818, win 24576, options [nop,nop,TS val 4294955779 ecr 202384,mptcp dss ack 3916393019], length 0
+
